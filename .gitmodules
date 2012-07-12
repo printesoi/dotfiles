@@ -13,3 +13,6 @@
 [submodule "vimfiles/bundle/vim-powerline"]
 	path = vimfiles/bundle/vim-powerline
 	url = git://github.com/Lokaltog/vim-powerline.git
+[submodule "vimfiles/bundle/nerdcommenter"]
+	path = vimfiles/bundle/nerdcommenter
+	url = git://github.com/scrooloose/nerdcommenter.git
