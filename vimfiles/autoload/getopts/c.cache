@@ -1,0 +1,4 @@
+-I/usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.1/include/
+-I/usr/local/include/
+-I/usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.1/include-fixed/
+-I/usr/include/

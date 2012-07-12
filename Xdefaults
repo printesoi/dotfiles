@@ -1,0 +1,82 @@
+Xcursor*theme: Adwaita
+
+!------------------------------------------------------------------------------
+! color settings
+*background: #151515
+*foreground: #f2f7f9
+
+!! Default
+!! 0: black
+*color0:  #333333
+*color8:  #5b5b5b
+! 1: red
+*color1:  #f05b50
+*color9:  #ffafaf
+! 2: green
+*color2:  #72bc67
+*color10: #a5ee79
+! 3: yellow
+*color3:  #feae5f
+*color11: #fee298
+! 4: blue
+*color4:  #86aed5
+*color12: #a3c8ed
+! 5: magenta
+*color5:  #8686ad
+*color13: #ababe5
+! 6: cyan
+*color6:  #8cd0d3
+*color14: #93cbcb
+! 7: white
+*color7:  #dcdccc
+*color15: #ffffff
+
+!------------------------------------------------------------------------------
+! x t e r m
+XTerm*colorMode:		on
+XTerm*colorBD:			lightyellow
+!XTerm*colorBDMode:		off
+XTerm*colorUL:			yellow
+XTerm*colorULMode:		on
+XTerm*dynamicColors:		off
+XTerm*highlightSelection:	true
+XTerm*background:		#000000
+XTerm*foreground:		#7f7f7f
+XTerm*faceName:                 xft:Bitstream Vera Sans Mono:regular:size=8:antialias=true:hinting=true
+XTerm*geometry: 120x35
+XTerm*utf8:               2
+XTerm*eightBitInput:      true
+XTerm*saveLines:          1024
+!XTerm*imFont:               xft:Bitstream Vera Sans Mono:regular:size=8:antialias=true:hinting=true
+!XTerm*boldFont:             xft:Bitstream Vera Sans Mono:bold:size=8:antialias=true:hinting=true
+!XTerm*italicFont:           xft:Bitstream Vera Sans Mono:italic:size=8:antialias=true:hinting=true
+!XTerm*boldItalicFont:       xft:Bitstream Vera Sans Mono:bold:italic:size=8:antialias=true:hinting=true
+
+!------------------------------------------------------------------------------
+! u r x v t
+
+URxvt*font:                 xft:Bitstream Vera Sans Mono:regular:size=8:antialias=true:hinting=true
+URxvt*imFont:               xft:Bitstream Vera Sans Mono:regular:size=8:antialias=true:hinting=true
+URxvt*boldFont:             xft:Bitstream Vera Sans Mono:bold:size=8:antialias=true:hinting=true
+URxvt*italicFont:           xft:Bitstream Vera Sans Mono:italic:size=8:antialias=true:hinting=true
+URxvt*boldItalicFont:       xft:Bitstream Vera Sans Mono:bold:italic:size=8:antialias=true:hinting=true
+!URxvt*font:                 xft:Pragmata TT:regular:size=9:antialias=true:hinting=true
+!URxvt*imFont:               xft:Pragmata TT:regular:size=9:antialias=true:hinting=true
+!URxvt*boldFont:             xft:Pragmata TT:bold:size=9:antialias=true:hinting=true
+!URxvt*italicFont:           xft:Pragmata TT:italic:size=9:antialias=true:hinting=true
+!URxvt*boldItalicFont:       xft:Pragmata TT:bold:italic:size=9:antialias=true:hinting=true
+URxvt*lineSpace:	2
+URxvt*urlLauncher:         google-chrome
+URxvt*scrollBar:        false
+URxvt*scrollBar_right:        true
+URxvt*scrollColor:        #000000
+
+Xft.autohint: 1
+!Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+!Xft.dpi: 96
+Xft.rgba: rgb
+
+Emacs.font: Bitstream Vera Sans Mono-9

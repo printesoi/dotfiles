@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [[ -z "$DIGIKAM_LOG_FILE" ]]; then
+	DIGIKAM_LOG_FILE="digikam.log"
+fi
+
+__LINES="---------------------------------------------"
+
+echo -e "\n$__LINES\n`date`\n$__LINES\n" >> $DIGIKAM_LOG_FILE
+
+digikam &>> $DIGIKAM_LOG_FILE

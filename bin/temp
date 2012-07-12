@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sensors | sed -ne 's/^temp1:[ ]\++\(.*\)°C/\1/p'

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+XILINX="/opt/Xilinx/13.4/ISE_DS";
+. $XILINX/settings64.sh $XILINX &> /dev/null;
+ise

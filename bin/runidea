@@ -1,0 +1,4 @@
+#!/bin/bash
+
+$HOME/wmname-0.1/wmname LG3D
+/usr/share/intellijidea-ce/bin/idea.sh

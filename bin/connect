@@ -1,0 +1,5 @@
+#!/bin/bash
+sudo ifconfig eth0 10.16.2.31 up
+sudo ifconfig eth0 netmask 255.255.252.0 up
+sudo ifconfig eth0 hw ether C8:0A:A9:B6:3F:55 up
+sudo pppoe-start

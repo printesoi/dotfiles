@@ -1,0 +1,8 @@
+#!/bin/bash
+
+COLORS=$(tput colors 2> /dev/null)
+if [[ $? == 0 && $COLORS -gt 2 ]] ; then
+    echo -e "\e[01;32mIt's OK!\e[0m. Terminal supports colors"
+else
+    echo "Terminal does not support colors"
+fi
