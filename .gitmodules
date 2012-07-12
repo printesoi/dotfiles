@@ -19,3 +19,36 @@
 [submodule "vimfiles/bundle/vim-surround"]
 	path = vimfiles/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
+[submodule "vimfiles/bundle/ctrlp-filetype.vim"]
+	path = vimfiles/bundle/ctrlp-filetype.vim
+	url = git://github.com/endel/ctrlp-filetype.vim.git
+[submodule "vimfiles/bundle/vim-repeat"]
+	path = vimfiles/bundle/vim-repeat
+	url = git://github.com/tpope/vim-repeat.git
+[submodule "vimfiles/bundle/rainbow_parentheses"]
+	path = vimfiles/bundle/rainbow_parentheses
+	url = git://github.com/kien/rainbow_parentheses.vim.git
+[submodule "vimfiles/bundle/snipmate.vim"]
+	path = vimfiles/bundle/snipmate.vim
+	url = git://github.com/msanders/snipmate.vim.git
+[submodule "vimfiles/bundle/ack.vim"]
+	path = vimfiles/bundle/ack.vim
+	url = git://github.com/mileszs/ack.vim.git
+[submodule "vimfiles/bundle/conque-term"]
+	path = vimfiles/bundle/conque-term
+	url = git://github.com/rosenfeld/conque-term.git
+[submodule "vimfiles/bundle/a.vim"]
+	path = vimfiles/bundle/a.vim
+	url = git://github.com/vim-scripts/a.vim.git
+[submodule "vimfiles/bundle/indenthaskell"]
+	path = vimfiles/bundle/indenthaskell
+	url = git://github.com/vim-scripts/indenthaskell.vim.git
+[submodule "vimfiles/bundle/c.vim"]
+	path = vimfiles/bundle/c.vim
+	url = git@github.com:printesoi/c.vim.git
+[submodule "vimfiles/bundle/prolog.vim"]
+	path = vimfiles/bundle/prolog.vim
+	url = git://github.com/adimit/prolog.vim.git
+[submodule "vimfiles/bundle/minibufexpl.vim"]
+	path = vimfiles/bundle/minibufexpl.vim
+	url = git://github.com/fholgado/minibufexpl.vim.git
