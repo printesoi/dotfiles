@@ -52,3 +52,6 @@
 [submodule "vimfiles/bundle/minibufexpl.vim"]
 	path = vimfiles/bundle/minibufexpl.vim
 	url = git://github.com/fholgado/minibufexpl.vim.git
+[submodule "vimfiles/bundle/cpp11-syntax-support"]
+	path = vimfiles/bundle/cpp11-syntax-support
+	url = git://github.com/vim-scripts/Cpp11-Syntax-Support.git
