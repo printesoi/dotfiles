@@ -2,7 +2,7 @@
     " General "{{{
         set nocompatible
         set clipboard=unnamed
-        set ttyfast
+        "set ttyfast
         set history=3000
         set backspace=2
         set gdefault
@@ -57,8 +57,12 @@
     " Interface "{{{
         syntax on
         syntax enable
-        set bg=dark
-        color molokai
+        if has('gui_running')
+            set bg=light
+        else
+            set bg=dark
+        endif
+        color solarized
         set t_Co=256        " tell vim that terminal has 256 colors
     " }}}
     " Wildmenu and statusline "{{{
@@ -257,6 +261,7 @@
         " }}}
 
         " Vim-powerline settings "{{{
+            let g:Powerline_colorscheme="skwp"
             if $TERM == "rxvt-unicode-256color"
                 let g:Powerline_symbols='unicode'
             else
@@ -269,7 +274,11 @@
         " }}}
 
         " Tagbar "{{{
-            let g:tagbar_autoclose = 1  " autoclose the window when selecting a tag
+            let g:tagbar_autoclose = 0  " autoclose the window when selecting a tag
         " }}}
+        "
+        " Solarized "{{{
+        let g:solarized_termcolors=256
+        "}}}
     " }}}
 "}}}
