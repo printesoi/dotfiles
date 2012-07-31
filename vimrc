@@ -59,10 +59,11 @@
         syntax enable
         if has('gui_running')
             set bg=light
+            color solarized
         else
             set bg=dark
+            color molokai
         endif
-        color solarized
         set t_Co=256        " tell vim that terminal has 256 colors
     " }}}
     " Wildmenu and statusline "{{{
@@ -247,7 +248,7 @@
             let g:clang_snippets = 1
             let g:clang_complete_copen = 1
             let g:clang_use_library = 1
-            let g:clang_snippets_engine = 'snipmate'
+            let g:clang_snippets_engine = 'ultisnips'
             let g:clang_complete_macros = 1
             let g:clang_complete_patterns = 1
         " }}}
@@ -278,7 +279,7 @@
         " }}}
         "
         " Solarized "{{{
-        let g:solarized_termcolors=256
+        let g:solarized_termcolors=16
         "}}}
     " }}}
 "}}}

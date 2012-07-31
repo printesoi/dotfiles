@@ -12,9 +12,13 @@ alias xo="xdg-open"
 # Vim
 alias vim='vim -X'
 
+# utilities
+alias octave='octave -q'
+
 # GSoC
-alias soc='cd ~/kde/digikam'
-alias socb='cd ~/kde/digikam/build'
+alias dsc='cd ~/kde/digikam'
+alias dscb='cd ~/kde/digikam/build'
+alias dkc='cd ~/kde/digikam/core'
 alias lkp='cd ~/kde/digikam/extra/libkipi'
 alias lkpb='cd ~/kde/digikam/extra/libkipi/build'
 alias kpp='cd ~/kde/digikam/extra/kipi-plugins'
@@ -28,6 +32,8 @@ alias ......='cd ../../../../..'
 
 # make
 alias m='make'
+alias m2='make -j2'
 alias m4='make -j4'
 alias mi='make && sudo make install'
+alias m2i='make -j2 && sudo make install'
 alias m4i='make -j4 && sudo make install'

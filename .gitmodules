@@ -61,3 +61,6 @@
 [submodule "vimfiles/bundle/command-t"]
 	path = vimfiles/bundle/command-t
 	url = git://github.com/wincent/Command-T.git
+[submodule "vimfiles/bundle/ultisnips"]
+	path = vimfiles/bundle/ultisnips
+	url = git://github.com/SirVer/ultisnips.git

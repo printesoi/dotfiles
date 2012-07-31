@@ -1,0 +1,25 @@
+snippet IF "IF(CONDITION) ... ENDIF" !b
+IF(${1:condition})
+  $2
+ENDIF($1)
+endsnippet
+
+snippet IFE "IF(CONDITION)...ELSE...ENDIF" !b
+IF(${1:condition}
+  $2
+ELSE($1)
+  $3
+ENDIF($1)
+endsnippet
+
+snippet MSG "MESSAGE(STATUS ...)" !b
+MESSAGE(STATUS "$1")
+endsnippet
+
+snippet MSGW "MESSAGE(WARNING ...)" !b
+MESSAGE(WARNING "$1")
+endsnippet
+
+snippet MSGE "MESSAGE(WARNING ...)" !b
+MESSAGE(FATAL_ERROR "$1")
+endsnippet

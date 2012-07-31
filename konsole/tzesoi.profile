@@ -1,7 +1,7 @@
 [Appearance]
 AntiAliasFonts=true
 BoldIntense=true
-ColorScheme=m_solarized
+ColorScheme=Pastel1
 Font=Bitstream Vera Sans Mono,9,-1,5,50,0,0,0,0,0
 
 [General]
