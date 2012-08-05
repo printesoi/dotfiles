@@ -245,10 +245,10 @@
         " Clang-complete options "{{{
             let g:clang_hl_error = 1
             "let g:clang_auto_select = 2
-            let g:clang_snippets = 1
+            "let g:clang_snippets = 1
             let g:clang_complete_copen = 1
             let g:clang_use_library = 1
-            let g:clang_snippets_engine = 'ultisnips'
+            "let g:clang_snippets_engine = 'ultisnips'
             let g:clang_complete_macros = 1
             let g:clang_complete_patterns = 1
         " }}}
@@ -262,7 +262,7 @@
         " }}}
 
         " Vim-powerline settings "{{{
-            let g:Powerline_colorscheme="skwp"
+            "let g:Powerline_colorscheme="skwp"
             if $TERM == "rxvt-unicode-256color"
                 let g:Powerline_symbols='unicode'
             else

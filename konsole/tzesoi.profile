@@ -17,7 +17,7 @@ ShowNewAndCloseTabButtons=true
 TabBarPosition=1
 
 [Keyboard]
-KeyBindings=linux
+KeyBindings=default
 
 [Scrolling]
 HistoryMode=1

@@ -133,11 +133,11 @@ XTerm*saveLines:          1024
 !------------------------------------------------------------------------------
 ! u r x v t
 
-URxvt*font:                 xft:Bitstream Vera Sans Mono:regular:size=8:antialias=true:hinting=true
-URxvt*imFont:               xft:Bitstream Vera Sans Mono:regular:size=8:antialias=true:hinting=true
-URxvt*boldFont:             xft:Bitstream Vera Sans Mono:bold:size=8:antialias=true:hinting=true
-URxvt*italicFont:           xft:Bitstream Vera Sans Mono:italic:size=8:antialias=true:hinting=true
-URxvt*boldItalicFont:       xft:Bitstream Vera Sans Mono:bold:italic:size=8:antialias=true:hinting=true
+URxvt*font:                 xft:Bitstream Vera Sans Mono:regular:size=9:antialias=true:hinting=true
+URxvt*imFont:               xft:Bitstream Vera Sans Mono:regular:size=9:antialias=true:hinting=true
+URxvt*boldFont:             xft:Bitstream Vera Sans Mono:bold:size=9:antialias=true:hinting=true
+URxvt*italicFont:           xft:Bitstream Vera Sans Mono:italic:size=9:antialias=true:hinting=true
+URxvt*boldItalicFont:       xft:Bitstream Vera Sans Mono:bold:italic:size=9:antialias=true:hinting=true
 !URxvt*font:                 xft:Pragmata TT:regular:size=9:antialias=true:hinting=true
 !URxvt*imFont:               xft:Pragmata TT:regular:size=9:antialias=true:hinting=true
 !URxvt*boldFont:             xft:Pragmata TT:bold:size=9:antialias=true:hinting=true
