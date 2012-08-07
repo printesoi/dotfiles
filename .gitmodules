@@ -64,3 +64,6 @@
 [submodule "vimfiles/bundle/ultisnips"]
 	path = vimfiles/bundle/ultisnips
 	url = git://github.com/SirVer/ultisnips.git
+[submodule "vimfiles/bundle/nerdtree"]
+	path = vimfiles/bundle/nerdtree
+	url = git://github.com/scrooloose/nerdtree.git
