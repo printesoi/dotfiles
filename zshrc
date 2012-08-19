@@ -9,7 +9,7 @@
 export OMZ="$HOME/.oh-my-zsh"
 
 # Set the key mapping style to 'emacs' or 'vi'.
-zstyle ':omz:module:editor' keymap 'emacs'
+zstyle ':omz:module:editor' keymap 'vi'
 
 # Auto convert .... to ../..
 zstyle ':omz:module:editor' dot-expansion 'no'

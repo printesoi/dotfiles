@@ -21,7 +21,7 @@ KeyBindings=default
 
 [Scrolling]
 HistoryMode=1
-HistorySize=4096
+HistorySize=6000
 ScrollBarPosition=2
 
 [Terminal Features]
