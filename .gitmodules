@@ -37,6 +37,7 @@
 [submodule "vimfiles/bundle/conque-term"]
 	path = vimfiles/bundle/conque-term
 	url = git://github.com/rosenfeld/conque-term.git
+    ignore = untracked
 [submodule "vimfiles/bundle/a.vim"]
 	path = vimfiles/bundle/a.vim
 	url = git://github.com/vim-scripts/a.vim.git
@@ -52,6 +53,7 @@
 [submodule "vimfiles/bundle/minibufexpl.vim"]
 	path = vimfiles/bundle/minibufexpl.vim
 	url = git://github.com/fholgado/minibufexpl.vim.git
+    ignore = untracked
 [submodule "vimfiles/bundle/cpp11-syntax-support"]
 	path = vimfiles/bundle/cpp11-syntax-support
 	url = git://github.com/vim-scripts/Cpp11-Syntax-Support.git
