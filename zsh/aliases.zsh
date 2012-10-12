@@ -37,3 +37,6 @@ alias m4='make -j4'
 alias mi='make && sudo make install'
 alias m2i='make -j2 && sudo make install'
 alias m4i='make -j4 && sudo make install'
+
+# misc
+alias auth='vim ~/.auth.bfa'

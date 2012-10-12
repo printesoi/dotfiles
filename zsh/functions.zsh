@@ -16,3 +16,20 @@ function git_files()
     esac
     git status --porcelain | sed -nre "s/^$regex (.*)$/\1/p"
 }
+
+function encrypt_aes()
+{
+    [[ -z "$1" ]] && return 1;
+    [[ -f "$1" ]] || return 2;
+    FILE="$1"
+    openssl aes-256-cbc -salt -a -in "$FILE" -out "$FILE.aes"
+}
+
+function decrypt_aes()
+{
+    [[ -z "$1" ]] && return 1;
+    [[ -f "$1" ]] || return 2;
+    FILE="$1"
+    # TODO decrypt based on the extension
+    openssl aes-256-cbc -d -a -in "$FILE" -out "${FILE:r}"
+}
