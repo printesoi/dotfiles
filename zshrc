@@ -42,7 +42,8 @@ zstyle ':omz:load' omodule \
   'utility' \
   'git' \
   'prompt' \
-  'pacman'
+  'pacman' \
+  'rails'
 
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
@@ -70,3 +71,6 @@ bindkey -M vicmd '^r' history-incremental-search-backward
 [[ -f "$HOME/.zsh/functions.zsh" ]] && . "$HOME/.zsh/functions.zsh"
 
 setopt INTERACTIVE_COMMENTS
+
+SYNCAD_BIN_PATH="/opt/synapticad-17.02b/bin"
+[[ -d "$SYNCAD_BIN_PATH" ]] && export PATH="$SYNCAD_BIN_PATH:$PATH"
