@@ -1,5 +1,0 @@
-#!/bin/bash
-
-git status &> /dev/null || exit 1
-
-git rm `git status|grep deleted|tr -s ' '|cut -d ' ' -f 2`
