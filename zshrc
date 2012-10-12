@@ -70,6 +70,9 @@ bindkey -M vicmd '^r' history-incremental-search-backward
 [[ -f "$HOME/.zsh/aliases.zsh" ]] && . "$HOME/.zsh/aliases.zsh"
 [[ -f "$HOME/.zsh/functions.zsh" ]] && . "$HOME/.zsh/functions.zsh"
 
+fpath=(~/dotfiles/zsh/functions $fpath)
+autoload mkdircd git_files git_cd_root encrypt_aes decrypt_aes
+
 setopt INTERACTIVE_COMMENTS
 
 SYNCAD_BIN_PATH="/opt/synapticad-17.02b/bin"

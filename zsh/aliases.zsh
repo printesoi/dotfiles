@@ -40,3 +40,5 @@ alias m4i='make -j4 && sudo make install'
 
 # misc
 alias auth='vim ~/.auth.bfa'
+alias -g NF='*(.om[1])' # newest file
+alias -g ND='*(/om[1])' # newest directory

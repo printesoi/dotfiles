@@ -1,0 +1,8 @@
+function decrypt_aes()
+{
+    [[ -z "$1" ]] && return 1;
+    [[ -f "$1" ]] || return 2;
+    FILE="$1"
+    # TODO decrypt based on the extension
+    openssl aes-256-cbc -d -a -in "$FILE" -out "${FILE:r}"
+}

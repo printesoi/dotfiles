@@ -1,0 +1,4 @@
+function git_cd_root () {
+    local root=$(git rev-parse --show-toplevel) && \
+    cd "$root" || return 1
+}
