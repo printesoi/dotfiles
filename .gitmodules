@@ -69,3 +69,6 @@
 [submodule "vimfiles/bundle/nerdtree"]
 	path = vimfiles/bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
+[submodule "vimfiles/bundle/openssl.vim"]
+	path = vimfiles/bundle/openssl.vim
+	url = git://github.com/vim-scripts/openssl.vim.git
