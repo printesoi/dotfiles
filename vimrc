@@ -18,6 +18,10 @@
         set colorcolumn=80
         set textwidth=79        " wrap the text
 
+        " for latex
+        set grepprg=grep\ -nH\ $*
+        let g:tex_flavor='latex'
+
         " Load the Man function "{{{
         let $PAGER=""
         "}}}
