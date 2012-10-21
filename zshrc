@@ -19,3 +19,8 @@ fi
 SYNCAD_BIN_PATH="/opt/synapticad-17.02b/bin"
 [[ -d "$SYNCAD_BIN_PATH" ]] && export PATH="$SYNCAD_BIN_PATH:$PATH"
 
+export EDITOR="vim"
+bindkey -v
+bindkey "^[." insert-last-word
+bindkey -M viins '^r' history-incremental-search-backward
+bindkey -M vicmd '^r' history-incremental-search-backward

@@ -92,12 +92,6 @@ zstyle ':prezto:module:terminal' auto-title 'yes'
 
 AUTO_CD=1
 
-export EDITOR="vim"
-bindkey -v
-bindkey "^[." insert-last-word
-bindkey -M viins '^r' history-incremental-search-backward
-bindkey -M vicmd '^r' history-incremental-search-backward
-
 fpath=(~/dotfiles/zsh/functions $fpath)
 autoload mkdircd git_files git_cd_root encrypt_aes decrypt_aes
 
