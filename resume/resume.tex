@@ -1,0 +1,126 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2012 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper,sans]{moderncv}
+
+% moderncv themes
+\moderncvstyle{classic}                        % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                          % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}    % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+\usepackage[utf8]{inputenc}                  % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                         % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=0.75]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}           % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}      % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% personal data
+\firstname{Victor}
+\familyname{Dodon}
+\address{Splaiul Independentei St, P16, room 042, Bucharest,
+Romania}{060029}    % optional, remove the line if not wanted
+\mobile{+40 742 324 309}                     % optional, remove the line if not wanted
+\email{dodonvictor@gmail.com}                          % optional, remove the line if not wanted
+
+\definecolor{linkcolour}{rgb}{0,0,0.6}
+\usepackage{hyperref}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                     % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+
+\section{EDUCATION}
+\cventry{2010 -- est.\ 2014}{Bachelor's degree}{``Politehnica'' University of
+Bucharest}{}{}{Faculty of Automatic Controls and Computers.\\Computer Science and Engineering, Information Technology}  % arguments 3 to 6 can be left empty
+\vspace{3pt}
+\cventry{Feb. 2012 -- May 2012}{Course}{ROSEdu at ``Politehnica''
+University of Bucharest}{}{}{WEBDEV – a pragmatic web development
+course.\\Web development using Ruby language, web design using HTML and JavaScript}  % arguments 3 to 6 can be left empty
+\vspace{3pt}
+\cventry{Nov. 2011 -- Dec. 2011}{Course}{IBM Linux Center, Faculty of
+Automatic Controls and Computers at ``Politehnica'' University of
+Bucharest}{}{}{IBM Certified Academic Associate - DB2 9 Database and
+Application Fundamentals.\\The management of IBM DB2 relational model database server (RMDS)}  % arguments 3 to 6 can be left empty
+\vspace{3pt}
+\cventry{Feb. 2011 -- April 2011}{Course}{ROSEdu at ``Politehnica''
+University of Bucharest}{}{}{The free Open Source Community and
+Development Lab.\\Contribution within an open source project, project management tools, community integration}  % arguments 3 to 6 can be left empty
+
+\section{Experience}
+\cventry{May 2012 -- August 2012}{Student Developer as part of Google
+Summer of Code 2012}{KDE e.v. through Google Inc.}{Linienstr}{}{Porting
+  the plugin loading mechanism of digiKam (a powerful photo management
+  program for K Desktop Environment – KDE) to KDE XML-GUI technology
+\\[6pt]
+Achievements:%
+\begin{itemize}%
+\item Patched libkipi shared library to use the new architecture
+\item Patched digiKam interface to libkipi and all the kipi-plugins
+\item Patched other applications that use libkipi shared library:
+  KSnapshot, Gwenview, KPhotoAlbum
+\end{itemize}
+\vspace{3pt}
+\href{https://projects.kde.org/projects/extragear/graphics/digikam/digikam-software-compilation}{digikam git repository}}
+
+\section{Computer skills}
+\cvitem{Languages}{Strong background in C and C++ languages, Qt toolkit
+and KDE4 api. Good knowledge of SQL. Medium knowledge of Java, Javascript, Ruby (and Ruby on
+Rails) and Matlab}
+\cvitem{Tools}{Advanced skills in the administration of Linux systems:
+Archlinux, Ubuntu, Fedora, OpenSuse. Good knowledge of bash and zsh
+scripting languages, git source control management system, GNU
+debugger. Essential skills to manage and to program IBM DB2 RMDS.}
+
+\section{Languages}
+\cvitemwithcomment{Romanian}{Native}{}
+\cvitemwithcomment{English}{Independent user (B2)}{}
+\cvitemwithcomment{French}{Proficient user (C1)}{}
+\cvitemwithcomment{Russian}{Proficient user (C1)}{}
+
+\section{Qualities}
+\cvitem{Personal}{Good software engineering skills. Eager to learn and
+master new technologies.}
+\cvitem{Experience with}{High level programming languages, debugging and
+  testing techniques, Object Oriented Programming, Model-View-Controller
+desing pattern.}
+
+\section{Leisure and hobbies}
+\cvitem{FOSS}{Open Source Software enthusiast:
+  \begin{itemize}
+    \item{Owner of official KDE developer account}
+    \item{Developer and maintainer for some packages in Arch User
+      Repository(AUR)}
+    \item{Patched a digiKam plugin for editing image metadata and
+        written a new plugin for exporting images to ImageShack web
+      service}
+    \item{I am now maintainer for libkipi shared library after the GSoC
+      ending}
+  \end{itemize}}
+
+\end{document}
+
+%% end of file `template.tex'.
+
