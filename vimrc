@@ -188,21 +188,22 @@
         filetype plugin indent on
 
         " Filetype tweaks
-        autocmd FileType java   setlocal tw=78 cin wrap foldmethod=marker
-        autocmd FileType c,cpp  setlocal tw=78 cindent expandtab
-        autocmd FileType python setlocal autoindent expandtab sts=4 sw=4
-        autocmd FileType haskell setlocal tw=72 sw=2 sts=2 et
-        autocmd FileType tex     setlocal tw=72 sw=2 sts=2 ai
-        autocmd FileType tex     so ~/.vim/abbrevs.vim
-        autocmd FileType php     setlocal tw=72 cindent fo=croql
-        autocmd FileType ruby   setlocal tw=72 cindent shiftwidth=4 tabstop=4 keywordprg=ri
-        autocmd BufRead,BufNewFile *.wiki setlocal ft=creole
-        autocmd BufRead,BufNewFile *.tex setlocal ft=tex
-        autocmd BufRead,BufNewFile *.cool setlocal ft=cool
-        autocmd BufRead,BufNewFile *.cl setlocal ft=cool
-        autocmd BufRead,BufNewFile *.miC setlocal ft=C
-        autocmd BufRead,BufNewFile *.g setlocal ft=antlr
-        autocmd BufRead,BufNewFile *.clp setlocal ft=clips
+        autocmd FileType java       setlocal tw=78 cin wrap foldmethod=marker
+        autocmd FileType c,cpp      setlocal tw=78 cindent expandtab
+        autocmd FileType gitconfig  setlocal shiftwidth=4 tabstop=4 noexpandtab
+        autocmd FileType python     setlocal autoindent expandtab sts=4 sw=4
+        autocmd FileType haskell    setlocal tw=72 sw=2 sts=2 et
+        autocmd FileType tex        setlocal tw=72 sw=2 sts=2 ai
+        "autocmd FileType tex        so ~/.vim/abbrevs.vim
+        autocmd FileType php        setlocal tw=72 cindent fo=croql
+        autocmd FileType ruby       setlocal tw=72 cindent shiftwidth=4 tabstop=4 keywordprg=ri
+        autocmd BufRead,BufNewFile *.wiki   setlocal ft=creole
+        autocmd BufRead,BufNewFile *.tex    setlocal ft=tex
+        autocmd BufRead,BufNewFile *.cool   setlocal ft=cool
+        autocmd BufRead,BufNewFile *.cl     setlocal ft=cool
+        autocmd BufRead,BufNewFile *.miC    setlocal ft=C
+        autocmd BufRead,BufNewFile *.g      setlocal ft=antlr
+        autocmd BufRead,BufNewFile *.clp    setlocal ft=clips
 
         "" automatically open and close the popup menu / preview window
         au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
