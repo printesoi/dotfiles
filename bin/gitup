@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# A git pull --rebase which will stash away local changes first, if any
+# Author: David Faure <faure@kde.org>
+# Usage: add this alias in your .gitconfig:
+# up = !gitup
+
+ns=`git diff | wc -l`
+[[ $ns -eq 0 ]] && ns=`git diff --cached | wc -l`
+
+[[ $ns -gt 0 ]] && git stash
+git pull --rebase
+[[ $ns -gt 0 ]] && git stash pop --index --quiet
+
