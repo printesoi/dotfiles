@@ -1,0 +1,54 @@
+[url "git://anongit.kde.org/"]
+	insteadof = kde:
+[url "git@git.kde.org:"]
+	pushinsteadof = kde:
+[url "ssh://git@git.kde.org/"]
+	pushinsteadof = kde:
+[alias]
+	up = !gitup
+	a = add
+	ci = commit
+	st = status
+	co = checkout
+	br = branch
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	stp = status --porcelain
+	sts = status --short
+[core]
+	editor = vim
+[user]
+	name = Victor Dodon
+	email = dodonvictor@gmail.com
+[push]
+	default = tracking
+[color]
+	# turn on color
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	ui = auto
+[color "branch"]
+	current = green bold
+	local = green
+	remote = red bold
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+[color "status"]
+	added = green bold
+	changed = yellow bold
+	untracked = red
+[color "sh"]
+	branch = yellow
+[giggle]
+	main-window-maximized = false
+	main-window-geometry = 1202x690+71+166
+	history-view-vpane-position = 398
+	main-window-view = HistoryView
+[merge]
+	tool = gvimdiff
+[rebase]
+	stat = true
