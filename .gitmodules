@@ -72,3 +72,6 @@
 [submodule "vimfiles/bundle/openssl.vim"]
 	path = vimfiles/bundle/openssl.vim
 	url = git://github.com/vim-scripts/openssl.vim.git
+[submodule "vimfiles/bundle/github-vim-colorscheme"]
+	path = vimfiles/bundle/github-vim-colorscheme
+	url = git://github.com/xonecas/github-vim-colorscheme.git
