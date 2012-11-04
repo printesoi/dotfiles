@@ -93,6 +93,6 @@ zstyle ':prezto:module:terminal' auto-title 'yes'
 AUTO_CD=1
 
 fpath=(~/dotfiles/zsh/functions $fpath)
-autoload mkdircd git_files git_cd_root encrypt_aes decrypt_aes
+autoload mkdircd git_files git_cd_root encrypt_aes decrypt_aes rfc
 
 setopt INTERACTIVE_COMMENTS

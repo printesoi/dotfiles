@@ -1,0 +1,14 @@
+function rfc() {
+    local rfc_root="/usr/share/doc/rfc/txt";
+    if [[ ! $# -eq 1 ]];then
+        echo "You must specify only one rfc number"
+        return
+    fi
+
+    local file="$rfc_root/rfc$1.txt"
+    if [[ ! -f "$file" ]]; then
+        echo "rfc $1 not found"
+    fi
+
+    less $file
+}
