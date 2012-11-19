@@ -14,6 +14,8 @@ alias vim='vim -X'
 
 # utilities
 alias octave='octave -q'
+alias irb='irb --simple-prompt'
+alias sri='/usr/bin/ri'
 
 # GSoC
 alias dsc='cd ~/kde/digikam'
