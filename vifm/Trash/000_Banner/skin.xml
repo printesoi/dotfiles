@@ -1,0 +1,13 @@
+<skin name="Minimal" width="168" height="168">
+
+	<image src="shadow.png" x="0" y="0" width="168" height="168"/>
+	<image src="cover.png" x="20" y="20" width="128" height="128"/>
+	<albumcover x="20" y="20" width="128" height="128"/>
+	<image src="banner.png" x="10" y="103" width="148" height="46"/>
+	<playercontrols>
+		<prev x="36" y="111" src="previous.png" hover="previous hover.png"/> 
+		<play x="68" y="111" src="play.png" hover="play hover.png" pause="pause.png" pause_hover="pause hover.png"/> 
+		<next x="100" y="111" src="next.png" hover="next hover.png"/> 
+	</playercontrols>
+
+</skin>
