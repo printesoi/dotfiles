@@ -1,0 +1,205 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Bookmarks:
+'b
+	/home/printesoi/bin/
+	../
+'h
+	/home/printesoi/
+	../
+
+# TUI:
+al
+q0
+v2
+ov
+m-1
+l2
+r2
+
+# Left window history (oldest to newest):
+d/media/Stuff/Music/30 Seconds To Mars/2009 - This Is War
+	../
+0
+d/media/Stuff/Music
+	../
+0
+d/media/Stuff
+	../
+0
+d/media
+	../
+0
+d/
+	media/
+9
+d/home/printesoi/.vifm
+	colors/
+2
+d/home/printesoi/.vifm/colors
+	Default
+1
+d/home/printesoi/dotfiles/vimfiles/bundle/vim-powerline
+	../
+0
+d/home/printesoi/dotfiles/vimfiles/bundle
+	../
+0
+d/home/printesoi/dotfiles/vimfiles
+	../
+0
+d/home/printesoi/dotfiles
+	../
+0
+d/home/printesoi
+	tmp/
+26
+d/home/printesoi/tmp
+	../
+0
+d/home/printesoi
+	school/
+22
+d/home/printesoi/school
+	an3/
+2
+d/home/printesoi/school/an3
+	egc/
+2
+d/home/printesoi/school/an3/egc
+	teme/
+2
+d/home/printesoi/school/an3/egc/teme
+	02/
+2
+d/home/printesoi/school/an3/egc/teme/02
+	../
+0
+d/home/printesoi/school/an3/egc/teme
+	../
+0
+d/home/printesoi/school/an3/egc
+	../
+0
+d/home/printesoi/school/an3
+	apd/
+1
+d/home/printesoi/school/an3/apd
+	teme/
+2
+d/home/printesoi/school/an3/apd/teme
+	02/
+2
+d/home/printesoi/school/an3/apd/teme/02
+	updated_set1/
+1
+d/home/printesoi/school/an3/apd/teme/02/updated_set1
+	doc3.txt
+3
+d/media/Stuff/Downloads
+	Learning OpenCV.pdf
+36
+d
+
+# Right window history (oldest to newest):
+D/home/printesoi/dotfiles/vimfiles/bundle
+	vim-powerline/
+22
+D/home/printesoi/dotfiles/vimfiles
+	bundle/
+4
+D/home/printesoi/dotfiles
+	resume/
+4
+D/home/printesoi
+	school/
+22
+D/home/printesoi/school
+	an3/
+2
+D/home/printesoi/school/an3
+	egc/
+2
+D/home/printesoi/school/an3/egc
+	teme/
+2
+D/home/printesoi/school/an3/egc/teme
+	02/
+2
+D/home/printesoi/school/an3/egc/teme/02
+	rubik
+13
+D/home/printesoi/.vifm
+	../
+0
+D/home/printesoi/dotfiles/vimfiles/bundle/vim-powerline
+	../
+0
+D/home/printesoi/dotfiles/vimfiles/bundle
+	../
+0
+D/home/printesoi/dotfiles/vimfiles
+	../
+0
+D/home/printesoi/dotfiles
+	../
+0
+D
+
+# Command line history (oldest to newest):
+:execute
+:!%
+:!%c
+:!./%c
+:help
+:!git status
+:q
+
+# Search history (oldest to newest):
+
+# Prompt history (oldest to newest):
+
+# Registers:
+
+# Directory stack (oldest to newest):
+
+# Trash content:
+t000_03. Megadeth - Addicted To Chaos.mp3
+	/home/printesoi/Music/conv/03. Megadeth - Addicted To Chaos.mp3
+t000_04. Megadeth - Five Magics.mp3
+	/home/printesoi/Music/conv/04. Megadeth - Five Magics.mp3
+t000_05. Megadeth - Poison Was The Cure.mp3
+	/home/printesoi/Music/conv/05. Megadeth - Poison Was The Cure.mp3
+t000_07. Megadeth - Liar.mp3
+	/home/printesoi/Music/conv/07. Megadeth - Liar.mp3
+t000_07. Megadeth - Tornado Of Souls.mp3
+	/home/printesoi/Music/conv/07. Megadeth - Tornado Of Souls.mp3
+t000_08. Megadeth - Hook In Mouth.mp3
+	/home/printesoi/Music/conv/08. Megadeth - Hook In Mouth.mp3
+t000_11. Megadeth - The Right To Go Insane.mp3
+	/home/printesoi/Music/conv/11. Megadeth - The Right To Go Insane.mp3
+t000_conv
+	/home/printesoi/Music/conv
+t000_Tooltip2
+	/home/printesoi/.CoverGloobus/themes/Tooltip2
+t000_Mini small left
+	/home/printesoi/.CoverGloobus/themes/Mini small left
+t000_Mini small right
+	/home/printesoi/.CoverGloobus/themes/Mini small right
+t000_Mini Down
+	/home/printesoi/.CoverGloobus/themes/Mini Down
+t000_Mini Up
+	/home/printesoi/.CoverGloobus/themes/Mini Up
+t000_BoxOfTzesoi
+	/home/printesoi/.CoverGloobus/themes/BoxOfTzesoi
+t000_Banner (Slim)
+	/home/printesoi/.CoverGloobus/themes/Banner (Slim)
+t000_Banner
+	/home/printesoi/.CoverGloobus/themes/Banner
+
+# State:
+f
+i1
+F
+I1
+s0
