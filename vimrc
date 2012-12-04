@@ -6,7 +6,7 @@
         set history=3000
         set backspace=2
         set gdefault
-        set autowrite
+        set autowriteall
         set number
         set mouse=a
         set nobackup
@@ -185,6 +185,7 @@
     " Filetype options "{{{
         filetype on
         filetype plugin on
+        filetype indent on
         filetype plugin indent on
 
         " Filetype tweaks
@@ -256,6 +257,7 @@
             "let g:clang_snippets_engine = 'ultisnips'
             let g:clang_complete_macros = 1
             let g:clang_complete_patterns = 1
+            let g:clang_user_options = "-std=c++11 -stdlib=libc++"
         " }}}
 
         " ControlP "{{{
