@@ -1,10 +1,3 @@
-#!/bin/bash
-# Rutare Retea eRegie
-#
-# Daca te muti in alt camin va trebui sa vii si sa redownloadezi acest fisier
-# FISIERUL TREBUIE DOWNLOADAT NUMAI DE LA ADRESA http://www.eregie.pub.ro/downloads/retea.bat
-#
-#
-route del -net 10.0.0.0 netmask 255.0.0.0
-route add -net 10.0.0.0 netmask 255.0.0.0 gw 10.16.0.1
-
+sudo ip route del 10.0.0.0/8 via 10.16.0.1
+sudo ip addr add 10.16.3.251/22 dev eth0
+sudo ip route add 10.0.0.0/8 via 10.16.0.1 dev eth0
