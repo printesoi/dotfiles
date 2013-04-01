@@ -81,3 +81,18 @@
 [submodule "vimfiles/bundle/vim-rails"]
 	path = vimfiles/bundle/vim-rails
 	url = git://github.com/tpope/vim-rails.git
+[submodule "vimfiles/bundle/harlequin"]
+	path = vimfiles/bundle/harlequin
+	url = git://github.com/nielsmadan/harlequin.git
+[submodule "vimfiles/bundle/vim-obsession"]
+	path = vimfiles/bundle/vim-obsession
+	url = git://github.com/tpope/vim-obsession.git
+[submodule "vimfiles/bundle/powerline"]
+	path = vimfiles/bundle/powerline
+	url = git://github.com/Lokaltog/powerline.git
+[submodule "vimfiles/bundle/vim-racket"]
+	path = vimfiles/bundle/vim-racket
+	url = git://github.com/wlangstroth/vim-racket.git
+[submodule "vimfiles/bundle/rainbow_parentheses.vim"]
+	path = vimfiles/bundle/rainbow_parentheses.vim
+	url = git://github.com/kien/rainbow_parentheses.vim.git

@@ -14,6 +14,7 @@
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	stp = status --porcelain
 	sts = status --short
+	meld = !/home/printesoi/dev/git-meld/git-meld.pl
 [core]
 	editor = vim
 [user]
@@ -52,3 +53,5 @@
 	tool = gvimdiff
 [rebase]
 	stat = true
+[diff]
+	tool = meld
