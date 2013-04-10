@@ -20,7 +20,8 @@ if version > 580
 endif
 let g:colors_name="github"
 
-hi Normal       guifg=#000000 guibg=#F8F8FF
+hi Normal       guifg=#000000 guibg=#EEE8D5
+"hi Normal       guifg=#000000 guibg=#F8F8FF
 
 " {{{ Cursor
 hi Cursor		guibg=#444454 guifg=#F8F8FF
@@ -36,14 +37,14 @@ hi DiffDelete      guifg=#DDCCCC guibg=#FFDDDD gui=none
 " }}}
 
 " {{{ Folding / Line Numbering / Status Lines
-hi Folded		guibg=#ECECEC guifg=#808080 gui=bold
-hi vimFold		guibg=#ECECEC guifg=#808080 gui=bold
-hi FoldColumn	guibg=#ECECEC guifg=#808080 gui=bold
+hi Folded		guibg=#EEE8D5 guifg=#808080 gui=bold
+hi vimFold		guibg=#EEE8D5 guifg=#808080 gui=bold
+hi FoldColumn	guibg=#EEE8D5 guifg=#808080 gui=bold
 
-hi LineNr		guifg=#959595 guibg=#ECECEC gui=bold
-hi NonText		guifg=#808080 guibg=#ECECEC
-hi Folded		guifg=#808080 guibg=#ECECEC gui=bold
-hi FoldeColumn  guifg=#808080 guibg=#ECECEC gui=bold
+hi LineNr		guifg=#959595 guibg=#EEE8D5 gui=bold
+hi NonText		guifg=#808080 guibg=#EEE8D5
+hi Folded		guifg=#808080 guibg=#EEE8D5 gui=bold
+hi FoldeColumn  guifg=#808080 guibg=#EEE8D5 gui=bold
 
 hi VertSplit	guibg=#bbbbbb guifg=#bbbbbb gui=none
 hi StatusLine   guibg=#bbbbbb guifg=#404040 gui=bold
@@ -85,11 +86,21 @@ hi Todo			guifg=#FFFFFF guibg=#990000 gui=bold
 hi Special		guifg=#159828 gui=bold
 hi rubySymbol   guifg=#960B73
 hi Error        guibg=#f8f8ff guifg=#ff1100 gui=undercurl
-hi Todo         guibg=#f8f8ff guifg=#ff1100 gui=underline
+hi Todo         guibg=#f8f8ff guifg=#ff1100 gui=underline,bold
 hi Label        guifg=#000000 gui=bold
 hi StorageClass guifg=#000000 gui=bold
 hi Structure    guifg=#000000 gui=bold
 hi TypeDef      guifg=#000000 gui=bold
+
+"hi cType		guifg=#177F80 gui=bold
+hi cType		guifg=#445588 gui=bold
+hi cString		guifg=#D81745 gui=bold
+hi cConstant	guifg=#177F80 gui=bold
+hi cNumber  	guifg=#445599 gui=bold
+hi cStructure   guifg=#445588 gui=bold
+
+hi cCustomFunc  gui=bold guifg=#008800
+hi cCustomClass gui=reverse guifg=#008800
 " }}}
 
 " {{{ Completion menus

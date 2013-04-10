@@ -97,6 +97,9 @@ hi cPreCondit guifg=#557799 gui=bold
 hi cConstant guifg=#557799 gui=bold
 hi cNumber guifg=#0000DD gui=NONE
 hi cIncluded guifg=#BB4444 gui=bold
+hi cType guifg=#008800 guibg=NONE gui=BOLD
+hi cppType guifg=#008800 guibg=NONE gui=BOLD
+hi cStructure guifg=#008800 guibg=NONE gui=BOLD
 hi cppStructure guifg=#008800 guibg=NONE gui=BOLD
 hi cppStatement guifg=#008800 guibg=NONE gui=BOLD
 hi cStatement guifg=#008800 guibg=NONE gui=BOLD

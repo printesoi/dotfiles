@@ -96,3 +96,6 @@
 [submodule "vimfiles/bundle/rainbow_parentheses.vim"]
 	path = vimfiles/bundle/rainbow_parentheses.vim
 	url = git://github.com/kien/rainbow_parentheses.vim.git
+[submodule "vimfiles/bundle/AsyncCommand"]
+	path = vimfiles/bundle/AsyncCommand
+	url = git://github.com/pydave/AsyncCommand.git
