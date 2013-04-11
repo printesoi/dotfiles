@@ -40,6 +40,7 @@ function prompt_tzesoi_setup {
     "%B%F{white}"
     "%B%F{blue}"
     "%B%F{red}"
+    "%F{blue}"
   )
 
   # Formats:
@@ -64,12 +65,8 @@ function prompt_tzesoi_setup {
   zstyle ':vcs_info:*:prompt:*' nvcsformats   ""
 
   # Define prompts.
-#  PROMPT="
-#${_prompt_tzesoi_colors[3]}%n%f at ${_prompt_tzesoi_colors[2]}%m%f in ${_prompt_tzesoi_colors[5]}%~%f "'${vcs_info_msg_0_}'"
-#"'$(virtualenv_info)'"$ "
-
   PROMPT="
-${_prompt_tzesoi_colors[7]}λ%?%f%b :: ${_prompt_tzesoi_colors[3]}%n%f ➔ ${_prompt_tzesoi_colors[2]}%m%f ➔ ${_prompt_tzesoi_colors[5]}%~%f "'${vcs_info_msg_0_}'"
+%(?.%B%F{blue}.%B%F{red})λ%?%f%b :: ${_prompt_tzesoi_colors[3]}%n%f ➔ ${_prompt_tzesoi_colors[2]}%m%f ➔ ${_prompt_tzesoi_colors[5]}%~%f ➔ ${_prompt_tzesoi_colors[9]}%*%f "'${vcs_info_msg_0_}'"
 "'$(virtualenv_info)'"${_prompt_tzesoi_colors[6]}⚡%f%b "
 }
 
