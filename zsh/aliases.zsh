@@ -9,9 +9,6 @@ alias atiload='aticonfig --od-getclocks'
 alias go="gnome-open"
 alias xo="xdg-open"
 
-# Vim
-alias vim='vim -X'
-
 # utilities
 alias octave='octave -q'
 alias irb='irb --simple-prompt'
@@ -44,6 +41,3 @@ alias m4i='make -j4 && sudo make install'
 alias auth='vim ~/.auth.bfa'
 alias -g NF='*(.om[1])' # newest file
 alias -g ND='*(/om[1])' # newest directory
-
-# teme
-alias apdt1='cd ~/school/an3/apd/teme/01'

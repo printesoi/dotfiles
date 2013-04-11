@@ -1,0 +1,62 @@
+function clt()
+{
+    local fname="$0";
+    local clt_dir="$HOME/dev/cltaxis/cltaxis";
+
+    function $0_usage()
+    {
+        echo "$fname [conf|make|cl|cd|clean|dev|spush|push|upver]";
+    }
+
+    function $0_help()
+    {
+        case "$1" in
+            "conf") echo "Run ./configure script";;
+            "cd") echo "cd into the cltaxis dir";;
+            "make") echo "Run make";;
+            "cl") echo "Run make clean";;
+            "clean") echo "Run make clean && make distclean";;
+            "upver") echo "Increment version tag in main.c";;
+            *) echo "unknow action $1" && return 2;;
+        esac
+    }
+
+    function $0_cd()
+    {
+        local pwd=$(pwd);
+        [[ "$pwd" == "$clt_dir" ]] || cd "$clt_dir";
+    }
+
+    if [[ $# -eq 0 ]]; then
+        $0_usage $1;
+        return 1
+    fi
+
+    case "$1" in
+        "conf") $0_cd && ./configure;;
+        "make") $0_cd && ( [[ -f Makefile ]] || ./configure && make);;
+        "cl") $0_cd && ( [[ -f Makefile ]] && make clean);;
+        "clean") $0_cd && ( [[ -f Makefile ]] && make clean && make distclean);;
+        "cd" ) $0_cd;;
+        "spush" ) $0_cd && (git stash save; git svn dcommit; git stash pop --index --quiet);;
+        "push" ) $0_cd && git svn dcommit;;
+        "upver" )
+            $0_cd || return 2;
+            ver=$(git svn info | grep "Revision" | awk '{print $2}');
+            newver=$((ver+1));
+            sed -e 's/Starting server\[SVN[0-9]\+/Starting server\[SVN'$newver'/' -i src/main.c;
+            sed -e 's/Starting x server\[SVN[0-9]\+/Starting x server\[SVN'$newver'/' -i src/x.c;;
+        "help")
+            [[ -z "$2" ]] && $0_usage || $0_help "$2";
+            return 2;;
+        *) echo "unknown action $1" && return 2;;
+    esac
+
+    unfunction -m $0_usage;
+    unfunction -m $0_help;
+    unfunction -m $0_cd;
+}
+
+unfunction -m $0_usage;
+unfunction -m $0_help;
+unfunction -m $0_cd;

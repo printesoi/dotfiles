@@ -14,10 +14,8 @@ fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 [[ -f "$HOME/.zsh/aliases.zsh" ]] && . "$HOME/.zsh/aliases.zsh"
+[[ -f "$HOME/.zsh/aliases_priv.zsh" ]] && . "$HOME/.zsh/aliases_priv.zsh"
 [[ -f "$HOME/.zsh/functions.zsh" ]] && . "$HOME/.zsh/functions.zsh"
-
-SYNCAD_BIN_PATH="/opt/synapticad-17.02b/bin"
-[[ -d "$SYNCAD_BIN_PATH" ]] && export PATH="$SYNCAD_BIN_PATH:$PATH"
 
 export EDITOR="vim"
 bindkey -v
