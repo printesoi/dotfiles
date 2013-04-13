@@ -93,3 +93,6 @@
 [submodule "vimfiles/bundle/powerline"]
 	path = vimfiles/bundle/powerline
 	url = git@github.com:printesoi/powerline.git
+[submodule "vimfiles/bundle/nerdcommenter"]
+	path = vimfiles/bundle/nerdcommenter
+	url = git@github.com:printesoi/nerdcommenter.git
