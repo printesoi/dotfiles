@@ -10,9 +10,6 @@
 [submodule "vimfiles/bundle/tagbar"]
 	path = vimfiles/bundle/tagbar
 	url = git://github.com/majutsushi/tagbar.git
-[submodule "vimfiles/bundle/vim-powerline"]
-	path = vimfiles/bundle/vim-powerline
-	url = git://github.com/Lokaltog/vim-powerline.git
 [submodule "vimfiles/bundle/nerdcommenter"]
 	path = vimfiles/bundle/nerdcommenter
 	url = git://github.com/scrooloose/nerdcommenter.git
@@ -87,9 +84,6 @@
 [submodule "vimfiles/bundle/vim-obsession"]
 	path = vimfiles/bundle/vim-obsession
 	url = git://github.com/tpope/vim-obsession.git
-[submodule "vimfiles/bundle/powerline"]
-	path = vimfiles/bundle/powerline
-	url = git://github.com/Lokaltog/powerline.git
 [submodule "vimfiles/bundle/vim-racket"]
 	path = vimfiles/bundle/vim-racket
 	url = git://github.com/wlangstroth/vim-racket.git
@@ -99,3 +93,6 @@
 [submodule "vimfiles/bundle/AsyncCommand"]
 	path = vimfiles/bundle/AsyncCommand
 	url = git://github.com/pydave/AsyncCommand.git
+[submodule "vimfiles/bundle/powerline"]
+	path = vimfiles/bundle/powerline
+	url = git@github.com:printesoi/powerline.git
