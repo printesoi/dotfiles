@@ -15,7 +15,6 @@ fi
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 [[ -f "$HOME/.zsh/aliases.zsh" ]] && . "$HOME/.zsh/aliases.zsh"
 [[ -f "$HOME/.zsh/aliases_priv.zsh" ]] && . "$HOME/.zsh/aliases_priv.zsh"
-[[ -f "$HOME/.zsh/functions.zsh" ]] && . "$HOME/.zsh/functions.zsh"
 
 export EDITOR="vim"
 bindkey -v
