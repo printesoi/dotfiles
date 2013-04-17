@@ -11,12 +11,15 @@
         set mouse=a
         set nobackup
         set noswapfile
-        set virtualedit=all
+        set virtualedit=block
         set keywordprg=vman
         set hidden
         set encoding=utf-8
         set colorcolumn=80
         set textwidth=79        " wrap the text
+        set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+
+        set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
         " for latex
         set grepprg=grep\ -nH\ $*
@@ -63,10 +66,10 @@
         syntax enable
         if has('gui_running')
             set bg=light
-            color solarized
+            color github
         else
             set bg=dark
-            color molokai
+            color solarized
         endif
         set t_Co=256        " tell vim that terminal has 256 colors
     " }}}
@@ -140,6 +143,8 @@
         map <Leader>g :e $MYGVIMRC<CR>
         map <Leader>v :e $MYVIMRC<CR>
 
+        map <Leader><F8> <ESC>:silent AsyncCommand clementine -t<CR><CR>
+
         map j gj
         map k gk
         nmap <up> <nop>
@@ -168,8 +173,6 @@
         " Display syntax stack
         nmap <C-S-z> :call <SID>SynStack()<CR>
 
-        " Calculate the value of the current line
-
         " Exuberant ctags "{{{
             " configure tags - add additional tags here or comment out not-used ones
             "set tags+=c:\users\tzesoi\vimfiles\tags\cpp
@@ -190,7 +193,7 @@
 
         " Filetype tweaks
         autocmd FileType java       setlocal tw=78 cin wrap foldmethod=marker
-        autocmd FileType c,cpp      setlocal tw=78 cindent expandtab
+        autocmd FileType c,cpp      setlocal cindent expandtab formatoptions+=l
         autocmd FileType gitconfig  setlocal shiftwidth=4 tabstop=4 noexpandtab
         autocmd FileType python     setlocal autoindent expandtab sts=4 sw=4
         autocmd FileType haskell    setlocal tw=72 sw=2 sts=2 et
@@ -251,21 +254,23 @@
         " Clang-complete options "{{{
             let g:clang_hl_error = 1
             "let g:clang_auto_select = 2
-            "let g:clang_snippets = 1
             let g:clang_complete_copen = 1
             let g:clang_use_library = 1
-            "let g:clang_snippets_engine = 'ultisnips'
+            let g:clang_snippets = 1
+            let g:clang_snippets_engine = 'ultisnips'
+            let g:clang_trailing_placeholder = 1
             let g:clang_complete_macros = 1
             let g:clang_complete_patterns = 1
-            let g:clang_user_options = "-std=c++11 -stdlib=libc++"
         " }}}
 
         " ControlP "{{{
             let g:ctrlp_default_input = 1
+            let g:ctrlp_cmd='CtrlPMixed'
 
             " CTRLP for filetype
             let g:ctrlp_extensions = ['filetype']
             silent! nnoremap <unique> <silent> <Leader>f :CtrlPFiletype<CR>
+            silent! nnoremap <unique> <silent> <Leader>r :CtrlPMRUFiles<CR>
         " }}}
 
         " Vim-powerline settings "{{{
@@ -275,10 +280,6 @@
             else
                 let g:Powerline_symbols='fancy'
             end
-            " Replace builtin lineinfo with linesinfo:lineinfo
-            call Pl#Theme#ReplaceSegment('lineinfo', 'linesinfo:lineinfo')
-            " Add marker that tells when there are trailing spaces
-            call Pl#Theme#InsertSegment('ws_marker', 'after', 'linesinfo:lineinfo')
         " }}}
 
         " Tagbar "{{{
@@ -286,7 +287,11 @@
         " }}}
         "
         " Solarized "{{{
-        let g:solarized_termcolors=16
+        let g:solarized_termcolors=256
+        "}}}
+        "
+        " Molokai "{{{
+        let g:molokai_original=1
         "}}}
     " }}}
 "}}}
