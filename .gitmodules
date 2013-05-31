@@ -66,9 +66,6 @@
 [submodule "vimfiles/bundle/openssl.vim"]
 	path = vimfiles/bundle/openssl.vim
 	url = git://github.com/vim-scripts/openssl.vim.git
-[submodule "vimfiles/bundle/github-vim-colorscheme"]
-	path = vimfiles/bundle/github-vim-colorscheme
-	url = git://github.com/xonecas/github-vim-colorscheme.git
 [submodule "vimfiles/bundle/vim-ruby"]
 	path = vimfiles/bundle/vim-ruby
 	url = git://github.com/vim-ruby/vim-ruby.git
@@ -96,3 +93,9 @@
 [submodule "vimfiles/bundle/nerdcommenter"]
 	path = vimfiles/bundle/nerdcommenter
 	url = git@github.com:printesoi/nerdcommenter.git
+[submodule "vimfiles/bundle/dbext.vim"]
+	path = vimfiles/bundle/dbext.vim
+	url = git://github.com/vim-scripts/dbext.vim.git
+[submodule "vimfiles/bundle/clips.vim"]
+	path = vimfiles/bundle/clips.vim
+	url = git://github.com/vim-scripts/clips.vim.git

@@ -56,7 +56,3 @@ function clt()
     unfunction -m $0_help;
     unfunction -m $0_cd;
 }
-
-unfunction -m $0_usage;
-unfunction -m $0_help;
-unfunction -m $0_cd;
