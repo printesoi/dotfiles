@@ -1,5 +1,5 @@
 " GVim only options "{{{
-    set gfn=Bitstream\ Vera\ Sans\ Mono\ 9   " GUI font
+    set gfn=DejaVu\ Sans\ Mono\ 9   " GUI font
     set linespace=3           " space between lines
     set go-=m                 " remove the menubar
     set go-=T                 " no toolbar
