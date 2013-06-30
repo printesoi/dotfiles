@@ -26,6 +26,11 @@
                 "priority": 10
             },
             {
+                "name": "branch",
+                "exclude_modes": ["nc"],
+                "priority": 60
+            },
+            {
                 "name": "readonly_indicator",
                 "draw_divider": false,
                 "after": " "
@@ -33,11 +38,15 @@
             {
                 "name": "file_directory",
                 "priority": 40,
-                "draw_divider": false
+                "draw_soft_divider": false
             },
             {
                 "name": "file_name",
-                "draw_divider": false
+                "draw_soft_divider": false
+            },
+            {
+                "name": "file_vcs_status",
+                "before": " "
             },
             {
                 "name": "modified_indicator",
@@ -64,7 +73,7 @@
                 "module": "powerline.segments.common",
                 "args": { "player": "clementine"},
                 "exclude_modes": ["nc"],
-                "priority": 70,
+                "priority": 100,
                 "draw_soft_divider": false
             },
             {
