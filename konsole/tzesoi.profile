@@ -2,14 +2,15 @@
 AntiAliasFonts=true
 BoldIntense=true
 ColorScheme=Pastel1
-Font=Bitstream Vera Sans Mono,9,-1,5,50,0,0,0,0,0
+Font=DejaVu Sans Mono,9,-1,5,75,0,0,0,0,0
 
 [Encoding Options]
 DefaultEncoding=UTF-8
 
 [General]
-Directory=~
-Environment=TERM=xterm
+Command=/bin/zsh -l
+Directory=/home/printesoi
+Environment=TERM=xterm-256color
 LocalTabTitleFormat=%# - %d : %n
 MenuIndex=2
 Name=tzesoi
@@ -23,7 +24,7 @@ TabBarPosition=1
 KeyBindings=default
 
 [Scrolling]
-HistoryMode=1
+HistoryMode=2
 HistorySize=6000
 ScrollBarPosition=2
 

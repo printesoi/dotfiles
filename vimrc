@@ -19,7 +19,7 @@
         set textwidth=79        " wrap the text
         set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 
-        set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+        "set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
         " for latex
         set grepprg=grep\ -nH\ $*
@@ -64,14 +64,14 @@
     " Interface "{{{
         syntax on
         syntax enable
+        set t_Co=256        " tell vim that terminal has 256 colors
         if has('gui_running')
             set bg=light
             color github
         else
             set bg=dark
-            color solarized
+            color molokai
         endif
-        set t_Co=256        " tell vim that terminal has 256 colors
     " }}}
     " Wildmenu and statusline "{{{
         set modeline
@@ -142,6 +142,29 @@
         map <Leader>sv :source $MYVIMRC<CR>
         map <Leader>g :e $MYGVIMRC<CR>
         map <Leader>v :e $MYVIMRC<CR>
+
+        " Quickfix window
+        map <Leader>qf <ESC>:copen<CR>
+        imap <Leader>qf <ESC>:copen<CR>
+        vmap <Leader>qf <ESC>:copen<CR>
+        nmap <Leader>qf <ESC>:copen<CR>
+
+        map <Leader>qc <ESC>:cclose<CR>
+        imap <Leader>qc <ESC>:cclose<CR>
+        vmap <Leader>qc <ESC>:cclose<CR>
+        nmap <Leader>qc <ESC>:cclose<CR>
+
+        " Location list
+        map <Leader>lf <ESC>:lopen<CR>
+        imap <Leader>lf <ESC>:lopen<CR>
+        vmap <Leader>lf <ESC>:lopen<CR>
+        nmap <Leader>lf <ESC>:lopen<CR>
+
+        map <Leader>lc <ESC>:lclose<CR>
+        imap <Leader>lc <ESC>:lclose<CR>
+        vmap <Leader>lc <ESC>:lclose<CR>
+        nmap <Leader>lc <ESC>:lclose<CR>
+
 
         map <Leader><F8> <ESC>:silent AsyncCommand clementine -t<CR><CR>
 
@@ -282,6 +305,16 @@
             end
         " }}}
 
+        " vim-airline "{{{
+            let g:airline_powerline_fonts = 1
+            let g:airline_theme = 'luna'
+        " }}}
+
+        " vim-gitgutter "{{{
+           let g:gitgutter_realtime = 0
+           let g:gitgutter_eager = 0
+        " }}}
+
         " Tagbar "{{{
             let g:tagbar_autoclose = 0  " autoclose the window when selecting a tag
         " }}}
@@ -295,3 +328,4 @@
         "}}}
     " }}}
 "}}}
+"
