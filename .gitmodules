@@ -99,3 +99,15 @@
 [submodule "vimfiles/bundle/clips.vim"]
 	path = vimfiles/bundle/clips.vim
 	url = git://github.com/vim-scripts/clips.vim.git
+[submodule "vimfiles/bundle/mango.vim"]
+	path = vimfiles/bundle/mango.vim
+	url = https://github.com/goatslacker/mango.vim.git
+[submodule "vimfiles/bundle/tabular"]
+	path = vimfiles/bundle/tabular
+	url = https://github.com/godlygeek/tabular.git
+[submodule "vimfiles/bundle/vim-airline"]
+	path = vimfiles/bundle/vim-airline
+	url = https://github.com/bling/vim-airline
+[submodule "vimfiles/bundle/vim-wombat"]
+	path = vimfiles/bundle/vim-wombat
+	url = https://github.com/dsolstad/vim-wombat256i.git
