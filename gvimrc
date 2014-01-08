@@ -6,6 +6,4 @@
     set go-=r                 " no right-hand scrollbar
     set go-=l                 " no left-hand scrollbar
     set go-=L                 " no left-hand scrollbar when windows are split
-    set lines=60              " lines and columns of the GUI window
-    set columns=110
 " }}}
