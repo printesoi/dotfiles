@@ -3,7 +3,7 @@
         set nocompatible
         filetype off
         set clipboard=unnamed
-        "set ttyfast
+        set ttyfast
         set history=3000
         set backspace=2
         set gdefault
@@ -18,6 +18,7 @@
         set encoding=utf-8
         set colorcolumn=80
         set textwidth=79        " wrap the text
+        set nowrap
         set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 
         " Set Vundle
@@ -29,7 +30,7 @@
         Bundle 'YankRing.vim'
         Bundle 'a.vim'
         Bundle 'mileszs/ack.vim'
-        Bundle 'rosenfeld/conque-term'
+        "Bundle 'rosenfeld/conque-term'
         Bundle 'Cpp11-Syntax-Support'
         Bundle 'kien/ctrlp.vim'
         Bundle 'endel/ctrlp-filetype.vim'
@@ -40,17 +41,20 @@
         Bundle 'majutsushi/tagbar'
         Bundle 'SirVer/ultisnips'
         Bundle 'bling/vim-airline'
-        Bundle 'altercation/vim-colors-solarized'
+        "Bundle 'altercation/vim-colors-solarized'
+        Bundle 'printesoi/vim-colors-solarized'
         Bundle 'wincent/Command-T'
-        Bundle 'pydave/AsyncCommand'
+        "Bundle 'pydave/AsyncCommand'
         Bundle 'scrooloose/syntastic'
         "Bundle 'Valloric/YouCompleteMe'
         Bundle 'Yggdroot/indentLine'
-        Bundle 'SirVer/ultisnips'
         Bundle 'Rip-Rip/clang_complete'
-        Bundle 'tpope/vim-obsession'
+        "Bundle 'tpope/vim-obsession'
         Bundle 'gregsexton/Muon'
         Bundle 'troydm/easybuffer.vim'
+        Bundle 'endel/vim-github-colorscheme'
+        Bundle 'noahfrederick/vim-hemisu'
+        Bundle 'amdt/sunset'
         "Bundle 'nginx.vim'
 
         "set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
@@ -90,18 +94,22 @@
         set softtabstop=4
         set list
         set listchars=tab:→\ ,trail:·
+        set sidescroll=5
         set listchars+=extends:»,precedes:«
     " }}}
     " Interface "{{{
         syntax on
         syntax enable
         set t_Co=256        " tell vim that terminal has 256 colors
-        color muon
+        set bg=dark
 
         if has("gui_running")
             " GUI is running or is about to start.
             " Maximize gvim window.
             set lines=999 columns=999
+            color solarized
+        else
+            color muon
         endif
     " }}}
     " Wildmenu and statusline "{{{
@@ -224,6 +232,11 @@
         nnoremap <silent>         <C-x> :<C-u>call AddSubtract("\<C-x>", '')<CR>
         nnoremap <silent> <Leader><C-x> :<C-u>call AddSubtract("\<C-x>", 'b')<CR>
 
+        " Show EasyBuffer
+        map <Leader>eb  <ESC>:EasyBuffer<CR>
+        vmap <Leader>eb  <ESC>:EasyBuffer<CR>
+        imap <Leader>eb  <ESC>:EasyBuffer<CR>
+
         " Jump to the next buffer using Ctrl + Tab
         map <C-Tab>   <ESC>:bnext<CR>
         vmap <C-Tab>   <ESC>:bnext<CR>
@@ -253,7 +266,7 @@
         "autocmd FileType tex        so ~/.vim/abbrevs.vim
         autocmd FileType php        setlocal tw=72 shiftwidth=2 tabstop=2 cindent fo=croql
         autocmd FileType ruby       setlocal tw=72 cindent shiftwidth=2 tabstop=2 keywordprg=ri
-        autocmd FileType html       setlocal shiftwidth=2 tabstop=2
+        autocmd FileType html       setlocal shiftwidth=4 tabstop=4
         autocmd BufRead,BufNewFile *.wiki   setlocal ft=creole
         autocmd BufRead,BufNewFile *.tex    setlocal ft=tex
         autocmd BufRead,BufNewFile *.cool   setlocal ft=cool
@@ -261,6 +274,9 @@
         autocmd BufRead,BufNewFile *.miC    setlocal ft=C
         autocmd BufRead,BufNewFile *.g      setlocal ft=antlr
         autocmd BufRead,BufNewFile *.clp    setlocal ft=clips
+
+        autocmd BufRead,BufNewFile *.bb     setlocal ft=conf
+        autocmd BufRead,BufNewFile *.bbappend     setlocal ft=conf
 
         " for latex
         set grepprg=grep\ -nH\ $*
@@ -313,6 +329,7 @@
             "let g:clang_auto_select = 2
             let g:clang_complete_copen = 1
             let g:clang_use_library = 1
+            let g:clang_library_path = '/usr/lib/llvm-3.2/lib/'
             let g:clang_snippets = 1
             let g:clang_snippets_engine = 'clang_complete'
             let g:clang_trailing_placeholder = 1
@@ -359,6 +376,7 @@
         "
         " Solarized "{{{
             let g:solarized_termcolors=256
+            let g:solarized_menu=0
         "}}}
         "
         " Molokai "{{{
@@ -377,11 +395,17 @@
             let g:syntastic_c_no_default_include_dirs = 1
             let g:syntastic_c_auto_refresh_includes = 1
             let g:syntastic_ignore_files = ['^/usr/include/']
-            let g:syntastic_c_config_file = '.config'
+            let g:syntastic_c_config_file = '.syntastic_c_config'
         "}}}
 
         " IndentLine "{{{
             let g:indentLine_char = '┆'
+        " }}}
+
+        " Sunset "{{{
+            let g:sunset_latitude = 44.4355
+            let g:sunset_longitude = 26.1025
+            let g:sunset_utc_offset = 3
         " }}}
 
     " }}}
