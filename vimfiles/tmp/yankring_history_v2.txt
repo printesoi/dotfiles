@@ -1,0 +1,100 @@
+/home/victor/dev/cltaxis/trunk/cltaxis/cmake/modules/FindRevision.cmake,v
+-I/usr/lib/x86_64-linux-gnu/glib-2.0/include,V
+-I/usr/include/glib-2.0,V
+-I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include,v
+,V
+gnome-themes-standard,v
+    stand->,V
+/usr/lib/llvm-3.2/lib/,v
+/usr/lib/llvm-3.2/lib/libclang.so,v
+    a->,v
+    a->,V
+[Shortcuts]options_configure=Ctrl+Shift+Ooptions_configure_keybinding=Ctrl+Shift+K,v
+http://opendesktop.org/content/show.php/Transparent+Tabs?content=151686,v
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto",v
+        puts "Nuber of ids in data array: #{data.size}"        ids = []        max_locations = -1        max_id = ""        data.each do |x|            id = x["id"]            ids << id            ls = x["locations"].size            puts "Id #{id} has #{ls} locations"            if ls > max_locations                max_locations = ls                max_id = id            end        end        puts "Number of unique id in data array: #{ids.uniq.size}"        puts "Max locations #{max_locations} for id #{max_id}",V
+Building and running--------------------,v
+    if (value == app)    {        LOG("Cleaning up request %s, app %p", key, value);    },V
+d_app_request(buf, app);,v
+        del_poll(app->com);        remove_app_request((char*)request_id);,V
+poll [DEBUGEXT] FREE: [0x1234260][18:57:39.206854] x_net.c:461:free_poll [DEBUGEXT] FREE: [0x124d600][18:57:39.289752] x_net.c:771:do_poll [DEBUG] 1 SOCKETS R,v
+    LOG("**************** %d", g_map_files_log_time);,V
+Freeing,v
+    /*return 1;*/,V
+app2.clevertaxi.com/andreisock.ph,v
+,V
+    unsigned int sent;,V
+    char *uuid;,V
+LOG,v
+void remove_all_app_requests(struct x_app *app){    g_hash_table_foreach_remove(g_request_hash, app_request_compare, app);},V
+void remove_all_app_requests(struct x_app *app){    g_hash_table_foreach_remove(g_request_hash, app_request_compare, app);},V
+request,v
+  13      z     h          c       src/main/order.c,V
+    char *uuid = g_hash_table_lookup(g_request_hash, request);    if (!uuid)        return;    /*struct x_app *app = g_hash_table_lookup*/    /*GList *requests = g_hash_table_lookup(g_app_reqs_hash, app);*/    /*GList *creq = g_list_find_custom(requests, request, g_strcmp0);*/,V
+    struct x_app *app = g_hash_table_lookup    GList *requests = g_hash_table_lookup(g_app_reqs_hash, app);    GList *creq = g_list_find_custom(requests, request, g_strcmp0);    g_hash_table_remove(g_request_hash, request);,V
+    /* TODO */,V
+    g_hash_table_remove(g_request_hash, request);,V
+t,v
+    GList *requests = g_hash_table_lookup(g_app_reqs_hash, app);    GList *creq = g_list_find_custom(requests, ag_strcmp0);,V
+NULL,v
+    char uuid_buff[64];,V
+    uuid_unparse(uuid, uuid_buff);,V
+    ${UUID_LIBRARIES},V
+    g_hash_table_replace(,V
+    g,V
+    g_hash_ta,V
+http://code.google.com/p/libflibs/,v
+otycos,v
+6:00	FRANCE	30 - 10,v
+    p->ip;,V
+"MAP_FILES_LOG_TIME",v
+1392042767,v
+g_map_files_log_time,v
+9 |                  13,v
+MAP_FILES_LOG_TIME,v
+cornisa95,v
+    char *cookie;,V
+static GHashTable *g_app_request_hash;,V
+#include <uuid/uuid.h>,V
+python-virtualenv,v
+python,v
+rpm.pbone.net/index.php3?stat=3...python...‎Traducerea acestei paginiRPM PBone Search. ... Rawhide, download.fedora.redhat.com/pub/fedora/linux/development/rawhide/x86_64/os/Packages/p/python-2.7.6-2.fc21.x86_64.rpm.python-2.7.4-aarch64.patch - openSUSE Build Servicebuild.opensuse.org › Projects‎Traducerea acestei paginiView File python-2.7.4-aarch64.patch of Package python (Project openSUSE:Factory:PowerLE). # HG changeset patch # User Andreas Schwab ...python-2.7.4-no-REUSEPORT.patch - openSUSE Build Servicebuild.opensuse.org › Projects‎Traducerea acestei paginiView File python-2.7.4-no-REUSEPORT.patch of Package python (Project openSUSE:Factory:PowerLE). Index: Python-2.7.4/Lib/test/test_support.py ...python-2.7.4-canonicalize2.patch - openSUSE Build Servicebuild.opensuse.org › Projects‎Traducerea acestei paginiView File python-2.7.4-canonicalize2.patch of Package python (Project openSUSE:Factory:PowerLE). --- a/Python/sysmodule.c +++ b/Python/sysmodule.c ...python-base.changes - openSUSE Build Servicebuild.opensuse.org › Projects‎Traducerea acestei paginiView File python-base.changes of Package python (Project openSUSE:13.1) ... 30 16:40:16 UTC 2013 - jmatejek@suse.com - python-2.7.4-aarch64.patch: add  ...Building Python 2.7.4 on SLES 10 SP3 - Fotsies Technology Blogfgimian.github.io/.../building-python-2-dot-7-4...‎Traducerea acestei pagini12 mai 2013 - In this post, we'll be building the latest revision of Python 2.7 on SLES 10 SP3. ... procedure may also work on other versions of SLES and OpenSUSE too. ... wget http://www.python.org/ftp/python/2.7.4/Python-2.7.4.tgz tar xvfz  ...How to do a binary install of Python 2.7 on SUSE Linux Enterprise ...unix.stackexchange.com/.../how-to-do-a-binary...‎Traducerea acestei pagini18 feb. 2011 - Most likely, you're not going to want to replace the existing python, since that would probably break the existing OS software. You could either ...Download Pythonwww.python.org/getit/‎Traducerea acestei pagini40+ elemente - The original implementation of Python, written in C.Python 3.3.3 Windows x86 MSI Installer	Windows binary -- does not include ...Python 3.3.3 compressed source tarball	for Linux, Unix or Mac OS X1	2345678910Înainte,V
+ImportError: No module named 'encodings',v
+ ,v
+,v
+update-alternatives --install /usr/bin/python python2.7 /usr/bin/python2.7 10,v
+play,v
+10800,v
+a24cc3e208c3bdaf67acd68e0b29e078,v
+3030,v
+chat.facebook.com,v
+nagiosadmin,v
+    if (!strncpy(conn->requested_file, "/static", 7))    {        /* Serve the file from static directory */    }    else if (!strncpy(conn->requested_file, "/dynamic", 8))    {        /* Serve the file from static directory */    }    else    {        /* 404 Not found */    },v
+    if (!strncpy(conn->requested_file, "/static", 7))    {        /* Serve the file from static directory */    }    else if (!strncpy(conn->requested_file, "/dynamic", 8))    {        /* Serve the file from static directory */    }    else    {        /* 404 Not found */    },V
+enum ,v
+enum connection_state {    STATE_DATA_RECEIVED,    STATE_DATA_SENT,    STATE_CONNECTION_CLOSED};,V
+    bool initkk,V
+        /* Serve the file from static directory */,V
+    struct connection *conn = ((struct epoll_ptr *)parser->data)->data;,V
+a,v
+BUFFER_DRIVER_KEEP_IN_STAND_EXIT,v
+parse(,v
+    dlog(LOG_WARNING, "*** Path %s\n", path);,V
+    strncpy(path, buffer, len);,V
+    char path[BUFSIZ];    memset(path, 0, sizeof path);,V
+on_headers,v
+&settings,v
+on_query_string_callback,v
+static int on_query_string_callback(http_parser *parser, const char *buffer, size_t len){    char q[BUFSIZ];    strncpy(q, buffer, len);    dlog(LOG_WARNING, "QUERY: %s", q);    return len;},V
+    dlog(LOG_WARNING, "HEADERS COMPLETED");,V
+    parser->,V
+dips,v
+echo -e "GET /alabala HTTP/1.1\r\n\r\n" |,v
+getpid,v
+    pid_t pid = getpid();,V
+$`int __sig`,v
+$`__pid_t __pid`,v
+void http_cleanup(void){    /* Always cleanup! Relying on OS to free the memory is bad practice */    epoll_ptr_remove(listen_ptr);    epoll_ptr_remove(signal_ptr);}void sigsev_handler(int signo){    if (signo != SIGSEGV)        return;    http_cleanup();},V
+$`void (*__func)(void)`,v
+    http_cleanup();,V
+    if (at_,V

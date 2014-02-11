@@ -2,9 +2,9 @@
 #
 #     Filename:
 #       Author: Dodon Victor <victor DOT dodon AT cti DOT pub DOT ro>
-#           OS: ArchLinux x86_64
-#     Compiler: clang 3.2
-#       Editor: ViM 7.3
+#           OS:
+#     Compiler:
+#       Editor:
 #      Created:
 #  Description:
 #
