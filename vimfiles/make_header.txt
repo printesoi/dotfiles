@@ -1,7 +1,7 @@
 :insert
 #
 #     Filename:
-#       Author: Dodon Victor <victor DOT dodon AT cti DOT pub DOT ro>
+#       Author: Dodon Victor <dodonvictor AT gmail DOT com>
 #           OS:
 #     Compiler:
 #       Editor:

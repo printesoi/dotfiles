@@ -1,100 +1,100 @@
-/home/victor/dev/cltaxis/trunk/cltaxis/cmake/modules/FindRevision.cmake,v
--I/usr/lib/x86_64-linux-gnu/glib-2.0/include,V
--I/usr/include/glib-2.0,V
--I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include,v
-,V
-gnome-themes-standard,v
-    stand->,V
-/usr/lib/llvm-3.2/lib/,v
-/usr/lib/llvm-3.2/lib/libclang.so,v
-    a->,v
-    a->,V
-[Shortcuts]options_configure=Ctrl+Shift+Ooptions_configure_keybinding=Ctrl+Shift+K,v
-http://opendesktop.org/content/show.php/Transparent+Tabs?content=151686,v
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto",v
-        puts "Nuber of ids in data array: #{data.size}"        ids = []        max_locations = -1        max_id = ""        data.each do |x|            id = x["id"]            ids << id            ls = x["locations"].size            puts "Id #{id} has #{ls} locations"            if ls > max_locations                max_locations = ls                max_id = id            end        end        puts "Number of unique id in data array: #{ids.uniq.size}"        puts "Max locations #{max_locations} for id #{max_id}",V
-Building and running--------------------,v
-    if (value == app)    {        LOG("Cleaning up request %s, app %p", key, value);    },V
-d_app_request(buf, app);,v
-        del_poll(app->com);        remove_app_request((char*)request_id);,V
-poll [DEBUGEXT] FREE: [0x1234260][18:57:39.206854] x_net.c:461:free_poll [DEBUGEXT] FREE: [0x124d600][18:57:39.289752] x_net.c:771:do_poll [DEBUG] 1 SOCKETS R,v
-    LOG("**************** %d", g_map_files_log_time);,V
-Freeing,v
-    /*return 1;*/,V
-app2.clevertaxi.com/andreisock.ph,v
+ Essential skills to manage and to program IBM DB2 RDBMS.,v
+Teaching the basics of TCP/IP stack, the general concepts of networking: packet switching, ipv4/ipv6 addressing and routing, VLANs, NAT, firewalls, security and authentication.,v
+Local Area Networks,v
+administrating,v
+    else    {#ifdef ENABLE_SLAVE_THREAD        my_snprintf(query_str, sizeof(query_str), SQL_SAVE_MESSAGE_WITH_ID,                (int)last_id(g_db), dis_id, json_typeof(driver_ids) != JSON_ARRAY ? "[" : "",                driver_ids_str ? driver_ids_str : "",                json_typeof(driver_ids) != JSON_ARRAY ? "]" : "",                msg_type, from_op, msg ? msg : "", send_type);        add_task(slave_query, mstrdup(query_str));#endif    },V
+#ifdef ENABLE_SLAVE_THREAD    add_task(slave_query, mstrdup(query_str));#endif,V
 ,V
-    unsigned int sent;,V
-    char *uuid;,V
-LOG,v
-void remove_all_app_requests(struct x_app *app){    g_hash_table_foreach_remove(g_request_hash, app_request_compare, app);},V
-void remove_all_app_requests(struct x_app *app){    g_hash_table_foreach_remove(g_request_hash, app_request_compare, app);},V
-request,v
-  13      z     h          c       src/main/order.c,V
-    char *uuid = g_hash_table_lookup(g_request_hash, request);    if (!uuid)        return;    /*struct x_app *app = g_hash_table_lookup*/    /*GList *requests = g_hash_table_lookup(g_app_reqs_hash, app);*/    /*GList *creq = g_list_find_custom(requests, request, g_strcmp0);*/,V
-    struct x_app *app = g_hash_table_lookup    GList *requests = g_hash_table_lookup(g_app_reqs_hash, app);    GList *creq = g_list_find_custom(requests, request, g_strcmp0);    g_hash_table_remove(g_request_hash, request);,V
-    /* TODO */,V
-    g_hash_table_remove(g_request_hash, request);,V
-t,v
-    GList *requests = g_hash_table_lookup(g_app_reqs_hash, app);    GList *creq = g_list_find_custom(requests, ag_strcmp0);,V
-NULL,v
-    char uuid_buff[64];,V
-    uuid_unparse(uuid, uuid_buff);,V
-    ${UUID_LIBRARIES},V
-    g_hash_table_replace(,V
-    g,V
-    g_hash_ta,V
-http://code.google.com/p/libflibs/,v
-otycos,v
-6:00	FRANCE	30 - 10,v
-    p->ip;,V
-"MAP_FILES_LOG_TIME",v
-1392042767,v
-g_map_files_log_time,v
-9 |                  13,v
-MAP_FILES_LOG_TIME,v
-cornisa95,v
-    char *cookie;,V
-static GHashTable *g_app_request_hash;,V
-#include <uuid/uuid.h>,V
-python-virtualenv,v
-python,v
-rpm.pbone.net/index.php3?stat=3...python...‎Traducerea acestei paginiRPM PBone Search. ... Rawhide, download.fedora.redhat.com/pub/fedora/linux/development/rawhide/x86_64/os/Packages/p/python-2.7.6-2.fc21.x86_64.rpm.python-2.7.4-aarch64.patch - openSUSE Build Servicebuild.opensuse.org › Projects‎Traducerea acestei paginiView File python-2.7.4-aarch64.patch of Package python (Project openSUSE:Factory:PowerLE). # HG changeset patch # User Andreas Schwab ...python-2.7.4-no-REUSEPORT.patch - openSUSE Build Servicebuild.opensuse.org › Projects‎Traducerea acestei paginiView File python-2.7.4-no-REUSEPORT.patch of Package python (Project openSUSE:Factory:PowerLE). Index: Python-2.7.4/Lib/test/test_support.py ...python-2.7.4-canonicalize2.patch - openSUSE Build Servicebuild.opensuse.org › Projects‎Traducerea acestei paginiView File python-2.7.4-canonicalize2.patch of Package python (Project openSUSE:Factory:PowerLE). --- a/Python/sysmodule.c +++ b/Python/sysmodule.c ...python-base.changes - openSUSE Build Servicebuild.opensuse.org › Projects‎Traducerea acestei paginiView File python-base.changes of Package python (Project openSUSE:13.1) ... 30 16:40:16 UTC 2013 - jmatejek@suse.com - python-2.7.4-aarch64.patch: add  ...Building Python 2.7.4 on SLES 10 SP3 - Fotsies Technology Blogfgimian.github.io/.../building-python-2-dot-7-4...‎Traducerea acestei pagini12 mai 2013 - In this post, we'll be building the latest revision of Python 2.7 on SLES 10 SP3. ... procedure may also work on other versions of SLES and OpenSUSE too. ... wget http://www.python.org/ftp/python/2.7.4/Python-2.7.4.tgz tar xvfz  ...How to do a binary install of Python 2.7 on SUSE Linux Enterprise ...unix.stackexchange.com/.../how-to-do-a-binary...‎Traducerea acestei pagini18 feb. 2011 - Most likely, you're not going to want to replace the existing python, since that would probably break the existing OS software. You could either ...Download Pythonwww.python.org/getit/‎Traducerea acestei pagini40+ elemente - The original implementation of Python, written in C.Python 3.3.3 Windows x86 MSI Installer	Windows binary -- does not include ...Python 3.3.3 compressed source tarball	for Linux, Unix or Mac OS X1	2345678910Înainte,V
-ImportError: No module named 'encodings',v
+#ifdef ENABLE_SLAVE_THREAD    my_snprintf(query_str, sizeof(query_str), SQL_INSERT_DISPATCH_SESSION_WITH_ID, d->sess_id, d->id, get_com_ip(d->com));    add_task(slave_query, mstrdup(query_str));#endif,V
+$`void *db`,v
+$`struct poll_data *p`,v
+$`const char *fmt, ...`,v
+$`int size`,v
+$`char *buf`,v
+https://www.youtube.com/watch?v=AR-sMAI740E,v
+•••,v
+bPpUfbuiF4O8W0cIPJEg,v
+••••••••,v
+void create_esystem_session(struct external_system *es);void end_esystem_session(struct external_system *es);,V
+    es->rejected++;,V
+Digest::MD5.hexdigest,v
+advertised,v
+  19      x     h          -       cscope.out,V
+dau cu zarul 6 5nu am nevoie de servicicum m-a lasat Dumnezeuasta e destinul meu,v
+19581,v
+                sleep(4);                snprintf(bufsend, sizeof(bufsend), es[ES_ORDER_UPDATE], order_id, ORDER_DRIVER_ARRIVED);                send_string(bufsend);,V
+472: selected and sorted 1 desirable cars out of 1 total cars[15:21:17.931261] company.c:2214:sc_car_selection [DEBUGEXT] FREE: [0xe9e51d0][15:21:17.931515] company.c:2947:advertise_order [INFO] Waves 3, asked 0, sel_no 1[15:21:17.932000] company.c:2615:sc_advertise_order_normal [INFO] [TIMER] Set normal timer 5, 0 0[15:21:17.932406] protocol.c:2881:pending_order [INFO] Order 1654472, company 0, advertising to 1 drivers, take 1[15:21:18.067408] net.c:1073:do_poll [DEBUGEXT] 1 fds ready for IO[15:21:18.068697] net.c:1008:read_string [INFO] << aptus fd 34 got cleartext packet 0: [{"type":999,"timestamp":1398428476}][15:21:18.069226] net.c:1397:send_string [INFO] >> aptus fd 34 E 0 [T 999]:[{"type":999,"timestamp":1398428476}][15:21:18.069734] net.c:1318:write_packet [DEBUG] [SEND] Sent 36 bytes from 36 on fd 34[15:21:18.070132] external_system.c:125:send_esystem_string_free [DEBUGEXT] FREE: [0xe9e5d90][15:21:18.685199] net.c:1073:do_poll [DEBUGEXT] 1 fds ready for IO[15:21:18.685608] protocol.c:3043:do_order_timer [INFO] Order 1654453 from ANDROID state 1[15:21:18.685827] company.c:2947:advertise_order [INFO] Waves 3, asked 3, sel_no 1[15:21:18.686199] company.c:2958:advertise_order [INFO] Additional wave for order 1654453[15:21:18.686934] company.c:2311:sc_select_additional [DEBUGEXT] CALLOC: [0xe9e5e00], nmemb 1, size 16[15:21:18.687282] company.c:2342:sc_select_additional [DEBUGEXT] REALLOC before: [0xe6604e0][15:21:18.687561] company.c:2342:sc_select_additional [DEBUGEXT] REALLOC after: [0xe9e5e50], size [160][15:21:18.687752] company.c:2374:sc_select_additional [DEBUG] Company 5, num_cars 1[15:21:18.687947] company.c:2431:sc_select_additional [DEBUG] Selected 0 additional cars[15:21:18.688844] protocol.c:2806:withdraw_order [DEBUGEXT] FREE: [0xe9e6570][15:21:18.689066] protocol.c:2810:withdraw_order [DEBUGEXT] FREE: [0xe9e5e50][15:21:18.691812] net.c:1397:send_string [INFO] >> aptus fd 34 E 0 [T 3]:[{"type":3,"email":"dodonvictor@gmail.com","order_id":1654453,"name":"Dodon Victor","tel":"0742324309","cost":0,"address":{"desc":"În blocul cu Help Net la parter","id":0,"lng":26.097246999999999,"lat":44.45,v
+26.02004554,v
+2014-04-24 11:38:,v
+        o->num_advertised_esystems = advertise_order_to_esystems(o);,V
+https://www.youtube.com/channel/UC_HYofA1kuuuMfDRWDwXzhA,v
+$`gconstpointer key`,v
+$`GHashTable *hash_table`,v
+  16      s     h         vim      /home/victor/.gvimrc,V
+{        "dispatch_port": 3002,        "boss_port": 3003,        "application_port": 3006,        "driver_tcp_port": 3007,        "clevertaxi_port": 3009,        "clevertaxi_secure_port": 3010,        "external_api_port": 3011,        "xport": 3029,        "pbx_port": 3012,        "external_systems_port": 3013,        "db_host": "localhost",        "db_user": "clevertaxi-app2",        "db_pass": "9jshewt",        "db_name": "clevertaxi-app2",        "slave_db_host": "localhost",        "slave_db_user": "clt-app2-slave",        "slave_db_pass": "9jshewt",        "slave_db_name": "clevertaxi-app2-slave",        "log": "/var/local/cltaxis",        "slave_log": "/var/local/slave_logs",        "ping_file": "/run/cltaxis.ping",        "keep_car_locations": 20,        "driver_locations_dump_dir": "/var/local/driver_loc_dump",        "chat_messages_dump_dir": "/var/local/chat_dump",        "car_pending_dump_dir": "/var/local/car_pending_dump",        "audit_dir": "/var/local/audit",        "maps_dir": "/var/local/maps"},v
+"external_systems_port": 3013,,v
+    free_companies();,V
+1654387,v
+                },V
+                {,V
+                    LOG("Order %d, driver arrived, app disconnected. Sending push", o->id);,V
+                LOG("Order %d, driver arrived, app disconnected. Sending push", o->id);,V
+                if (o->com)                {                    json_t *obj = json_object();                    json_object_set_new(obj, "type", json_integer(APP_TRACK_DRIVER));                    json_object_set_new(obj, "state", json_integer(o->state));                    send_string_free(o->com, APP_TRACK_DRIVER, json_dump_free(obj));                }                else                {                    LOG("Driver %s arrived, order %d, the app is not there. Sending push", c->id, o->id);                    if (_is_clevertaxi_app_new(o))                        send_push_for_app(o, PN_DRIVER_ARRIVED, translate("driver_arrived", o->lang));                },V
+                    if (o->com)                    {                        json_t *obj = json_object();                        json_object_set_new(obj, "type", json_integer(APP_TRACK_DRIVER));                        json_object_set_new(obj, "state", json_integer(o->state));                        send_string_free(o->com, APP_TRACK_DRIVER, json_dump_free(obj));                    }                    else                    {                        LOG("Driver %s arrived, order %d, the app is not there. Sending push", c->id, o->id);                        if (_is_clevertaxi_app_new(o))                            send_push_for_app(o, PN_DRIVER_ARRIVED, translate("driver_arrived", o->lang));                    },V
  ,v
-,v
-update-alternatives --install /usr/bin/python python2.7 /usr/bin/python2.7 10,v
-play,v
-10800,v
-a24cc3e208c3bdaf67acd68e0b29e078,v
-3030,v
-chat.facebook.com,v
-nagiosadmin,v
-    if (!strncpy(conn->requested_file, "/static", 7))    {        /* Serve the file from static directory */    }    else if (!strncpy(conn->requested_file, "/dynamic", 8))    {        /* Serve the file from static directory */    }    else    {        /* 404 Not found */    },v
-    if (!strncpy(conn->requested_file, "/static", 7))    {        /* Serve the file from static directory */    }    else if (!strncpy(conn->requested_file, "/dynamic", 8))    {        /* Serve the file from static directory */    }    else    {        /* 404 Not found */    },V
-enum ,v
-enum connection_state {    STATE_DATA_RECEIVED,    STATE_DATA_SENT,    STATE_CONNECTION_CLOSED};,V
-    bool initkk,V
-        /* Serve the file from static directory */,V
-    struct connection *conn = ((struct epoll_ptr *)parser->data)->data;,V
-a,v
-BUFFER_DRIVER_KEEP_IN_STAND_EXIT,v
-parse(,v
-    dlog(LOG_WARNING, "*** Path %s\n", path);,V
-    strncpy(path, buffer, len);,V
-    char path[BUFSIZ];    memset(path, 0, sizeof path);,V
-on_headers,v
-&settings,v
-on_query_string_callback,v
-static int on_query_string_callback(http_parser *parser, const char *buffer, size_t len){    char q[BUFSIZ];    strncpy(q, buffer, len);    dlog(LOG_WARNING, "QUERY: %s", q);    return len;},V
-    dlog(LOG_WARNING, "HEADERS COMPLETED");,V
-    parser->,V
-dips,v
-echo -e "GET /alabala HTTP/1.1\r\n\r\n" |,v
-getpid,v
-    pid_t pid = getpid();,V
-$`int __sig`,v
-$`__pid_t __pid`,v
-void http_cleanup(void){    /* Always cleanup! Relying on OS to free the memory is bad practice */    epoll_ptr_remove(listen_ptr);    epoll_ptr_remove(signal_ptr);}void sigsev_handler(int signo){    if (signo != SIGSEGV)        return;    http_cleanup();},V
-$`void (*__func)(void)`,v
-    http_cleanup();,V
-    if (at_,V
+                usleep(2000 + random() % 1000);,V
+                usleep(100 + random() % 1000);,V
+$`const char *ts_name`,v
+$`long esystem_id`,v
+$`int order_id`,v
+        /* TODO */,V
+void order_update_esystem_ts(int order_id, long esystem_id, const char *ts_name),V
+Everything Everything,v
+ driver_id, ,v
+query_str,v
+-DDEV-DENABLE_DB_SLAVE_THREAD,V
+#ifdef ENABLE_DB_SLAVE_THREAD    my_snprintf(query_str, sizeof(query_str), SQL_UPDATE_ORDER_TS2, ts_name, ts, ts_name, ts_name, order_id, driver_id, ts_name);    add_task(slave_query, mstrdup(query_str));#endif,V
+    if (query(g_db, query_str, 0, NULL) < 0 || !mysql_affected_rows(g_db)) {        WARNX("ASSERT oid %d", order_id);        return;    },V
+driver_id, ,v
+#define SQL_UPDATE_ORDER_ES_TS "UPDATE `orders` o, `users` u SET o.`%s`=FROM_UNIXTIME(%lu), " \    "u.`%s` = u.`%s` + 1 WHERE o.`id`=%d and o.`%s` is NULL",V
+#ifdef ENABLE_DB_SLAVE_THREAD    my_snprintf(query_str, sizeof(query_str), SQL_UPDATE_HOT_ORDER_TS2, ts_name, ts, ts_name, ts_name, order_id, driver_id, ts_name);#else    my_snprintf(query_str, sizeof(query_str), SQL_UPDATE_ORDER_TS2, ts_name, ts, ts_name, ts_name, order_id, driver_id, ts_name);#endif,V
+#ifdef ENABLE_,V
+",v
+e,v
+cedry2k,v
+        /* Dispatch order. Confirm the cars. */,V
+yms from /lib/x86_64-linux-gnu/libgcc_s.so.1 (0xc56b000)--23649--   Considering /lib/x86_64-linux-gnu/libgcc_s.so.1 ..--23649--   .. CRC mismatch (computed c8e4b229 wanted 098e39f6)--23649--    object doesn't have a symbol table--23649-- REDIR: 0x6ab6300 (__GI_strncmp) redirected to 0x4c2c480 (__GI_strncmp)--23649-- REDIR: 0x6ab82b0 (memchr) redirected to 0x4c2cce0 (memchr),V
+                sleep(20 + random() % 3);,V
+        /*"{\"company_id\":0,\"deviceid\":\"%s\",\"imei\":\"359028039710684\",\"tel\":\"0742324309\",\"versioncode\":1,\"number\":1,\"type\":1,\"real_lng\":%lf,\"timestamp\":%d,\"source\":1,\"details\":\"\",\"token\":\"%s\",\"address\":{\"line1\":\"Hristache Pitarul %d, Bucuresti\",\"lng\":%lf,\"lat\":%lf,\"desc\":\"În blocul cu Help Net la parter\"},\"email\":\"dodonvictor@gmail.com\",\"name\":\"Dodon Victor\",\"real_lat\":%lf,\"accuracy\": 20.0, \"target_cid\":[12,20], \"chat_enabled\":1,\"register_id\":\"APA91bETxoOnB0TweEdWi4g38Ve9O33RpC19kHOZJMB5glElOORsaU7B4MxQ5-DHYTPK7B1FlG6EvbTtT6QGl8uwRN7AEpLob3jSKCsX1Om66jJm7mavIu-jxEfEkudHyb3AdbRHV7P4KKbiH_Al_KMuhuOWTUnWF8dOLbuBvXaoeEW_wLrb63I\",\"enable_multiple_drivers_view\":1}",*/,V
+--20931--   .. CRC mismatch (computed 93b6e136 wanted 0e7fce87)--20931--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libnss_files-2.15.so ..--20931--   .. CRC is valid--20931-- REDIR: 0x6abfb00 (__GI___rawmemchr) redirected to,v
+    action = json_int(data, "action");,V
+    p,V
+    if (o->state != STATE_PENDING)    {        LOG("Too late");        return 1;    },V
+        "{\"company_id\":0,\"deviceid\":\"%s\",\"imei\":\"359028039710684\",\"tel\":\"0742324309\",\"versioncode\":1,\"number\":1,\"type\":1,\"real_lng\":%lf,\"timestamp\":%d,\"source\":1,\"details\":\"\",\"token\":\"%s\",\"address\":{\"line1\":\"Hristache Pitarul %d, Bucuresti\",\"lng\":%lf,\"lat\":%lf,\"desc\":\"În blocul cu Help Net la parter\"},\"email\":\"dodonvictor@gmail.com\",\"name\":\"Dodon Victor\",\"real_lat\":%lf,\"accuracy\": 20.0, \"target_cid\":[12,20], \"chat_enabled\":1,\"register_id\":\"APA91bETxoOnB0TweEdWi4g38Ve9O33RpC19kHOZJMB5glElOORsaU7B4MxQ5-DHYTPK7B1FlG6EvbTtT6QGl8uwRN7AEpLob3jSKCsX1Om66jJm7mavIu-jxEfEkudHyb3AdbRHV7P4KKbiH_Al_KMuhuOWTUnWF8dOLbuBvXaoeEW_wLrb63I\",\"enable_multiple_drivers_view\":1}",,V
+$`const json_t *integer`,v
+==17542==    definitely lost: 263,168 bytes in 8 blocks==17542==    indirectly lost: 0 bytes in 0 blocks==17542==      possibly lost: 177,335 bytes in 1,111 blocks==17542==    still reachable: 7,300,578 bytes in 123,524 blocks==17542==         suppressed: 0 bytes in 0 blocks==17542== ==17542== ERROR SUMMARY: 41 errors from 41 contexts (suppressed: 2 from 2)--17542-- --17542-- used_suppression:      2 dl-hack3-cond-1,V
+    withdraw_order_from_esystems(o, es->id);,V
+    o->state = STATE_CANCELED;    if (o->source != SOURCE_PHONE)    {        /* Drop the app. */        send_string_free(o->com, APP_CANCEL, serialize_app_reject(NULL, o->lang, NULL));        del_poll(o->com);    }    else    {        /* Notify dispatch if we have one. */        order_send_dispatch(o, DISPATCH_ORDER, serialize_dispatch_order(o));        finish_order(o);    },V
+num_adv_esystems,v
+        int num_adv_esystems;,V
+{"test":1},v
+https://www.youtube.com/watch?v=nG1gRK5b_v0,v
+32,896,v
+com,v
+nfig (misc.c:487)==19905==    by 0x40C213: main (main.c:108)==19905== ==19905== LEAK SUMMARY:==19905==    definitely lost: 0 bytes in 0 blocks==19905==    indirectly lost: 0 bytes in 0 blocks==19905==      possibly lost: 0 bytes in 0 blocks==19905==    still reachable: 478 bytes in 13 blocks==19905==         suppressed: 0 bytes in 0 blocks==19905== ==19905== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)--19905-- --19905-- used_suppression:      2 dl-hack3-cond-1==19905== ==19905== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)--19931-- REDIR: 0x6ab5a90 (__GI_strcpy) redirected to 0x4c2c0b0 (__GI_strcpy)--19931-- REDIR: 0x6abfd10 (strchrnul) redirected to 0x4c2e3b0 (strchrnul)--19931-- REDIR: 0x6ab8c60 (__GI_memset) redirected to 0x4c2e080 (memset)--19931-- REDIR: 0x6b636a0 (__strncasecmp_sse42) redirected to 0x4c2c600 (strncasecmp)--19931-- Reading syms from /lib/x86_64-linux-gnu/libgcc_s.so.1 (0xc56b000)--19931--   Considering /lib/x86_64-linux-gnu/libgcc_s.so.1 ..--19931--   .. CRC mismatch (computed c8e4b229 wanted 098e39f6)--19931--    object doesn't have a symbol table--19931-- REDIR: 0x6ab6300 (__GI_strncmp) redirected to 0x4c2c480 (__GI_strncmp)--19931-- REDIR: 0x6ab82b0 (memchr) redirected to 0x4c2cce0 (memchr)--19931-- REDIR: 0x6ab9ce0 (__GI_stpcpy) redirected to 0x4c2de10 (__GI_stpcpy)--19931-- Reading syms from /lib/x86_64-linux-gnu/libnss_files-2.15.so (0xc781000)--19931--   Considering /lib/x86_64-linux-gnu/libnss_files-2.15.so ..--19931--   .. CRC mismatch (computed 93b6e136 wanted 0e7fce87)--19931--   Considering,v
+    send_string(bufsend);,V
+$`__useconds_t __useconds`,v
+/watch?v=s7sfubsZJxA,v
+What three things do you need to do today?,v
+What,v
+http://www.piticigratis.com/,v
+$`struct list_head *list`,v
+$`x`,v
+	size_t start = bio->bi_sector * KERNEL_SECTOR_SIZE;	const int rw = bio_data_dir(bio);,V
+$`struct list_head *head`,v
+$`struct list_head *new`,v
+	list_hea,V
+	rbio->,V
+$`gfp_t flags`,v
+$`size_t size`,v
+$`unsigned long flags`,v
