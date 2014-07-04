@@ -20,8 +20,8 @@ if version > 580
 endif
 let g:colors_name="github"
 
-hi Normal       guifg=#000000 guibg=#EEE8D5
-"hi Normal       guifg=#000000 guibg=#F8F8FF
+"hi Normal       guifg=#000000 guibg=#EEE8D5
+hi Normal       guifg=#000000 guibg=#FFFFFF
 
 " {{{ Cursor
 hi Cursor		guibg=#444454 guifg=#F8F8FF
@@ -37,14 +37,14 @@ hi DiffDelete      guifg=#DDCCCC guibg=#FFDDDD gui=none
 " }}}
 
 " {{{ Folding / Line Numbering / Status Lines
-hi Folded		guibg=#EEE8D5 guifg=#808080 gui=bold
-hi vimFold		guibg=#EEE8D5 guifg=#808080 gui=bold
-hi FoldColumn	guibg=#EEE8D5 guifg=#808080 gui=bold
+hi Folded		guibg=#FFFFFF guifg=#808080 gui=bold
+hi vimFold		guibg=#FFFFFF guifg=#808080 gui=bold
+hi FoldColumn	guibg=#FFFFFF guifg=#808080 gui=bold
 
-hi LineNr		guifg=#959595 guibg=#EEE8D5 gui=bold
-hi NonText		guifg=#808080 guibg=#EEE8D5
-hi Folded		guifg=#808080 guibg=#EEE8D5 gui=bold
-hi FoldeColumn  guifg=#808080 guibg=#EEE8D5 gui=bold
+hi LineNr		guifg=#959595 guibg=#FFFFFF gui=bold
+hi NonText		guifg=#808080 guibg=#FFFFFF
+hi Folded		guifg=#808080 guibg=#FFFFFF gui=bold
+hi FoldeColumn  guifg=#808080 guibg=#FFFFFF gui=bold
 
 hi VertSplit	guibg=#bbbbbb guifg=#bbbbbb gui=none
 hi StatusLine   guibg=#bbbbbb guifg=#404040 gui=bold
@@ -74,10 +74,10 @@ hi Search		guibg=#cdcdfd guifg=#000000 gui=italic
 " {{{ Syntax groups
 hi Ignore		guifg=#808080
 hi Identifier	guifg=#0086B3
-hi PreProc		guifg=#A0A0A0 gui=bold
-hi Comment		guifg=#999988
+hi PreProc		guifg=#505050 gui=bold
+hi Comment		guifg=#AAAAAA gui=bold,italic
 hi Constant		guifg=#177F80 gui=none
-hi String		guifg=#D81745
+hi String		guifg=#D81745 gui=bold
 hi Function		guifg=#990000 gui=bold
 hi Statement	guifg=#000000 gui=bold
 hi Type			guifg=#445588 gui=bold
@@ -93,7 +93,6 @@ hi TypeDef      guifg=#000000 gui=bold
 
 "hi cType		guifg=#177F80 gui=bold
 hi cType		guifg=#445588 gui=bold
-hi cString		guifg=#D81745 gui=bold
 hi cConstant	guifg=#177F80 gui=bold
 hi cNumber  	guifg=#445599 gui=bold
 hi cStructure   guifg=#445588 gui=bold

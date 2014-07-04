@@ -1,0 +1,105 @@
+snippet xor "XOR gate" b
+pmos(${5:w1}, vdd, ${3:in2});
+nmos(${1:out}, $5, ${2:in1});
+nmos(${4:w0}, vdd, $3);
+pmos($1, $4, $2);
+nmos(${7:w3}, vss, $2);
+nmos($1, $7, $3);
+pmos(${6:w2}, vss, $2);
+pmos($1, $6, $3);
+endsnippet
+
+snippet AND "AND cmos gate" !b
+pmos(${5:w2}, vdd, ${2:in1});
+pmos($5, vdd, ${3:in2});
+nmos(${4:w1}, vss, $2);
+nmos($5, $4, $3);
+pmos(${1:out}, vdd, $5);
+nmos($1, vss, $5);
+endsnippet
+
+snippet and2 "AND2 gate" b
+nmos(${4:w0}, vdd, ${2:in1});
+nmos(${1:out}, $4, ${3:in2});
+pmos($1, vss, $2);
+pmos($1, vss, $3);
+endsnippet
+
+snippet or2 "OR2 gate" b
+nmos(${1:out}, vdd, ${2:in1});
+nmos($1, vdd, ${3:in2});
+pmos(${4:w0}, vss, $3);
+pmos($1, $4, $2);
+endsnippet
+
+snippet and3 "AND3 gate" b
+/* and3($1, $2, $3, $4) */
+nmos(${5:w0}, vdd, ${2:in1});
+nmos(${6:w1}, $5, ${3:in2});
+nmos(${1:out}, $6, ${4:in3});
+pmos($1, vss, $2);
+pmos($1, vss, $3);
+pmos($1, vss, $4);
+endsnippet
+
+snippet and4 "AND4 gate" b
+/* and4($1, $2, $3, $4, $5) */
+nmos(${6:w0}, vdd, ${2:in1});
+nmos(${7:w1}, $6, ${3:in2});
+nmos(${8:w2}, $7, ${4:in3});
+nmos(${1:out}, $8, ${5:in4});
+pmos($1, vss, $2);
+pmos($1, vss, $3);
+pmos($1, vss, $4);
+pmos($1, vss, $5);
+endsnippet
+
+snippet and5 "AND5 gate" b
+/* and5($1, $2, $3, $4, $5, $6) */
+nmos(${7:w0}, vdd, ${2:in1});
+nmos(${8:w1}, $7, ${3:in2});
+nmos(${9:w2}, $8, ${4:in3});
+nmos(${10:w3}, $9, ${5:in4});
+nmos(${1:out}, $10, ${6:in4});
+pmos($1, vss, $2);
+pmos($1, vss, $3);
+pmos($1, vss, $4);
+pmos($1, vss, $5);
+pmos($1, vss, $6);
+endsnippet
+
+snippet or3 "OR3 gate in CMOS" b
+/* or3($1, $2, $3, $4) */
+nmos(${1:out}, vdd, ${2:in1});
+nmos($1, vdd, ${3:in2});
+nmos($1, vdd, ${4:in3});
+pmos(${5:w0}, vss, $4);
+pmos(${6:w1}, $5, $3);
+pmos($1, $6, $2);
+endsnippet
+
+snippet or4 "OR4 gate in CMOS" b
+/* or4($1, $2, $3, $4, $5) */
+nmos(${1:out}, vdd, ${2:in1});
+nmos($1, vdd, ${3:in2});
+nmos($1, vdd, ${4:in3});
+nmos($1, vdd, ${5:in4});
+pmos(${6:w0}, vss, $5);
+pmos(${7:w1}, $6, $4);
+pmos(${8:w2}, $7, $3);
+pmos($1, $8, $2);
+endsnippet
+
+snippet or5 "OR5 gate in CMOS" b
+/* or5($1, $2, $3, $4, $5, $6) */
+nmos(${1:out}, vdd, ${2:in1});
+nmos($1, vdd, ${3:in2});
+nmos($1, vdd, ${4:in3});
+nmos($1, vdd, ${5:in4});
+nmos($1, vdd, ${6:in5});
+pmos(${7:w0}, vss, $6);
+pmos(${8:w1}, $7, $5);
+pmos(${9:w2}, $8, $4);
+pmos(${10:w3}, $9, $3);
+pmos($1, $10, $2);
+endsnippet
