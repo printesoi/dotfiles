@@ -19,7 +19,14 @@
         set colorcolumn=80
         set textwidth=79        " wrap the text
         set nowrap
-        set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+        " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+        set noshowmode
+
+        " Remap the <Leader> key
+        let mapleader=","
+
+        " Disable for now Sunset
+        let g:loaded_sunset = 1
 
         " Set Vundle
         set rtp+=~/.vim/bundle/vundle/
@@ -40,6 +47,7 @@
         Bundle 'godlygeek/tabular'
         Bundle 'majutsushi/tagbar'
         Bundle 'SirVer/ultisnips'
+        Plugin 'honza/vim-snippets'
         Bundle 'bling/vim-airline'
         "Bundle 'altercation/vim-colors-solarized'
         Bundle 'printesoi/vim-colors-solarized'
@@ -47,15 +55,24 @@
         "Bundle 'pydave/AsyncCommand'
         Bundle 'scrooloose/syntastic'
         "Bundle 'Valloric/YouCompleteMe'
-        Bundle 'Yggdroot/indentLine'
+        "Bundle 'Yggdroot/indentLine'
         Bundle 'Rip-Rip/clang_complete'
         "Bundle 'tpope/vim-obsession'
         Bundle 'gregsexton/Muon'
         Bundle 'troydm/easybuffer.vim'
         Bundle 'endel/vim-github-colorscheme'
         Bundle 'noahfrederick/vim-hemisu'
-        Bundle 'amdt/sunset'
+        "Bundle 'amdt/sunset'
         "Bundle 'nginx.vim'
+        Bundle 'duff/vim-scratch'
+        Plugin 'Shougo/vimproc.vim'
+        Plugin 'eagletmt/ghcmod-vim'
+        Bundle "pangloss/vim-javascript"
+        Plugin 'nathanaelkane/vim-indent-guides'
+        Bundle 'suan/vim-instant-markdown'
+        Bundle 'tpope/vim-markdown'
+        Bundle 'edkolev/tmuxline.vim'
+        Bundle 'leshill/vim-json'
 
         "set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
@@ -101,15 +118,17 @@
         syntax on
         syntax enable
         set t_Co=256        " tell vim that terminal has 256 colors
-        set bg=dark
 
         if has("gui_running")
             " GUI is running or is about to start.
             " Maximize gvim window.
             set lines=999 columns=999
-            color solarized
+            set bg=light
+            "color solarized
+            color github
         else
-            color muon
+            set bg=dark
+            color molokai
         endif
     " }}}
     " Wildmenu and statusline "{{{
@@ -224,7 +243,8 @@
 
         " if you forgot to open a file with sudo
         cmap w!! w !sudo tee % >/dev/null
-        map <Leader><tab> :Scratch<CR>
+        "map <Leader><tab> :Scratch<CR>
+        map <Leader>S :Scratch<CR>
 
         " Shortcuts to add or the substract forward and backward
         nnoremap <silent>         <C-a> :<C-u>call AddSubtract("\<C-a>", '')<CR>
@@ -238,13 +258,19 @@
         imap <Leader>eb  <ESC>:EasyBuffer<CR>
 
         " Jump to the next buffer using Ctrl + Tab
-        map <C-Tab>   <ESC>:bnext<CR>
-        vmap <C-Tab>   <ESC>:bnext<CR>
-        imap <C-Tab>   <ESC>:bnext<CR>
+        "map <C-Tab>   <ESC>:bnext<CR>
+        "vmap <C-Tab>   <ESC>:bnext<CR>
+        "imap <C-Tab>   <ESC>:bnext<CR>
+        map <Leader><Tab>   <ESC>:bnext<CR>
+        vmap <Leader><Tab>   <ESC>:bnext<CR>
+        imap <Leader><Tab>   <ESC>:bnext<CR>
 
         " Jump to the previous buffer using Ctrl + Shift + Tab
-        map <C-S-Tab>   <ESC>:bprevious<CR>
-        vmap <C-S-Tab>   <ESC>:bprevious<CR>
+        "map <C-S-Tab>   <ESC>:bprevious<CR>
+        "vmap <C-S-Tab>   <ESC>:bprevious<CR>
+        map <Leader><S-Tab>   <ESC>:bprevious<CR>
+        vmap <Leader><S-Tab>   <ESC>:bprevious<CR>
+        imap <Leader><S-Tab>   <ESC>:bprevious<CR>
 
         " Display syntax stack
         nmap <C-S-z> :call <SID>SynStack()<CR>
@@ -258,15 +284,16 @@
 
         " Filetype tweaks
         autocmd FileType java       setlocal tw=78 cin wrap foldmethod=marker
-        autocmd FileType c,cpp      setlocal cindent expandtab formatoptions+=l
+        autocmd FileType c,cpp      setlocal cindent noexpandtab shiftwidth=8 tabstop=8 formatoptions+=l cinoptions=(0,W4
         autocmd FileType gitconfig  setlocal shiftwidth=4 tabstop=4 noexpandtab
         autocmd FileType python     setlocal autoindent expandtab sts=4 sw=4
         autocmd FileType haskell    setlocal tw=72 sw=2 sts=2 et
         autocmd FileType tex        setlocal tw=72 sw=2 sts=2 ai
         "autocmd FileType tex        so ~/.vim/abbrevs.vim
-        autocmd FileType php        setlocal tw=72 shiftwidth=2 tabstop=2 cindent fo=croql
+        autocmd FileType php        setlocal tw=72 shiftwidth=4 tabstop=4 cindent noexpandtab fo=croql
         autocmd FileType ruby       setlocal tw=72 cindent shiftwidth=2 tabstop=2 keywordprg=ri
         autocmd FileType html       setlocal shiftwidth=4 tabstop=4
+        autocmd BufNewFile,BufReadPost *.md set filetype=markdown
         autocmd BufRead,BufNewFile *.wiki   setlocal ft=creole
         autocmd BufRead,BufNewFile *.tex    setlocal ft=tex
         autocmd BufRead,BufNewFile *.cool   setlocal ft=cool
@@ -277,6 +304,8 @@
 
         autocmd BufRead,BufNewFile *.bb     setlocal ft=conf
         autocmd BufRead,BufNewFile *.bbappend     setlocal ft=conf
+
+        autocmd BufNewFile,BufRead /home/victor/dev/cltaxis/trunk/cltaxis/* set tabstop=4 shiftwidth=4 expandtab
 
         " for latex
         set grepprg=grep\ -nH\ $*
@@ -303,6 +332,7 @@
 
         " Ack plugin "{{{
             let g:ackprg="ack -H --nocolor --nogroup --column"
+            command -nargs=* AckCSrc :Ack --type=cc -i <args>
         " }}}
 
         " EasyMotion "{{{
@@ -311,6 +341,7 @@
 
         " Yankring "{{{
             let g:yankring_history_file = ".vim/tmp/yankring_history"
+            let g:yankring_enabled = 0
         " }}}
 
         " ConqueTerm "{{{
@@ -329,7 +360,6 @@
             "let g:clang_auto_select = 2
             let g:clang_complete_copen = 1
             let g:clang_use_library = 1
-            let g:clang_library_path = '/usr/lib/llvm-3.2/lib/'
             let g:clang_snippets = 1
             let g:clang_snippets_engine = 'clang_complete'
             let g:clang_trailing_placeholder = 1
@@ -362,7 +392,7 @@
             let g:airline_theme = 'luna'
             let g:airline#extensions#tabline#enabled = 1
             let g:airline#extensions#tagbar#enabled = 1
-            let g:airline#extensions#tagbar#flags = 's'
+            let g:airline#extensions#tagbar#flags = ''
         " }}}
 
         " vim-gitgutter "{{{
@@ -387,6 +417,12 @@
             let g:ycm_global_ycm_extra_conf = '/home/printesoi/dotfiles/vimfiles/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
         "}}}
 
+        " UltiSnips "{{{
+            let g:UltiSnipsExpandTrigger="<tab>"
+            let g:UltiSnipsJumpForwardTrigger="<tab>"
+            let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+        " }}}
+
         " Syntastic "{{{
             let g:syntastic_c_compiler = 'clang'
             let g:syntastic_c_compiler_options = '-Wall -Wno-implicit-function-declaration'
@@ -396,10 +432,12 @@
             let g:syntastic_c_auto_refresh_includes = 1
             let g:syntastic_ignore_files = ['^/usr/include/']
             let g:syntastic_c_config_file = '.syntastic_c_config'
+            let g:syntastic_c_remove_include_errors = 1
         "}}}
 
         " IndentLine "{{{
             let g:indentLine_char = '┆'
+            let g:indentLine_faster = 0
         " }}}
 
         " Sunset "{{{
@@ -408,6 +446,40 @@
             let g:sunset_utc_offset = 3
         " }}}
 
+        " Instant markdown "{{{
+            let g:instant_markdown_slow = 1
+        " }}}
+
     " }}}
+
+    if has("cscope")
+        " Look for a 'cscope.out' file starting from the current directory,
+        " going up to the root directory.
+        let s:dirs = split(getcwd(), "/")
+        while s:dirs != []
+            let s:path = "/" . join(s:dirs, "/")
+            if (filereadable(s:path . "/cscope.out"))
+                execute "cs add " . s:path . "/cscope.out " . s:path . " -v"
+                break
+            endif
+            let s:dirs = s:dirs[:-2]
+        endwhile
+
+        set csto=0  " Use cscope first, then ctags
+        set cst     " Only search cscope
+        set csverb  " Make cs verbose
+
+        nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+        nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+        nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+        nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+        nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+        nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+        nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+        nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+
+        " Open a quickfix window for the following queries.
+        set cscopequickfix=s-,c-,d-,i-,t-,e-,g-
+    endif
 "}}}
 "
