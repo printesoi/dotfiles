@@ -74,6 +74,8 @@
         Bundle 'edkolev/tmuxline.vim'
         Bundle 'leshill/vim-json'
 
+        call vundle#end()
+
         "set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
         " Load the Man function "{{{
