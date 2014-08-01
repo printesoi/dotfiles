@@ -114,3 +114,6 @@
 [submodule "vimfiles/bundle/YankRing.vim"]
 	path = vimfiles/bundle/YankRing.vim
 	url = https://github.com/vim-scripts/YankRing.vim.git
+[submodule "vimfiles/bundle/vundle"]
+	path = vimfiles/bundle/vundle
+	url = https://github.com/gmarik/Vundle.vim.git
