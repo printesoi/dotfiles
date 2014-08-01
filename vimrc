@@ -53,7 +53,7 @@
         Bundle 'printesoi/vim-colors-solarized'
         Bundle 'wincent/Command-T'
         "Bundle 'pydave/AsyncCommand'
-        Bundle 'scrooloose/syntastic'
+        Bundle 'scrooloose/sweb2smsCallbackURL.phpyntastic'
         "Bundle 'Valloric/YouCompleteMe'
         "Bundle 'Yggdroot/indentLine'
         Bundle 'Rip-Rip/clang_complete'
@@ -73,10 +73,6 @@
         Bundle 'tpope/vim-markdown'
         Bundle 'edkolev/tmuxline.vim'
         Bundle 'leshill/vim-json'
-
-        call vundle#end()
-
-        "set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
         " Load the Man function "{{{
         let $PAGER=""
