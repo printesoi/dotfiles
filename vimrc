@@ -53,7 +53,7 @@
         Bundle 'printesoi/vim-colors-solarized'
         Bundle 'wincent/Command-T'
         "Bundle 'pydave/AsyncCommand'
-        Bundle 'scrooloose/sweb2smsCallbackURL.phpyntastic'
+        Bundle 'scrooloose/syntastic'
         "Bundle 'Valloric/YouCompleteMe'
         "Bundle 'Yggdroot/indentLine'
         Bundle 'Rip-Rip/clang_complete'
