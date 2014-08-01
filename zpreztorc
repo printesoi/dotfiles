@@ -5,6 +5,13 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+# Add location of custom theme.
+#
+fpath=(
+    ${HOME}/dotfiles/zsh/prompt/functions
+    ${fpath}
+)
+
 ##
 ## General
 ##
@@ -68,7 +75,7 @@ zstyle ':prezto:module:pacman' frontend 'yaourt'
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-zstyle ':prezto:module:prompt' theme 'tzesoi'
+zstyle ':prezto:module:prompt' theme 'tzesoi1'
 
 # Set syntax highlighters.
 # By default main, brackets, and cursor are enabled.
