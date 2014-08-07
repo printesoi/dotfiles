@@ -12,7 +12,6 @@ fi
 
 # Customize to your needs...
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 [[ -f "$HOME/.zsh/aliases.zsh" ]] && . "$HOME/.zsh/aliases.zsh"
 [[ -f "$HOME/.zsh/aliases_priv.zsh" ]] && . "$HOME/.zsh/aliases_priv.zsh"
 
@@ -24,9 +23,9 @@ bindkey -M vicmd '^r' history-incremental-search-backward
 
 xset -b
 
-#export LIBVA_DRIVER_NAME=vdpau
-#export VDPAU_DRIVER=va_gl
+export LIBVA_DRIVER_NAME=vdpau
+export VDPAU_DRIVER=va_gl
 
-export PATH=$HOME/bin:$HOME/.cabal/bin:$PATH
+export LESS=-r
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.rvm/bin:$HOME/bin:$HOME/.cabal/bin" # Add RVM to PATH for scripting
