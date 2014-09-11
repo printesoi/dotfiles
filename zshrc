@@ -22,7 +22,7 @@ bindkey -M viins '^r' history-incremental-search-backward
 bindkey -M vicmd '^r' history-incremental-search-backward
 
 local xset_location="$(type xset 2>&-)"
-if [[ $? -eq 0  && ! -z "$xset_location" ]] then
+if [[ $? -eq 0 ]] then
     xset -b
 fi
 
