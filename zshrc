@@ -21,11 +21,12 @@ bindkey "^[." insert-last-word
 bindkey -M viins '^r' history-incremental-search-backward
 bindkey -M vicmd '^r' history-incremental-search-backward
 
-xset -b
+local xset_location="$(type xset 2>&-)"
+if [[ $? -eq 0  && ! -z "$xset_location" ]] then
+    xset -b
+fi
 
 export LIBVA_DRIVER_NAME=vdpau
 export VDPAU_DRIVER=va_gl
-
-export LESS=-r
 
 export PATH="$PATH:$HOME/.rvm/bin:$HOME/bin:$HOME/.cabal/bin" # Add RVM to PATH for scripting
