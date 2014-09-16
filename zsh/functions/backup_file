@@ -1,0 +1,26 @@
+function backup_file()
+{
+    FILE="$1"
+    if [[ -f "$FILE" ]] then
+        FBASE=${FILE:h}
+        FNAME=${FILE:t}
+        EXT=${FNAME:e}
+        [[ -n "$EXT" ]] && EXT=".${EXT}"
+        FNOEXT=${FNAME:r}
+
+        if [[ ${FNOEXT:e} == "tar" ]] then
+            EXT=".${FNOEXT:e}${EXT}"
+            FNOEXT=${FNOEXT:r}
+        fi
+
+        BACKUP="${FBASE}/#${FNOEXT}-$(date +'%F_%T')${EXT}"
+        cp -r "$FILE" "$BACKUP" || return 1
+    elif [[ -d "$FILE" ]] then
+        FBASE=${FILE:h}
+        FNAME=${FILE:t}
+        BACKUP="${FBASE}/#${FNAME}-`date +'%F_%T'`"
+        cp -r "$FILE" "$BACKUP" || return 1
+    else
+        return 1
+    fi
+}
