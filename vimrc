@@ -33,46 +33,48 @@
         call vundle#rc()
 
         " Vundle Bundles
-        Bundle 'gmarik/vundle'
-        Bundle 'YankRing.vim'
-        Bundle 'a.vim'
-        Bundle 'mileszs/ack.vim'
-        "Bundle 'rosenfeld/conque-term'
-        Bundle 'Cpp11-Syntax-Support'
-        Bundle 'kien/ctrlp.vim'
-        Bundle 'endel/ctrlp-filetype.vim'
-        Bundle 'printesoi/nerdcommenter'
-        Bundle 'scrooloose/nerdtree'
-        Bundle 'kien/rainbow_parentheses.vim'
-        Bundle 'godlygeek/tabular'
-        Bundle 'majutsushi/tagbar'
-        Bundle 'SirVer/ultisnips'
+        Plugin 'gmarik/vundle'
+        Plugin 'YankRing.vim'
+        Plugin 'a.vim'
+        Plugin 'mileszs/ack.vim'
+        "Plugin 'rosenfeld/conque-term'
+        Plugin 'Cpp11-Syntax-Support'
+        Plugin 'kien/ctrlp.vim'
+        Plugin 'endel/ctrlp-filetype.vim'
+        Plugin 'printesoi/nerdcommenter'
+        "Plugin 'scrooloose/nerdtree'
+        Plugin 'kien/rainbow_parentheses.vim'
+        Plugin 'godlygeek/tabular'
+        Plugin 'majutsushi/tagbar'
+        Plugin 'SirVer/ultisnips'
         Plugin 'honza/vim-snippets'
-        Bundle 'bling/vim-airline'
-        "Bundle 'altercation/vim-colors-solarized'
-        Bundle 'printesoi/vim-colors-solarized'
-        Bundle 'wincent/Command-T'
-        "Bundle 'pydave/AsyncCommand'
-        Bundle 'scrooloose/syntastic'
-        "Bundle 'Valloric/YouCompleteMe'
-        "Bundle 'Yggdroot/indentLine'
-        Bundle 'Rip-Rip/clang_complete'
-        "Bundle 'tpope/vim-obsession'
-        Bundle 'gregsexton/Muon'
-        Bundle 'troydm/easybuffer.vim'
-        Bundle 'endel/vim-github-colorscheme'
-        Bundle 'noahfrederick/vim-hemisu'
-        "Bundle 'amdt/sunset'
-        "Bundle 'nginx.vim'
-        Bundle 'duff/vim-scratch'
-        Plugin 'Shougo/vimproc.vim'
-        Plugin 'eagletmt/ghcmod-vim'
-        Bundle "pangloss/vim-javascript"
+        Plugin 'bling/vim-airline'
+        "Plugin 'altercation/vim-colors-solarized'
+        Plugin 'printesoi/vim-colors-solarized'
+        Plugin 'wincent/Command-T'
+        "Plugin 'pydave/AsyncCommand'
+        "Plugin 'scrooloose/syntastic'
+        "Plugin 'Valloric/YouCompleteMe'
+        "Plugin 'Yggdroot/indentLine'
+        Plugin 'Rip-Rip/clang_complete'
+        "Plugin 'tpope/vim-obsession'
+        "Plugin 'gregsexton/Muon'
+        Plugin 'troydm/easybuffer.vim'
+        "Plugin 'endel/vim-github-colorscheme'
+        "Plugin 'noahfrederick/vim-hemisu'
+        "Plugin 'amdt/sunset'
+        "Plugin 'nginx.vim'
+        "Plugin 'duff/vim-scratch'
+        "Plugin 'Shougo/vimproc.vim'
+        "Plugin 'eagletmt/ghcmod-vim'
+        "Plugin 'pangloss/vim-javascript'
         Plugin 'nathanaelkane/vim-indent-guides'
-        Bundle 'suan/vim-instant-markdown'
-        Bundle 'tpope/vim-markdown'
-        Bundle 'edkolev/tmuxline.vim'
-        Bundle 'leshill/vim-json'
+        Plugin 'suan/vim-instant-markdown'
+        Plugin 'tpope/vim-markdown'
+        "Plugin 'edkolev/tmuxline.vim'
+        "Plugin 'leshill/vim-json'
+        Plugin 'jiangmiao/simple-javascript-indenter'
+        "Plugin 'tpope/vim-vinegar.git'
 
         " Load the Man function "{{{
         let $PAGER=""
@@ -108,25 +110,24 @@
         set shiftwidth=4
         set softtabstop=4
         set list
-        set listchars=tab:→\ ,trail:·
+        " There's some problems with unicode characters for `tab`: →,»,▸
+        set listchars=tab:\|\ ,trail:·,precedes:«,extends:»
         set sidescroll=5
-        set listchars+=extends:»,precedes:«
     " }}}
     " Interface "{{{
         syntax on
         syntax enable
         set t_Co=256        " tell vim that terminal has 256 colors
 
+        set bg=dark
+        color solarized
+
         if has("gui_running")
             " GUI is running or is about to start.
             " Maximize gvim window.
             set lines=999 columns=999
-            set bg=light
-            "color solarized
-            color github
-        else
-            set bg=dark
-            color molokai
+            "set bg=light
+            "color github
         endif
     " }}}
     " Wildmenu and statusline "{{{
@@ -160,6 +161,47 @@
             silent! call repeat#set(":\<C-u>call AddSubtract('" .a:char. "', '" .a:back. "')\<CR>")
         endfunction
 
+        function! Git_Repo_Cdup() " Get the relative path to repo root
+            "Ask git for the root of the git repo (as a relative '../../' path)
+            let git_top = system('git rev-parse --show-cdup')
+            let git_fail = 'fatal: Not a git repository'
+            if strpart(git_top, 0, strlen(git_fail)) == git_fail
+                " Above line says we are not in git repo. Ugly. Better version?
+                return ''
+            else
+                " Return the cdup path to the root. If already in root,
+                " path will be empty, so add './'
+                return './' . git_top
+            endif
+        endfunction
+
+        function! CD_Git_Root()
+            execute 'cd '.Git_Repo_Cdup()
+            let curdir = getcwd()
+            echo 'CWD now set to: '.curdir
+        endfunction
+
+        " Define the wildignore from gitignore. Primarily for CommandT
+        function! WildignoreFromGitignore()
+            " silent call CD_Git_Root()
+            let gitignore = '.gitignore'
+            if filereadable(gitignore)
+                let igstring = ''
+                for oline in readfile(gitignore)
+                    let line = substitute(oline, '\s|\n|\r', '', "g")
+                    if line =~ '^#' | con | endif
+                    if line == '' | con  | endif
+                    if line =~ '^!' | con  | endif
+                    if line =~ '/$' | let igstring .= "," . line . "*" | con | endif
+                    let igstring .= "," . line
+                endfor
+                let execstring = "set wildignore+=".substitute(igstring,'^,','',"g")
+                execute execstring
+                echo 'Wildignore defined from gitignore in: '.getcwd()
+            else
+                echo 'Unable to find gitignore'
+            endif
+        endfunction
     " }}}
 
     " Keymappings "{{{
@@ -272,6 +314,10 @@
 
         " Display syntax stack
         nmap <C-S-z> :call <SID>SynStack()<CR>
+
+        nnoremap <LEADER>gr :call CD_Git_Root()<cr>
+        nnoremap <LEADER>cti :call WildignoreFromGitignore()<cr>
+        nnoremap <LEADER>cwi :set wildignore=''<cr>:echo 'Wildignore cleared'<cr>
     " }}}
 
     " Filetype options "{{{
@@ -291,6 +337,7 @@
         autocmd FileType php        setlocal tw=72 shiftwidth=4 tabstop=4 cindent noexpandtab fo=croql
         autocmd FileType ruby       setlocal tw=72 cindent shiftwidth=2 tabstop=2 keywordprg=ri
         autocmd FileType html       setlocal shiftwidth=4 tabstop=4
+        autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 shiftround expandtab
         autocmd BufNewFile,BufReadPost *.md set filetype=markdown
         autocmd BufRead,BufNewFile *.wiki   setlocal ft=creole
         autocmd BufRead,BufNewFile *.tex    setlocal ft=tex
@@ -325,6 +372,7 @@
         " Command-T Configuration "{{{
             let g:CommandTScanDotDirectories = 1
             let g:CommandTMaxHeight = 20
+            let g:CommandTTraverseSCM = 'none'
             cmap F5 CommandTFlush
         " }}}
 
@@ -391,6 +439,7 @@
             let g:airline#extensions#tabline#enabled = 1
             let g:airline#extensions#tagbar#enabled = 1
             let g:airline#extensions#tagbar#flags = ''
+            let g:airline#extensions#whitespace#mixed_indent_algo = 1
         " }}}
 
         " vim-gitgutter "{{{
@@ -448,36 +497,47 @@
             let g:instant_markdown_slow = 1
         " }}}
 
+        " Simple Javascript Indenter "{{{
+            let g:SimpleJsIndenter_BriefMode = 1
+        " }}}
+
+        " Indent Guides "{{{
+            let g:indent_guides_guide_size = 1
+            let g:indent_guides_start_level = 2
+        " }}}
+
     " }}}
 
-    if has("cscope")
-        " Look for a 'cscope.out' file starting from the current directory,
-        " going up to the root directory.
-        let s:dirs = split(getcwd(), "/")
-        while s:dirs != []
-            let s:path = "/" . join(s:dirs, "/")
-            if (filereadable(s:path . "/cscope.out"))
-                execute "cs add " . s:path . "/cscope.out " . s:path . " -v"
-                break
-            endif
-            let s:dirs = s:dirs[:-2]
-        endwhile
+    " CScope "{{{
+        if has("cscope")
+            " Look for a 'cscope.out' file starting from the current directory,
+            " going up to the root directory.
+            let s:dirs = split(getcwd(), "/")
+            while s:dirs != []
+                let s:path = "/" . join(s:dirs, "/")
+                if (filereadable(s:path . "/cscope.out"))
+                    execute "cs add " . s:path . "/cscope.out " . s:path . " -v"
+                    break
+                endif
+                let s:dirs = s:dirs[:-2]
+            endwhile
 
-        set csto=0  " Use cscope first, then ctags
-        set cst     " Only search cscope
-        set csverb  " Make cs verbose
+            set csto=0  " Use cscope first, then ctags
+            set cst     " Only search cscope
+            set csverb  " Make cs verbose
 
-        nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-        nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-        nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-        nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-        nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-        nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-        nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-        nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+            nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+            nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+            nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+            nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+            nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+            nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+            nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+            nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 
-        " Open a quickfix window for the following queries.
-        set cscopequickfix=s-,c-,d-,i-,t-,e-,g-
-    endif
-"}}}
-"
+            " Open a quickfix window for the following queries.
+            set cscopequickfix=s-,c-,d-,i-,t-,e-,g-
+        endif
+    " }}}
+
+" }}}

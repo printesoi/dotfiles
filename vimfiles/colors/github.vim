@@ -57,7 +57,7 @@ hi MoreMsg		guifg=#990000
 
 hi Title		guifg=#ef5939
 hi WarningMsg	guifg=#ef5939
-hi SpecialKey   guifg=#177F80 gui=italic
+hi SpecialKey   guifg=#177F80
 
 hi MatchParen	guibg=#cdcdfd guifg=#000000
 hi Underlined	guifg=#000000 gui=underline

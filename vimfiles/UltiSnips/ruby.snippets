@@ -6,3 +6,8 @@ snippet sign "Description" b
 #
 $0
 endsnippet
+
+snippet mysql2 "Description" b
+${0:$client} = Mysql2::Client.new(:username => "${1}", :password => "${2}",
+                             :database => "${3}")
+endsnippet
