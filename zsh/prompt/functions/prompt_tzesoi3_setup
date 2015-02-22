@@ -66,7 +66,7 @@ function prompt_tzesoi_setup {
 
   # Define prompts.
   PROMPT="
-%(?.%B%F{blue}.%B%F{red})λ%?%f%b :: ${_prompt_tzesoi_colors[3]}%n%f » ${_prompt_tzesoi_colors[4]}%m%f » ${_prompt_tzesoi_colors[5]}%~%f » ${_prompt_tzesoi_colors[9]}%*%f "'${vcs_info_msg_0_}'"
+%(?.%B%F{blue}.%B%F{red})λ%?%f%b :: ${_prompt_tzesoi_colors[3]}%n%f » ${_prompt_tzesoi_colors[4]}%M%f » ${_prompt_tzesoi_colors[5]}%~%f » ${_prompt_tzesoi_colors[9]}%*%f "'${vcs_info_msg_0_}'"
 "'$(virtualenv_info)'"${_prompt_tzesoi_colors[6]}»%f%b "
 }
 
