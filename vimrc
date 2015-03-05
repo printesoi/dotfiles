@@ -67,7 +67,7 @@
         "Plugin 'duff/vim-scratch'
         "Plugin 'Shougo/vimproc.vim'
         "Plugin 'eagletmt/ghcmod-vim'
-        "Plugin 'pangloss/vim-javascript'
+        Plugin 'pangloss/vim-javascript'
         Plugin 'nathanaelkane/vim-indent-guides'
         Plugin 'suan/vim-instant-markdown'
         Plugin 'tpope/vim-markdown'
@@ -75,6 +75,10 @@
         "Plugin 'leshill/vim-json'
         Plugin 'jiangmiao/simple-javascript-indenter'
         "Plugin 'tpope/vim-vinegar.git'
+        Plugin 'briancollins/vim-jst'
+        Plugin 'vim-ruby/vim-ruby'
+        Plugin 'groenewege/vim-less'
+        Plugin 'printesoi/gruvbox'
 
         " Load the Man function "{{{
         let $PAGER=""
@@ -120,14 +124,12 @@
         set t_Co=256        " tell vim that terminal has 256 colors
 
         set bg=dark
-        color solarized
+        color gruvbox
 
         if has("gui_running")
             " GUI is running or is about to start.
             " Maximize gvim window.
             set lines=999 columns=999
-            "set bg=light
-            "color github
         endif
     " }}}
     " Wildmenu and statusline "{{{
@@ -412,6 +414,7 @@
             let g:clang_conceal_snippets = 1
             let g:clang_complete_macros = 1
             let g:clang_complete_patterns = 1
+            let g:clang_complete_copen = 1
         " }}}
 
         " ControlP "{{{
@@ -435,7 +438,7 @@
 
         " vim-airline "{{{
             let g:airline_powerline_fonts = 1
-            let g:airline_theme = 'luna'
+            let g:airline_theme = 'gruvbox'
             let g:airline#extensions#tabline#enabled = 1
             let g:airline#extensions#tagbar#enabled = 1
             let g:airline#extensions#tagbar#flags = ''
