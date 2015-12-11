@@ -1,3 +1,0 @@
-#!/bin/bash
-sudo rc.d start network
-sudo pppoe-start

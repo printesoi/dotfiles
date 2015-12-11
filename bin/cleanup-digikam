@@ -1,8 +1,0 @@
-#!/bin/bash
-
-KDE_LOCAL_DIR="$(kde4-config --localprefix)"
-
-sudo rm -rf /usr/lib/libkipi*
-sudo rm -rf /usr/lib/libdigikam*
-rm -rf "${KDE_LOCAL_DIR}share/apps/digikam"
-rm -rf "${KDE_LOCAL_DIR}share/config/digikamrc"
