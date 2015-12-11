@@ -29,11 +29,11 @@
         let g:loaded_sunset = 1
 
         " Set Vundle
-        set rtp+=~/.vim/bundle/vundle/
+        set rtp+=~/.vim/bundle/Vundle.vim/
         call vundle#rc()
 
         " Vundle Bundles
-        Plugin 'gmarik/vundle'
+        Plugin 'VundleVim/Vundle.vim'
         Plugin 'YankRing.vim'
         Plugin 'a.vim'
         Plugin 'mileszs/ack.vim'
@@ -79,6 +79,9 @@
         Plugin 'vim-ruby/vim-ruby'
         Plugin 'groenewege/vim-less'
         Plugin 'printesoi/gruvbox'
+        Plugin 'peterhoeg/vim-qml'
+
+        call vundle#end()
 
         " Load the Man function "{{{
         let $PAGER=""
@@ -124,6 +127,8 @@
         set t_Co=256        " tell vim that terminal has 256 colors
 
         set bg=dark
+        let g:gruvbox_contrast_dark = 'hard'
+        let g:gruvbox_improved_strings = 0
         color gruvbox
 
         if has("gui_running")
@@ -325,7 +330,6 @@
     " Filetype options "{{{
         filetype on
         filetype plugin on
-        filetype indent on
         filetype plugin indent on
 
         " Filetype tweaks
@@ -340,6 +344,7 @@
         autocmd FileType ruby       setlocal tw=72 cindent shiftwidth=2 tabstop=2 keywordprg=ri
         autocmd FileType html       setlocal shiftwidth=4 tabstop=4
         autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 shiftround expandtab
+        autocmd FileType jst        setlocal shiftwidth=2 tabstop=2 shiftround expandtab
         autocmd BufNewFile,BufReadPost *.md set filetype=markdown
         autocmd BufRead,BufNewFile *.wiki   setlocal ft=creole
         autocmd BufRead,BufNewFile *.tex    setlocal ft=tex
