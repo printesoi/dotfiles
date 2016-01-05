@@ -24,6 +24,7 @@
 
         " Remap the <Leader> key
         let mapleader=","
+        let maplocalleader=","
 
         " Disable for now Sunset
         let g:loaded_sunset = 1
@@ -64,7 +65,6 @@
         "Plugin 'noahfrederick/vim-hemisu'
         "Plugin 'amdt/sunset'
         "Plugin 'nginx.vim'
-        "Plugin 'duff/vim-scratch'
         "Plugin 'Shougo/vimproc.vim'
         "Plugin 'eagletmt/ghcmod-vim'
         Plugin 'pangloss/vim-javascript'
@@ -80,6 +80,8 @@
         Plugin 'groenewege/vim-less'
         Plugin 'printesoi/gruvbox'
         Plugin 'peterhoeg/vim-qml'
+        Plugin 'chriskempson/base16-vim'
+        Plugin 'git@github.com:printesoi/scratch.vim.git'
 
         call vundle#end()
 
@@ -216,7 +218,7 @@
         nnoremap ,cd :lcd %:p:h<CR>:pwd<CR>
         noremap <F3> <Esc>:set nonumber!<CR>
         inoremap <F3> <Esc>:set nonumber!<CR>
-        noremap <F4> <ESC>:NERDTreeToggle<CR>
+        noremap <F4> <ESC>:ScratchToggle<CR>
         nmap <F8> :TagbarToggle<CR>
         imap <F8> <ESC>:TagbarToggle<CR>
 
@@ -235,8 +237,8 @@
         inoremap <C-Q> <ESC>:qa<CR>
         noremap <C-S> <ESC>:w<CR>
         inoremap <C-S> <ESC>:w<CR>
-        noremap <C-V> <ESC>"+gP
-        inoremap <C-V> <ESC>"+gP
+        noremap <C-V> <ESC>"+gp
+        inoremap <C-V> <ESC>"+gp
         vnoremap <C-C> "+y
 
         inoremap <C-B> <C-V>
@@ -246,8 +248,8 @@
         " Editing and reloading config file
         map <Leader>sg :source $MYGVIMRC<CR>
         map <Leader>sv :source $MYVIMRC<CR>
-        map <Leader>g :e $MYGVIMRC<CR>
-        map <Leader>v :e $MYVIMRC<CR>
+        map <Leader>eg :e $MYGVIMRC<CR>
+        map <Leader>ev :e $MYVIMRC<CR>
 
         " Open Quickfix window
         map <Leader>qf <ESC>:copen<CR>
@@ -272,9 +274,6 @@
         imap <Leader>lc <ESC>:lclose<CR>
         vmap <Leader>lc <ESC>:lclose<CR>
         nmap <Leader>lc <ESC>:lclose<CR>
-
-
-        map <Leader><F8> <ESC>:silent AsyncCommand clementine -t<CR><CR>
 
         " Disable arrows
         map j gj
@@ -334,7 +333,7 @@
 
         " Filetype tweaks
         autocmd FileType java       setlocal tw=78 cin wrap foldmethod=marker
-        autocmd FileType c,cpp      setlocal cindent noexpandtab shiftwidth=8 tabstop=8 formatoptions+=l cinoptions=(0,W4
+        autocmd FileType c,cpp      setlocal cindent noexpandtab shiftwidth=8 tabstop=8 formatoptions+=l cinoptions=(0,W4 relativenumber
         autocmd FileType gitconfig  setlocal shiftwidth=4 tabstop=4 noexpandtab
         autocmd FileType python     setlocal autoindent expandtab sts=4 sw=4
         autocmd FileType haskell    setlocal tw=72 sw=2 sts=2 et
@@ -356,8 +355,6 @@
 
         autocmd BufRead,BufNewFile *.bb     setlocal ft=conf
         autocmd BufRead,BufNewFile *.bbappend     setlocal ft=conf
-
-        autocmd BufNewFile,BufRead /home/victor/dev/cltaxis/trunk/cltaxis/* set tabstop=4 shiftwidth=4 expandtab
 
         " for latex
         set grepprg=grep\ -nH\ $*
@@ -514,6 +511,10 @@
             let g:indent_guides_start_level = 2
         " }}}
 
+        " Scratch "{{{
+            let g:scratch_insert_autohide = 0
+        " }}}
+
     " }}}
 
     " CScope "{{{
@@ -548,4 +549,26 @@
         endif
     " }}}
 
+    " Private options "{{{
+        if filereadable(glob("~/.vimrc.local"))
+            source ~/.vimrc.local
+        endif
+    " }}}
+
+" }}}
+
+" Learn ViM the hard way "{{{
+    " Chap.03: move the line downwards
+    nnoremap - ddp
+    " Chap.03: move line upwards
+    nnoremap _ YkPjjddkk
+
+    " Chap.04: convert to uppercase in insert mode
+    inoremap <C-u> <Esc>viwUea
+    " Chap.04: convert to upplercase in normal mode
+    nnoremap <C-u> gUiwe
+
+    " Chap.08: abbreviations
+    iabbrev @@ dodonvictor@gmail.com
+    iabbrev wwwd http://www.victordodon.com
 " }}}

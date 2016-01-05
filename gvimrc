@@ -1,8 +1,6 @@
 " GVim only options "{{{
-    "set gfn=DejaVu\ Sans\ Mono\ 9   " GUI font
-    "set gfn=PragmataPro\ 9   " GUI font
-    "set gfn=Source\ Code\ Pro\ for\ Powerline\ 9   " GUI font
-    set gfn=Ubuntu\ Mono\ derivative\ Powerline\ 10
+    "set gfn=Ubuntu\ Mono\ derivative\ Powerline\ 10
+    set gfn=Fantasque\ Sans\ Mono\ 10
     set linespace=4           " space between lines
     set go-=m                 " remove the menubar
     set go-=T                 " no toolbar
