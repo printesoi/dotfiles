@@ -29,9 +29,9 @@
         " Disable for now Sunset
         let g:loaded_sunset = 1
 
-        " Set Vundle
+        " Setup Vundle
         set rtp+=~/.vim/bundle/Vundle.vim/
-        call vundle#rc()
+        call vundle#begin()
 
         " Vundle Bundles
         Plugin 'VundleVim/Vundle.vim'
@@ -49,7 +49,8 @@
         Plugin 'majutsushi/tagbar'
         Plugin 'SirVer/ultisnips'
         Plugin 'honza/vim-snippets'
-        Plugin 'bling/vim-airline'
+        Plugin 'vim-airline/vim-airline'
+        Plugin 'vim-airline/vim-airline-themes'
         "Plugin 'altercation/vim-colors-solarized'
         Plugin 'printesoi/vim-colors-solarized'
         Plugin 'wincent/Command-T'
@@ -86,31 +87,33 @@
         call vundle#end()
 
         " Load the Man function "{{{
-        let $PAGER=""
+            let $PAGER=""
         "}}}
+
         runtime! ftplugin/man.vim
         " Editor options "{{{
             set guicursor=a:blinkon0
             set lazyredraw           " do not redraw while running macros
         " }}}
+
         " Search options "{{{
             set incsearch
             set hlsearch
             nohlsearch
         " }}}
+
         " No bell or flash "{{{
             set noerrorbells
             set novisualbell
             set t_vb=
         " }}}
+
         " Folding "{{{
             "set foldenable
             "set foldmethod=syntax
         " }}}
     " }}}
-    " Pathogen "{{{
-        "call pathogen#infect()
-    " }}}
+
     " Text, tab and indent related "{{{
         set cindent
         set autoindent
@@ -123,6 +126,7 @@
         set listchars=tab:\|\ ,trail:·,precedes:«,extends:»
         set sidescroll=5
     " }}}
+
     " Interface "{{{
         syntax on
         syntax enable
@@ -139,6 +143,7 @@
             set lines=999 columns=999
         endif
     " }}}
+
     " Wildmenu and statusline "{{{
         set modeline
         set statusline=%<%f\ %y%h%m%r%=%-24.(0x%02B,%l/%L,%c%V%)\ %P
@@ -214,13 +219,12 @@
     " }}}
 
     " Keymappings "{{{
-        inoremap jj <ESC>
-        nnoremap ,cd :lcd %:p:h<CR>:pwd<CR>
-        noremap <F3> <Esc>:set nonumber!<CR>
-        inoremap <F3> <Esc>:set nonumber!<CR>
-        noremap <F4> <ESC>:ScratchToggle<CR>
-        nmap <F8> :TagbarToggle<CR>
-        imap <F8> <ESC>:TagbarToggle<CR>
+        inoremap jk <ESC>
+        inoremap <Esc> <nop>
+
+        " Navigate on display lines
+        noremap j gj
+        noremap k gk
 
         " Jump between windows
         noremap <C-J> <ESC><C-W>j
@@ -241,56 +245,45 @@
         inoremap <C-V> <ESC>"+gp
         vnoremap <C-C> "+y
 
+        " Block selection
         inoremap <C-B> <C-V>
         vnoremap <C-B> <C-V>
         noremap <C-B> <C-V>
 
         " Editing and reloading config file
-        map <Leader>sg :source $MYGVIMRC<CR>
-        map <Leader>sv :source $MYVIMRC<CR>
-        map <Leader>eg :e $MYGVIMRC<CR>
-        map <Leader>ev :e $MYVIMRC<CR>
+        noremap <Leader>sg :source $MYGVIMRC<CR>
+        noremap <Leader>sv :source $MYVIMRC<CR>
+        noremap <Leader>eg :e $MYGVIMRC<CR>
+        noremap <Leader>ev :e $MYVIMRC<CR>
 
         " Open Quickfix window
-        map <Leader>qf <ESC>:copen<CR>
-        imap <Leader>qf <ESC>:copen<CR>
-        vmap <Leader>qf <ESC>:copen<CR>
-        nmap <Leader>qf <ESC>:copen<CR>
+        noremap <Leader>qf <ESC>:copen<CR>
+        inoremap <Leader>qf <ESC>:copen<CR>
 
         " Close Quickfix window
-        map <Leader>qc <ESC>:cclose<CR>
-        imap <Leader>qc <ESC>:cclose<CR>
-        vmap <Leader>qc <ESC>:cclose<CR>
-        nmap <Leader>qc <ESC>:cclose<CR>
+        noremap <Leader>qc <ESC>:cclose<CR>
+        inoremap <Leader>qc <ESC>:cclose<CR>
 
         " Open Location list
-        map <Leader>lf <ESC>:lopen<CR>
-        imap <Leader>lf <ESC>:lopen<CR>
-        vmap <Leader>lf <ESC>:lopen<CR>
-        nmap <Leader>lf <ESC>:lopen<CR>
+        noremap <Leader>lf <ESC>:lopen<CR>
+        inoremap <Leader>lf <ESC>:lopen<CR>
 
         " Close Location list
-        map <Leader>lc <ESC>:lclose<CR>
-        imap <Leader>lc <ESC>:lclose<CR>
-        vmap <Leader>lc <ESC>:lclose<CR>
-        nmap <Leader>lc <ESC>:lclose<CR>
+        noremap <Leader>lc <ESC>:lclose<CR>
+        inoremap <Leader>lc <ESC>:lclose<CR>
 
         " Disable arrows
-        map j gj
-        map k gk
-        nmap <up> <nop>
-        nmap <down> <nop>
-        nmap <left> <nop>
-        nmap <right> <nop>
-        vmap <up> <nop>
-        vmap <down> <nop>
-        vmap <left> <nop>
-        vmap <right> <nop>
+        noremap <up> <nop>
+        noremap <down> <nop>
+        noremap <left> <nop>
+        noremap <right> <nop>
+        inoremap <up> <nop>
+        inoremap <down> <nop>
+        inoremap <left> <nop>
+        inoremap <right> <nop>
 
         " if you forgot to open a file with sudo
-        cmap w!! w !sudo tee % >/dev/null
-        "map <Leader><tab> :Scratch<CR>
-        map <Leader>S :Scratch<CR>
+        cnoremap w!! w !sudo tee % >/dev/null
 
         " Shortcuts to add or the substract forward and backward
         nnoremap <silent>         <C-a> :<C-u>call AddSubtract("\<C-a>", '')<CR>
@@ -299,27 +292,28 @@
         nnoremap <silent> <Leader><C-x> :<C-u>call AddSubtract("\<C-x>", 'b')<CR>
 
         " Show EasyBuffer
-        map <Leader>eb  <ESC>:EasyBuffer<CR>
-        vmap <Leader>eb  <ESC>:EasyBuffer<CR>
-        imap <Leader>eb  <ESC>:EasyBuffer<CR>
+        noremap <Leader>eb  <ESC>:EasyBuffer<CR>
+        inoremap <Leader>eb  <ESC>:EasyBuffer<CR>
 
-        " Jump to the next buffer using Ctrl + Tab
-        "map <C-Tab>   <ESC>:bnext<CR>
-        "vmap <C-Tab>   <ESC>:bnext<CR>
-        "imap <C-Tab>   <ESC>:bnext<CR>
-        map <Leader><Tab>   <ESC>:bnext<CR>
-        vmap <Leader><Tab>   <ESC>:bnext<CR>
-        imap <Leader><Tab>   <ESC>:bnext<CR>
+        " Jump to the next buffer
+        noremap <Leader><Tab>   <ESC>:bnext<CR>
+        inoremap <Leader><Tab>   <ESC>:bnext<CR>
 
-        " Jump to the previous buffer using Ctrl + Shift + Tab
-        "map <C-S-Tab>   <ESC>:bprevious<CR>
-        "vmap <C-S-Tab>   <ESC>:bprevious<CR>
-        map <Leader><S-Tab>   <ESC>:bprevious<CR>
-        vmap <Leader><S-Tab>   <ESC>:bprevious<CR>
-        imap <Leader><S-Tab>   <ESC>:bprevious<CR>
+        " Jump to the previous buffer
+        noremap <Leader><S-Tab>   <ESC>:bprevious<CR>
+        inoremap <Leader><S-Tab>   <ESC>:bprevious<CR>
 
         " Display syntax stack
         nmap <C-S-z> :call <SID>SynStack()<CR>
+
+        noremap <Leader>S :Scratch<CR>
+        noremap <F4> <ESC>:ScratchToggle<CR>
+
+        noremap <F8> :TagbarToggle<CR>
+        inoremap <F8> <ESC>:TagbarToggle<CR>
+
+        " CD to the dirname of the current file
+        nnoremap ,cd :lcd %:p:h<CR>:pwd<CR>
 
         nnoremap <LEADER>gr :call CD_Git_Root()<cr>
         nnoremap <LEADER>cti :call WildignoreFromGitignore()<cr>
@@ -332,29 +326,33 @@
         filetype plugin indent on
 
         " Filetype tweaks
-        autocmd FileType java       setlocal tw=78 cin wrap foldmethod=marker
-        autocmd FileType c,cpp      setlocal cindent noexpandtab shiftwidth=8 tabstop=8 formatoptions+=l cinoptions=(0,W4 relativenumber
-        autocmd FileType gitconfig  setlocal shiftwidth=4 tabstop=4 noexpandtab
-        autocmd FileType python     setlocal autoindent expandtab sts=4 sw=4
-        autocmd FileType haskell    setlocal tw=72 sw=2 sts=2 et
-        autocmd FileType tex        setlocal tw=72 sw=2 sts=2 ai
-        "autocmd FileType tex        so ~/.vim/abbrevs.vim
-        autocmd FileType php        setlocal tw=72 shiftwidth=4 tabstop=4 cindent noexpandtab fo=croql
-        autocmd FileType ruby       setlocal tw=72 cindent shiftwidth=2 tabstop=2 keywordprg=ri
-        autocmd FileType html       setlocal shiftwidth=4 tabstop=4
-        autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 shiftround expandtab
-        autocmd FileType jst        setlocal shiftwidth=2 tabstop=2 shiftround expandtab
-        autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-        autocmd BufRead,BufNewFile *.wiki   setlocal ft=creole
-        autocmd BufRead,BufNewFile *.tex    setlocal ft=tex
-        autocmd BufRead,BufNewFile *.cool   setlocal ft=cool
-        autocmd BufRead,BufNewFile *.cl     setlocal ft=cool
-        autocmd BufRead,BufNewFile *.miC    setlocal ft=C
-        autocmd BufRead,BufNewFile *.g      setlocal ft=antlr
-        autocmd BufRead,BufNewFile *.clp    setlocal ft=clips
+        augroup filetype_tweaks
+            autocmd!
+            autocmd FileType java       setlocal tw=78 cin wrap foldmethod=marker
+            autocmd FileType c          setlocal cindent noexpandtab shiftwidth=8 tabstop=8 formatoptions+=l cinoptions=(0,W4,)20 relativenumber
+            autocmd FileType cpp        setlocal cindent expandtab shiftwidth=4 tabstop=4 formatoptions+=l cinoptions=(0,W4,)20 relativenumber
+            autocmd FileType gitconfig  setlocal shiftwidth=4 tabstop=4 noexpandtab
+            autocmd FileType python     setlocal autoindent expandtab sts=4 sw=4
+            autocmd FileType haskell    setlocal tw=72 sw=2 sts=2 et
+            autocmd FileType tex        setlocal tw=72 sw=2 sts=2 ai
+            "autocmd FileType tex        so ~/.vim/abbrevs.vim
+            autocmd FileType php        setlocal tw=72 shiftwidth=4 tabstop=4 cindent noexpandtab fo=croql
+            autocmd FileType ruby       setlocal tw=72 cindent shiftwidth=2 tabstop=2 keywordprg=ri
+            autocmd FileType html       setlocal shiftwidth=4 tabstop=4
+            autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 shiftround expandtab
+            autocmd FileType jst        setlocal shiftwidth=2 tabstop=2 shiftround expandtab
+            autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+            autocmd BufRead,BufNewFile *.wiki   setlocal ft=creole
+            autocmd BufRead,BufNewFile *.tex    setlocal ft=tex
+            autocmd BufRead,BufNewFile *.cool   setlocal ft=cool
+            autocmd BufRead,BufNewFile *.cl     setlocal ft=cool
+            autocmd BufRead,BufNewFile *.miC    setlocal ft=C
+            autocmd BufRead,BufNewFile *.g      setlocal ft=antlr
+            autocmd BufRead,BufNewFile *.clp    setlocal ft=clips
 
-        autocmd BufRead,BufNewFile *.bb     setlocal ft=conf
-        autocmd BufRead,BufNewFile *.bbappend     setlocal ft=conf
+            autocmd BufRead,BufNewFile *.bb     setlocal ft=conf
+            autocmd BufRead,BufNewFile *.bbappend     setlocal ft=conf
+        augroup end
 
         " for latex
         set grepprg=grep\ -nH\ $*
@@ -377,12 +375,12 @@
             let g:CommandTScanDotDirectories = 1
             let g:CommandTMaxHeight = 20
             let g:CommandTTraverseSCM = 'none'
-            cmap F5 CommandTFlush
+            cmap <F5> CommandTFlush<CR>
         " }}}
 
         " Ack plugin "{{{
             let g:ackprg="ack -H --nocolor --nogroup --column"
-            command -nargs=* AckCSrc :Ack --type=cc -i <args>
+            command! -nargs=* AckCSrc Ack! --type=cc --type=cpp -i <args>
         " }}}
 
         " EasyMotion "{{{
