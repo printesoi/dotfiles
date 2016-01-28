@@ -21,8 +21,7 @@ bindkey "^[." insert-last-word
 bindkey -M viins '^r' history-incremental-search-backward
 bindkey -M vicmd '^r' history-incremental-search-backward
 
-xset_location="$(type xset 2>&-)"
-if [[ $? -eq 0 ]] then
+if [[ -n "$DISPLAY" ]] && command -v xset >/dev/null 2>&1 ; then
     xset -b
 fi
 
