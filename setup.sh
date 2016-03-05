@@ -3,7 +3,7 @@
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${HOME}/.zprezto"
 git clone --recursive https://github.com/printesoi/dotfiles.git "${HOME}/dotfiles"
 
-for rcfile in "${HOME}/dotfiles/"{vimrc,zshrc,zshenv,zpreztorc,gitconfig,lesskey}; do
+for rcfile in "${HOME}/dotfiles/"{{,g}vimrc,zshrc,zshenv,zpreztorc,gitconfig,lesskey}; do
     ln -s "$rcfile" "${HOME}/.${rcfile:t}"
 done
 
