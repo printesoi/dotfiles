@@ -8,10 +8,10 @@ function prompt_tzesoi_precmd {
   # Check for untracked files or updated submodules since vcs_info does not.
   if [[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
     #branch_format="(${_prompt_tzesoi_colors[1]}%b%f%u%c${_prompt_tzesoi_colors[4]}•%f)"
-    branch_format="» (${_prompt_tzesoi_colors[1]}%b%f%u%c${_prompt_tzesoi_colors[4]}•%f)"
+    branch_format="${_prompt_tzesoi_separator} (${_prompt_tzesoi_colors[1]}%b%f%u%c${_prompt_tzesoi_colors[4]}•%f)"
   else
     #branch_format="(${_prompt_tzesoi_colors[1]}%b%f%u%c)"
-    branch_format="» (${_prompt_tzesoi_colors[1]}%b%f%u%c)"
+    branch_format="${_prompt_tzesoi_separator} (${_prompt_tzesoi_colors[1]}%b%f%u%c)"
   fi
 
   zstyle ':vcs_info:*:prompt:*' formats "${branch_format}"
@@ -31,6 +31,7 @@ function prompt_tzesoi_setup {
   # Add hook for calling vcs_info before each command.
   add-zsh-hook precmd prompt_tzesoi_precmd
 
+  _prompt_tzesoi_separator="»"
   _prompt_tzesoi_colors=(
     "%F{cyan}"
     "%F{yellow}"
@@ -66,8 +67,8 @@ function prompt_tzesoi_setup {
 
   # Define prompts.
   PROMPT="
-%(?.%B%F{blue}.%B%F{red})λ%?%f%b :: %(!.%F{red}.%F{magenta})%n%f » ${_prompt_tzesoi_colors[2]}%M%f » ${_prompt_tzesoi_colors[5]}%~%f » ${_prompt_tzesoi_colors[9]}%*%f "'${vcs_info_msg_0_}'"
-"'$(virtualenv_info)'"${_prompt_tzesoi_colors[6]}»%f%b "
+%(?.%B%F{blue}.%B%F{red})λ%?%f%b :: %(!.%F{red}.%F{magenta})%n%f ${_prompt_tzesoi_separator} ${_prompt_tzesoi_colors[2]}%M%f ${_prompt_tzesoi_separator} ${_prompt_tzesoi_colors[5]}%~%f ${_prompt_tzesoi_separator} ${_prompt_tzesoi_colors[9]}%*%f "'${vcs_info_msg_0_}'"
+"'$(virtualenv_info)'"${_prompt_tzesoi_colors[6]}%f%b${_prompt_tzesoi_separator} "
 }
 
 prompt_tzesoi_setup "$@"
