@@ -376,6 +376,7 @@
             let g:CommandTMaxHeight = 20
             let g:CommandTTraverseSCM = 'none'
             cmap <F5> CommandTFlush<CR>
+            nnoremap <silent> <Leader>r :CommandTMRU<CR>
         " }}}
 
         " Ack plugin "{{{
