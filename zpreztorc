@@ -7,10 +7,7 @@
 
 # Add location of custom theme.
 #
-fpath=(
-    ${HOME}/dotfiles/zsh/prompt/functions
-    ${fpath}
-)
+fpath=("${HOME}/.zsh/prompt/functions" ${fpath})
 
 ##
 ## General
@@ -97,13 +94,29 @@ zstyle ':prezto:module:terminal' auto-title 'yes'
 ## Custom options
 ##
 
-AUTO_CD=1
+setopt autocd
+setopt nullglob
+setopt interactivecomments
 
+##
+## Custom functions
+##
 fpath=("${HOME}/.zsh/functions" ${fpath})
-autoload mkdircd git_files git_cd_root encrypt_aes decrypt_aes rfc backup_file
 
-setopt INTERACTIVE_COMMENTS
+function load_zsh_functions() {
+    if [[ -z "$1" || ! -d "$1" ]]; then
+        return 1
+    fi
+    local funs=("$1"/[^_\#]*)
+    funs=(${funs[@]/*\//})
+    autoload ${funs[@]}
+}
 
+load_zsh_functions "${HOME}/.zsh/functions"
+
+##
+## Local(private) options
+##
 if [[ -s "${HOME}/.zsh.local/zpreztorc" ]]; then
     source "${HOME}/.zsh.local/zpreztorc"
 fi
