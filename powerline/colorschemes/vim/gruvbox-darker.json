@@ -1,0 +1,100 @@
+{
+	"name": "Gruvbox darker color scheme",
+	"groups": {
+		"information:unimportant":  { "fg": "gray8", "bg": "gray2", "attrs": [] },
+		"information:additional":   { "fg": "gray9", "bg": "gray4", "attrs": [] },
+		"background":               { "fg": "white", "bg": "gray2", "attrs": [] },
+		"background:divider":       { "fg": "gray6", "bg": "gray2", "attrs": [] },
+		"mode":                     { "fg": "gruvbox-darker:dark_green", "bg": "gruvbox-darker:bright_green", "attrs": ["bold"] },
+		"visual_range":             { "fg": "gruvbox-darker:bright_orange", "bg": "gruvbox-darker:dark_orange", "attrs": ["bold"] },
+		"modified_indicator":       { "fg": "brightyellow", "bg": "gray4", "attrs": ["bold"] },
+		"paste_indicator":          { "fg": "gruvbox-darker:fg", "bg": "gruvbox-darker:orange", "attrs": ["bold"] },
+		"readonly_indicator":       { "fg": "brightestred", "bg": "gray4", "attrs": [] },
+		"branch_dirty":             { "fg": "brightyellow", "bg": "gray4", "attrs": [] },
+		"branch:divider":           { "fg": "gray7", "bg": "gray4", "attrs": [] },
+		"file_name":                { "fg": "white", "bg": "gray4", "attrs": ["bold"] },
+		"window_title":             { "fg": "white", "bg": "gray4", "attrs": [] },
+		"file_name_no_file":        { "fg": "gray9", "bg": "gray4", "attrs": ["bold"] },
+		"file_vcs_status":          { "fg": "brightestred", "bg": "gray4", "attrs": [] },
+		"file_vcs_status_M":        { "fg": "brightyellow", "bg": "gray4", "attrs": [] },
+		"file_vcs_status_A":        { "fg": "brightgreen", "bg": "gray4", "attrs": [] },
+		"line_percent":             { "fg": "gray9", "bg": "gray4", "attrs": [] },
+		"line_percent_gradient":    { "fg": "dark_green_gray", "bg": "gray4", "attrs": [] },
+		"position":                 { "fg": "gray9", "bg": "gray4", "attrs": [] },
+		"position_gradient":        { "fg": "green_yellow_red", "bg": "gray4", "attrs": [] },
+		"line_current":             { "fg": "gray1", "bg": "gray10", "attrs": ["bold"] },
+		"line_current_symbol":      { "fg": "gray1", "bg": "gray10", "attrs": [] },
+		"virtcol_current_gradient": { "fg": "dark_GREEN_Orange_red", "bg": "gray10", "attrs": [] },
+		"col_current":              { "fg": "gray6", "bg": "gray10", "attrs": [] },
+		"modified_buffers":         { "fg": "brightyellow", "bg": "gray2", "attrs": [] },
+		"attached_clients":         { "fg": "gray8", "bg": "gray2", "attrs": [] },
+		"error":                    { "fg": "brightestred", "bg": "darkred", "attrs": ["bold"] },
+		"warning":                  { "fg": "brightyellow", "bg": "darkorange", "attrs": ["bold"] },
+		"current_tag":              { "fg": "gray9", "bg": "gray2", "attrs": [] },
+
+		"tab_nc:modified_indicator": { "fg": "gruvbox-darker:bright_yellow", "bg": "gray2", "attrs": ["bold"] }
+	},
+	"mode_translations": {
+		"nc": {
+			"colors": {
+				"brightyellow": "gruvbox-darker:dark_orange",
+				"brightestred": "gruvbox-darker:dark_red",
+				"gray0": "gray0",
+				"gray1": "gray0",
+				"gray2": "gray0",
+				"gray3": "gray1",
+				"gray4": "gray1",
+				"gray5": "gray1",
+				"gray6": "gray1",
+				"gray7": "gray4",
+				"gray8": "gray4",
+				"gray9": "gray4",
+				"gray10": "gray5",
+				"white": "gray6",
+				"dark_green_gray": "gray5"
+			}
+		},
+		"i": {
+			"colors": {
+				"gray0": "gruvbox-darker:blue",
+				"gray1": "gruvbox-darker:blue",
+				"gray2": "gruvbox-darker:blue",
+				"gray3": "gruvbox-darker:bright_blue",
+				"gray4": "gruvbox-darker:bright_blue",
+				"gray5": "gruvbox-darker:aqua",
+				"gray6": "gruvbox-darker:aqua",
+				"gray7": "gruvbox-darker:aqua",
+				"gray8": "gruvbox-darker:bright_aqua",
+				"gray9": "gruvbox-darker:bright_aqua",
+				"gray10": "gruvbox-darker:bright_aqua",
+				"green_yellow_red": "gray5",
+				"dark_green_gray": "light_green_gray"
+			},
+			"groups": {
+				"mode":               { "fg": "gruvbox-darker:dark_blue", "bg": "gruvbox-darker:fg", "attrs": ["bold"] },
+				"background:divider": { "fg": "darkcyan", "bg": "darkestblue", "attrs": [] },
+				"branch:divider":     { "fg": "darkcyan", "bg": "darkblue", "attrs": [] }
+			}
+		},
+		"v": {
+			"groups": {
+				"mode": { "fg": "gruvbox-darker:orange", "bg": "gruvbox-darker:bright_yellow", "attrs": ["bold"] }
+			}
+		},
+		"V": {
+			"groups": {
+				"mode": { "fg": "gruvbox-darker:orange", "bg": "gruvbox-darker:bright_yellow", "attrs": ["bold"] }
+			}
+		},
+		"^V": {
+			"groups": {
+				"mode": { "fg": "gruvbox-darker:orange", "bg": "gruvbox-darker:bright_yellow", "attrs": ["bold"] }
+			}
+		},
+		"R": {
+			"groups": {
+				"mode": { "fg": "white", "bg": "brightred", "attrs": ["bold"] }
+			}
+		}
+	}
+}
