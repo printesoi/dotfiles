@@ -29,8 +29,8 @@
         " Disable for now Sunset
         let g:loaded_sunset = 1
 
+        " Setup Vundle
         set rtp+=~/.config/nvim/bundle/Vundle.vim/
-
         call vundle#begin(expand("~/.config/nvim/bundle/"))
 
         " Vundle Bundles
@@ -52,7 +52,6 @@
         Plugin 'printesoi/vim-colors-solarized'
         Plugin 'wincent/Command-T'
         Plugin 'Valloric/YouCompleteMe'
-        "Plugin 'Rip-Rip/clang_complete'
         Plugin 'troydm/easybuffer.vim'
         Plugin 'nginx.vim'
         Plugin 'pangloss/vim-javascript'

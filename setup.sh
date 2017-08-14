@@ -23,7 +23,7 @@ vim +PluginInstall +qall
 # Neovim
 mkdir -p "${HOME}/.config/nvim/bundle/"
 for rcfile in init.vim ginit.vim; do
-    ln -s "${HOME}/dotfiles/${rcfile}" "${HOME}/.config/nvim/${rcfile}"
+    ln -s "${HOME}/dotfiles/nvim/${rcfile}" "${HOME}/.config/nvim/${rcfile}"
 done
 
 git clone https://github.com/VundleVim/Vundle.vim.git "${HOME}/.config/nvim/bundle/Vundle.vim"

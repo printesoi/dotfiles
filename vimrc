@@ -38,12 +38,10 @@
         Plugin 'YankRing.vim'
         Plugin 'a.vim'
         Plugin 'mileszs/ack.vim'
-        "Plugin 'rosenfeld/conque-term'
         Plugin 'Cpp11-Syntax-Support'
-        Plugin 'kien/ctrlp.vim'
-        Plugin 'endel/ctrlp-filetype.vim'
+        Plugin 'ctrlpvim/ctrlp.vim'
+        Plugin 'git@github.com:printesoi/ctrlp-filetype.vim.git'
         Plugin 'printesoi/nerdcommenter'
-        "Plugin 'scrooloose/nerdtree'
         Plugin 'kien/rainbow_parentheses.vim'
         Plugin 'godlygeek/tabular'
         Plugin 'majutsushi/tagbar'
@@ -51,40 +49,40 @@
         Plugin 'honza/vim-snippets'
         Plugin 'vim-airline/vim-airline'
         Plugin 'vim-airline/vim-airline-themes'
-        "Plugin 'altercation/vim-colors-solarized'
         Plugin 'printesoi/vim-colors-solarized'
         Plugin 'wincent/Command-T'
-        "Plugin 'pydave/AsyncCommand'
-        "Plugin 'scrooloose/syntastic'
-        "Plugin 'Valloric/YouCompleteMe'
-        "Plugin 'Yggdroot/indentLine'
-        Plugin 'Rip-Rip/clang_complete'
-        "Plugin 'tpope/vim-obsession'
-        "Plugin 'gregsexton/Muon'
+        Plugin 'Valloric/YouCompleteMe'
         Plugin 'troydm/easybuffer.vim'
-        "Plugin 'endel/vim-github-colorscheme'
-        "Plugin 'noahfrederick/vim-hemisu'
-        "Plugin 'amdt/sunset'
-        "Plugin 'nginx.vim'
-        "Plugin 'Shougo/vimproc.vim'
-        "Plugin 'eagletmt/ghcmod-vim'
+        Plugin 'nginx.vim'
         Plugin 'pangloss/vim-javascript'
         Plugin 'nathanaelkane/vim-indent-guides'
         Plugin 'suan/vim-instant-markdown'
         Plugin 'tpope/vim-markdown'
-        "Plugin 'edkolev/tmuxline.vim'
         "Plugin 'leshill/vim-json'
         Plugin 'jiangmiao/simple-javascript-indenter'
-        "Plugin 'tpope/vim-vinegar.git'
+        Plugin 'tpope/vim-vinegar.git'
         Plugin 'briancollins/vim-jst'
         Plugin 'vim-ruby/vim-ruby'
         Plugin 'groenewege/vim-less'
         Plugin 'printesoi/gruvbox'
         Plugin 'peterhoeg/vim-qml'
-        Plugin 'chriskempson/base16-vim'
         Plugin 'git@github.com:printesoi/scratch.vim.git'
+        Plugin 'rdnetto/YCM-Generator'
+        Plugin 'pearofducks/ansible-vim'
 
         call vundle#end()
+
+        " Load powerline
+        "if has('python3')
+            "let g:powerline_pycmd='py3'
+            "python3 from powerline.vim import setup as powerline_setup
+            "python3 powerline_setup()
+            "python3 del powerline_setup
+        "else
+            "python from powerline.vim import setup as powerline_setup
+            "python powerline_setup()
+            "python del powerline_setup
+        "endif
 
         " Load the Man function "{{{
             let $PAGER=""
@@ -131,17 +129,14 @@
         syntax on
         syntax enable
         set t_Co=256        " tell vim that terminal has 256 colors
-
+        set t_ut=
+        set termguicolors
         set bg=dark
+
+        let g:gruvbox_termcolors=16
         let g:gruvbox_contrast_dark = 'hard'
         let g:gruvbox_improved_strings = 0
         color gruvbox
-
-        if has("gui_running")
-            " GUI is running or is about to start.
-            " Maximize gvim window.
-            set lines=999 columns=999
-        endif
     " }}}
 
     " Wildmenu and statusline "{{{
@@ -209,9 +204,9 @@
                     if line =~ '/$' | let igstring .= "," . line . "*" | con | endif
                     let igstring .= "," . line
                 endfor
-                let execstring = "set wildignore+=".substitute(igstring,'^,','',"g")
+                let execstring = "set wildignore+=" . substitute(igstring,'^,','',"g")
                 execute execstring
-                echo 'Wildignore defined from gitignore in: '.getcwd()
+                echo 'Wildignore defined from gitignore in: ' . getcwd()
             else
                 echo 'Unable to find gitignore'
             endif
@@ -318,6 +313,10 @@
         nnoremap <LEADER>gr :call CD_Git_Root()<cr>
         nnoremap <LEADER>cti :call WildignoreFromGitignore()<cr>
         nnoremap <LEADER>cwi :set wildignore=''<cr>:echo 'Wildignore cleared'<cr>
+
+        nnoremap <Leader>jg :YcmCompleter GoTo<cr>
+        nnoremap <Leader>jd :YcmCompleter GoToDeclaration<cr>
+        nnoremap <Leader>ji :YcmCompleter GoToDefinition<cr>
     " }}}
 
     " Filetype options "{{{
@@ -332,15 +331,16 @@
             autocmd FileType c          setlocal cindent noexpandtab shiftwidth=8 tabstop=8 formatoptions+=l cinoptions=(0,W4,)20 relativenumber
             autocmd FileType cpp        setlocal cindent expandtab shiftwidth=4 tabstop=4 formatoptions+=l cinoptions=(0,W4,)20 relativenumber
             autocmd FileType gitconfig  setlocal shiftwidth=4 tabstop=4 noexpandtab
-            autocmd FileType python     setlocal autoindent expandtab sts=4 sw=4
+            autocmd FileType python     setlocal autoindent expandtab sts=2 sw=2
             autocmd FileType haskell    setlocal tw=72 sw=2 sts=2 et
             autocmd FileType tex        setlocal tw=72 sw=2 sts=2 ai
             "autocmd FileType tex        so ~/.vim/abbrevs.vim
-            autocmd FileType php        setlocal tw=72 shiftwidth=4 tabstop=4 cindent noexpandtab fo=croql
+            autocmd FileType php        setlocal tw=72 shiftwidth=4 tabstop=4 cindent expandtab fo=croql
             autocmd FileType ruby       setlocal tw=72 cindent shiftwidth=2 tabstop=2 keywordprg=ri
             autocmd FileType html       setlocal shiftwidth=4 tabstop=4
             autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 shiftround expandtab
             autocmd FileType jst        setlocal shiftwidth=2 tabstop=2 shiftround expandtab
+            autocmd FileType yaml       setlocal shiftwidth=2 tabstop=2 shiftround expandtab
             autocmd BufNewFile,BufReadPost *.md set filetype=markdown
             autocmd BufRead,BufNewFile *.wiki   setlocal ft=creole
             autocmd BufRead,BufNewFile *.tex    setlocal ft=tex
@@ -349,7 +349,6 @@
             autocmd BufRead,BufNewFile *.miC    setlocal ft=C
             autocmd BufRead,BufNewFile *.g      setlocal ft=antlr
             autocmd BufRead,BufNewFile *.clp    setlocal ft=clips
-
             autocmd BufRead,BufNewFile *.bb     setlocal ft=conf
             autocmd BufRead,BufNewFile *.bbappend     setlocal ft=conf
         augroup end
@@ -372,6 +371,7 @@
         " }}}
 
         " Command-T Configuration "{{{
+            let g:CommandTFileScanner = 'find'
             let g:CommandTScanDotDirectories = 1
             let g:CommandTMaxHeight = 20
             let g:CommandTTraverseSCM = 'none'
@@ -391,12 +391,6 @@
         " Yankring "{{{
             let g:yankring_history_file = ".vim/tmp/yankring_history"
             let g:yankring_enabled = 0
-        " }}}
-
-        " ConqueTerm "{{{
-            let g:ConqueTerm_FastMode = 1
-            let g:ConqueTerm_InserOnEnter = 1
-            let g:ConqueTerm_TERM = 'xterm'
         " }}}
 
         " Haskell indent "{{{
@@ -425,16 +419,6 @@
             " CTRLP for filetype
             let g:ctrlp_extensions = ['filetype']
             silent! nnoremap <unique> <silent> <Leader>f :CtrlPFiletype<CR>
-            silent! nnoremap <unique> <silent> <Leader>r :CtrlPMRUFiles<CR>
-        " }}}
-
-        " Vim-powerline settings "{{{
-            "let g:Powerline_colorscheme="skwp"
-            if $TERM == "rxvt-unicode-256color"
-                let g:Powerline_symbols='unicode'
-            else
-                let g:Powerline_symbols='fancy'
-            end
         " }}}
 
         " vim-airline "{{{
@@ -454,18 +438,14 @@
         " Tagbar "{{{
             let g:tagbar_autoclose = 0  " autoclose the window when selecting a tag
         " }}}
-        "
+
         " Solarized "{{{
             let g:solarized_termcolors=256
             let g:solarized_menu=0
         "}}}
-        "
-        " Molokai "{{{
-            let g:molokai_original=1
-        "}}}
 
         " YCM "{{{
-            let g:ycm_global_ycm_extra_conf = '/home/printesoi/dotfiles/vimfiles/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+            let g:ycm_global_ycm_extra_conf = '~/dotfiles/ycm_extra_conf.py'
         "}}}
 
         " UltiSnips "{{{
@@ -558,16 +538,12 @@
 
 " Learn ViM the hard way "{{{
     " Chap.03: move the line downwards
-    nnoremap - ddp
+    "nnoremap - ddp
     " Chap.03: move line upwards
-    nnoremap _ YkPjjddkk
+    "nnoremap _ YkPjjddkk
 
     " Chap.04: convert to uppercase in insert mode
     inoremap <C-u> <Esc>viwUea
     " Chap.04: convert to upplercase in normal mode
     nnoremap <C-u> gUiwe
-
-    " Chap.08: abbreviations
-    iabbrev @@ dodonvictor@gmail.com
-    iabbrev wwwd http://www.victordodon.com
 " }}}
