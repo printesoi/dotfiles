@@ -107,7 +107,8 @@ function load_zsh_functions() {
     if [[ -z "$1" || ! -d "$1" ]]; then
         return 1
     fi
-    local funs=("$1"/[^_\#]*)
+    local funs
+    funs=("$1"/[^_\#]*)
     funs=(${funs[@]/*\//})
     autoload ${funs[@]}
 }
