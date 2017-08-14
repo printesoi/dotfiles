@@ -30,3 +30,8 @@ bindkey -M vicmd '^r' history-incremental-search-backward
 if [[ -n "${DISPLAY}" ]] && command -v xset >/dev/null 2>&1 ; then
     xset -b
 fi
+
+# Completion for AWS CLI
+if [[ -f /usr/bin/aws_zsh_completer.sh ]]; then
+    source /usr/bin/aws_zsh_completer.sh
+fi

@@ -31,7 +31,7 @@ function prompt_tzesoi_setup {
   # Add hook for calling vcs_info before each command.
   add-zsh-hook precmd prompt_tzesoi_precmd
 
-  _prompt_tzesoi_separator="»"
+  _prompt_tzesoi_separator="->"
   _prompt_tzesoi_colors=(
     "%F{cyan}"
     "%F{yellow}"
