@@ -37,9 +37,10 @@ zstyle ':prezto:load' pmodule \
   'completion' \
   'utility' \
   'git' \
-  'prompt' \
   'pacman' \
-  'rails'
+  'rails' \
+  'syntax-highlighting' \
+  'prompt'
 
 ##
 ## Editor
@@ -82,6 +83,12 @@ zstyle ':prezto:module:syntax-highlighting' highlighters \
   'pattern' \
   'cursor' \
   'root'
+
+zstyle ':prezto:module:syntax-highlighting' styles \
+  'builtin' 'fg=blue,bold' \
+  'command' 'fg=blue,bold' \
+  'function' 'fg=blue,bold' \
+  'alias' 'fg=blue,bold'
 
 ##
 ## Terminal
