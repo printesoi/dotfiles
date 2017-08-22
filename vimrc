@@ -45,20 +45,21 @@
         Plugin 'kien/rainbow_parentheses.vim'
         Plugin 'godlygeek/tabular'
         Plugin 'majutsushi/tagbar'
-        Plugin 'SirVer/ultisnips'
         Plugin 'honza/vim-snippets'
         Plugin 'vim-airline/vim-airline'
         Plugin 'vim-airline/vim-airline-themes'
         Plugin 'printesoi/vim-colors-solarized'
         Plugin 'wincent/Command-T'
-        Plugin 'Valloric/YouCompleteMe'
+        if version > 704
+            Plugin 'SirVer/ultisnips'
+            Plugin 'Valloric/YouCompleteMe'
+        endif
         Plugin 'troydm/easybuffer.vim'
         Plugin 'nginx.vim'
         Plugin 'pangloss/vim-javascript'
         Plugin 'nathanaelkane/vim-indent-guides'
         Plugin 'suan/vim-instant-markdown'
         Plugin 'tpope/vim-markdown'
-        "Plugin 'leshill/vim-json'
         Plugin 'jiangmiao/simple-javascript-indenter'
         Plugin 'tpope/vim-vinegar.git'
         Plugin 'briancollins/vim-jst'
@@ -130,7 +131,9 @@
         syntax enable
         set t_Co=256        " tell vim that terminal has 256 colors
         set t_ut=
-        set termguicolors
+        if exists('+termguicolors')
+            set termguicolors
+        endif
         set bg=dark
 
         let g:gruvbox_termcolors=16
