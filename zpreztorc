@@ -85,10 +85,12 @@ zstyle ':prezto:module:syntax-highlighting' highlighters \
   'root'
 
 zstyle ':prezto:module:syntax-highlighting' styles \
-  'builtin' 'fg=blue,bold' \
-  'command' 'fg=blue,bold' \
-  'function' 'fg=blue,bold' \
-  'alias' 'fg=blue,bold'
+  'builtin'     'fg=blue,bold'  \
+  'command'     'fg=blue,bold'  \
+  'function'    'fg=blue,bold'  \
+  'alias'       'fg=blue,bold'  \
+  'cursor'      'fg=green,bold' \
+  'precommand'  'fg=cyan,bold'
 
 ##
 ## Terminal
@@ -117,7 +119,7 @@ function load_zsh_functions() {
     local funs
     funs=("$1"/[^_\#]*)
     funs=(${funs[@]/*\//})
-    autoload ${funs[@]}
+    autoload -Uz ${funs[@]}
 }
 
 load_zsh_functions "${HOME}/.zsh/functions"
