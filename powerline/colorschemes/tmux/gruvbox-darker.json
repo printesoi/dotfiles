@@ -1,4 +1,5 @@
 {
+	"name": "gruvbox-darker",
 	"groups": {
 		"active_window_status": {"fg": "darkblue",   "bg": "gray0",    "attrs": []},
 		"window_status":        {"fg": "gray70",     "bg": "gray0",    "attrs": []},
@@ -6,9 +7,10 @@
 		"bell_status":          {"fg": "red",        "bg": "gray0",    "attrs": []},
 		"window":               {"fg": "gray6",      "bg": "gray0",    "attrs": []},
 		"window:divider":       {"fg": "gray4",      "bg": "gray0",    "attrs": []},
-		"window:current":       {"fg": "gruvbox-darker:fg", "bg": "gruvbox-darker:blue", "attrs": []},
-		"window_name":          {"fg": "gruvbox-darker:fg", "bg": "gruvbox-darker:blue", "attrs": ["bold"]},
-		"session":              {"fg": "gruvbox-darker:bg", "bg": "gruvbox-darker:gray2", "attrs": ["bold"]},
-		"session:prefix":       {"fg": "gruvbox-darker:fg0", "bg": "gruvbox-darker:dark_blue", "attrs": ["bold"]}
+		"window:current":       {"fg": "gruvbox-darker:fg",   "bg": "gruvbox-darker:blue",       "attrs": []},
+		"window_name":          {"fg": "gruvbox-darker:fg",   "bg": "gruvbox-darker:blue",       "attrs": ["bold"]},
+		"session":              {"fg": "gruvbox-darker:bg",   "bg": "gruvbox-darker:gray2",      "attrs": ["bold"]},
+		"session:prefix":       {"fg": "gruvbox-darker:fg2",  "bg": "gruvbox-darker:dark_blue",  "attrs": ["bold"]},
+		"hostname":             {"fg": "gruvbox-darker:fg",   "bg": "gruvbox-darker:red",   "attrs": ["bold"] }
 	}
 }

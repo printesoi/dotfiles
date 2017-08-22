@@ -18,7 +18,7 @@
 			},
 			{
 				"function": "powerline.segments.common.sys.uptime",
-				"priority": 50,
+				"priority": 90,
 				"args": {
 					"hours_format": " {hours:02d}h",
 					"minutes_format": " {minutes:02d}m",
@@ -27,7 +27,7 @@
 			},
 			{
 				"function": "powerline.segments.common.sys.system_load",
-				"priority": 30
+				"priority": 10
 			},
 			{
 				"function": "powerline.segments.common.time.date",
@@ -42,7 +42,8 @@
 				}
 			},
 			{
-				"function": "powerline.segments.common.bat.battery"
+				"function": "powerline.segments.common.net.hostname",
+				"priority": 10
 			}
 		]
 	}
