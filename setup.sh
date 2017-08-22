@@ -25,6 +25,9 @@ if [[ -z "${PRINTESOI_DOTFILES_DISABLE_VIM}" ]]; then
 
     # This is still interactive
     vim +PluginInstall +qall
+
+    cd "${VIMDIR}/bundle/YouCompleteMe"
+    ./install.py --clang-completer
 fi
 
 
@@ -42,4 +45,7 @@ if [[ -z "${PRINTESOI_DOTFILES_DISABLE_NVIM}" ]]; then
 
     # This is still interactive
     nvim +PluginInstall +qall
+
+    cd "${NVIMDIR}/bundle/YouCompleteMe"
+    ./install.py --clang-completer
 fi
