@@ -70,6 +70,7 @@
         Plugin 'printesoi/scratch.vim'
         Plugin 'rdnetto/YCM-Generator'
         Plugin 'pearofducks/ansible-vim'
+        Plugin 'editorconfig/editorconfig-vim'
 
         call vundle#end()
 
@@ -337,21 +338,14 @@
             autocmd FileType python     setlocal autoindent expandtab sts=2 sw=2
             autocmd FileType haskell    setlocal tw=72 sw=2 sts=2 et
             autocmd FileType tex        setlocal tw=72 sw=2 sts=2 ai
-            "autocmd FileType tex        so ~/.vim/abbrevs.vim
-            autocmd FileType php        setlocal tw=72 shiftwidth=4 tabstop=4 cindent expandtab fo=croql
+            autocmd FileType php        setlocal tw=78 shiftwidth=4 tabstop=4 cindent expandtab fo=croql
             autocmd FileType ruby       setlocal tw=72 cindent shiftwidth=2 tabstop=2 keywordprg=ri
             autocmd FileType html       setlocal shiftwidth=4 tabstop=4
             autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 shiftround expandtab
             autocmd FileType jst        setlocal shiftwidth=2 tabstop=2 shiftround expandtab
             autocmd FileType yaml       setlocal shiftwidth=2 tabstop=2 shiftround expandtab
             autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-            autocmd BufRead,BufNewFile *.wiki   setlocal ft=creole
             autocmd BufRead,BufNewFile *.tex    setlocal ft=tex
-            autocmd BufRead,BufNewFile *.cool   setlocal ft=cool
-            autocmd BufRead,BufNewFile *.cl     setlocal ft=cool
-            autocmd BufRead,BufNewFile *.miC    setlocal ft=C
-            autocmd BufRead,BufNewFile *.g      setlocal ft=antlr
-            autocmd BufRead,BufNewFile *.clp    setlocal ft=clips
             autocmd BufRead,BufNewFile *.bb     setlocal ft=conf
             autocmd BufRead,BufNewFile *.bbappend     setlocal ft=conf
         augroup end
