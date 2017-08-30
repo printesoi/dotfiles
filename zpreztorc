@@ -39,7 +39,10 @@ zstyle ':prezto:load' pmodule \
   'git' \
   'pacman' \
   'rails' \
+  'fasd' \
+  'command-not-found' \
   'syntax-highlighting' \
+  'autosuggestions' \
   'prompt'
 
 ##
