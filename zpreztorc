@@ -84,8 +84,7 @@ zstyle ':prezto:module:syntax-highlighting' highlighters \
   'main' \
   'brackets' \
   'pattern' \
-  'cursor' \
-  'root'
+  'cursor'
 
 zstyle ':prezto:module:syntax-highlighting' styles \
   'builtin'     'fg=blue,bold'  \
