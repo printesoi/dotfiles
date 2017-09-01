@@ -5,6 +5,11 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+# Custom environment variables that need to be set before loading Prezto
+if [[ -s "${ZDOTDIR:-$HOME}/.zsh.local/zshenv.before" ]]; then
+    source "${ZDOTDIR:-$HOME}/.zsh.local/zshenv.before"
+fi
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
