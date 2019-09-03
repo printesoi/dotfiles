@@ -72,18 +72,6 @@
 
         call vundle#end()
 
-        " Load powerline
-        "if has('python3')
-            "let g:powerline_pycmd='py3'
-            "python3 from powerline.vim import setup as powerline_setup
-            "python3 powerline_setup()
-            "python3 del powerline_setup
-        "else
-            "python from powerline.vim import setup as powerline_setup
-            "python powerline_setup()
-            "python del powerline_setup
-        "endif
-
         " Load the Man function "{{{
             let $PAGER=""
         "}}}
@@ -238,11 +226,13 @@
         noremap <C-L> <ESC><C-W>l
         inoremap <C-L> <ESC><C-W>l
 
-        " Normal copy / paste behavior
+        " Normal save behavior
         noremap <C-Q> <ESC>:qa<CR>
         inoremap <C-Q> <ESC>:qa<CR>
         noremap <C-S> <ESC>:w<CR>
         inoremap <C-S> <ESC>:w<CR>
+
+        " Normal copy / paste behavior
         noremap <C-V> <ESC>"+gp
         inoremap <C-V> <ESC>"+gp
         vnoremap <C-C> "+y
