@@ -27,7 +27,7 @@ if [[ -z "${PRINTESOI_DOTFILES_DISABLE_VIM}" ]]; then
     vim +PluginInstall +qall
 
     cd "${VIMDIR}/bundle/YouCompleteMe"
-    ./install.py --clang-completer
+    ./install.py --clang-completer --go-completer
 fi
 
 
@@ -47,5 +47,11 @@ if [[ -z "${PRINTESOI_DOTFILES_DISABLE_NVIM}" ]]; then
     nvim +PluginInstall +qall
 
     cd "${NVIMDIR}/bundle/YouCompleteMe"
-    ./install.py --clang-completer
+    ./install.py --clang-completer --go-completer
 fi
+
+# Powerline symbols
+mkdir -p ~/.local/share/fonts/ ~/.config/fontconfig/conf.d/
+wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf -O ~/.local/share/fonts/PowerlineSymbols.otf
+wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf -O ~/.config/fontconfig/conf.d/10-powerline-symbols.conf
+fc-cache -vf ~/.local/share/fonts/
