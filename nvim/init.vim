@@ -56,7 +56,7 @@
         Plugin 'nginx.vim'
         Plugin 'pangloss/vim-javascript'
         Plugin 'nathanaelkane/vim-indent-guides'
-        Plugin 'suan/vim-instant-markdown'
+        "Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
         Plugin 'tpope/vim-markdown'
         Plugin 'jiangmiao/simple-javascript-indenter'
         Plugin 'tpope/vim-vinegar'
@@ -69,6 +69,13 @@
         Plugin 'rdnetto/YCM-Generator'
         Plugin 'pearofducks/ansible-vim'
         Plugin 'editorconfig/editorconfig-vim'
+        Plugin 'hashivim/vim-terraform'
+        Plugin 'scrooloose/nerdtree'
+        Plugin 'fatih/vim-go'
+        Plugin 'vim-syntastic/syntastic'
+        Plugin 'neomake/neomake'
+        Plugin 'Shougo/deoplete.nvim'
+        Plugin 'juliosueiras/vim-terraform-completion'
 
         call vundle#end()
 
@@ -314,6 +321,9 @@
         nnoremap <Leader>jg :YcmCompleter GoTo<cr>
         nnoremap <Leader>jd :YcmCompleter GoToDeclaration<cr>
         nnoremap <Leader>ji :YcmCompleter GoToDefinition<cr>
+
+        " Open NERDTree
+        map <F3> :NERDTreeToggle<CR>
     " }}}
 
     " Filetype options "{{{
@@ -327,11 +337,12 @@
             autocmd FileType java       setlocal tw=78 cin wrap foldmethod=marker
             autocmd FileType c          setlocal cindent noexpandtab shiftwidth=8 tabstop=8 formatoptions+=l cinoptions=(0,W4,)20 relativenumber
             autocmd FileType cpp        setlocal cindent expandtab shiftwidth=4 tabstop=4 formatoptions+=l cinoptions=(0,W4,)20 relativenumber
+            autocmd FileType go         setlocal cindent noexpandtab shiftwidth=4 tabstop=4
             autocmd FileType gitconfig  setlocal shiftwidth=4 tabstop=4 noexpandtab
             autocmd FileType python     setlocal autoindent expandtab sts=2 sw=2
             autocmd FileType haskell    setlocal tw=72 sw=2 sts=2 et
             autocmd FileType tex        setlocal tw=72 sw=2 sts=2 ai
-            autocmd FileType php        setlocal tw=78 shiftwidth=4 tabstop=4 cindent expandtab fo=croql
+            autocmd FileType php        setlocal tw=120 shiftwidth=4 tabstop=4 cindent expandtab fo=croql colorcolumn=120
             autocmd FileType ruby       setlocal tw=72 cindent shiftwidth=2 tabstop=2 keywordprg=ri
             autocmd FileType html       setlocal shiftwidth=4 tabstop=4
             autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 shiftround expandtab
@@ -482,6 +493,16 @@
 
         " Scratch "{{{
             let g:scratch_insert_autohide = 0
+        " }}}
+
+        " Terraform "{{{
+            let g:terraform_align = 1
+            let g:terraform_remap_spacebar = 1
+            let g:terraform_fmt_on_save = 1
+        " }}}
+
+        " Synastic "{{{
+            let g:syntastic_php_phpcs_args='--standard=PSR2'
         " }}}
 
     " }}}

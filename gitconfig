@@ -17,8 +17,8 @@
 [core]
 	editor = vim
 [user]
-	name = Victor Dodon
 	email = dodonvictor@gmail.com
+	name = Victor Dodon
 [push]
 	default = tracking
 [color]
@@ -54,3 +54,7 @@
 	stat = true
 [diff]
 	tool = kompare
+[url "git@bitbucket.org:"]
+	insteadOf = https://bitbucket.org/
+[diff "ansible-vault"]
+	textconv = ansible-vault view
