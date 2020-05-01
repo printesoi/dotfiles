@@ -1,10 +1,57 @@
 #!/bin/zsh
 
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${HOME}/.zprezto"
-git clone --recursive https://github.com/printesoi/dotfiles.git "${HOME}/dotfiles"
+: ${PRINTESOI_DOTFILES_DIR:="${HOME}/dotfiles"}
 
-for rcfile in "${HOME}/dotfiles/"{zsh,zshrc,zshenv,zpreztorc,gitconfig,lesskey}; do
-    ln -s "${rcfile}" "${HOME}/.${rcfile:t}"
+check_prerequisites() {
+    local missing=0
+    local prerequisites=(git curl cmake python3)
+    if [[ -z "${PRINTESOI_DOTFILES_DISABLE_VIM}" ]]; then
+        prerequisites+=vim
+    fi
+    if [[ -z "${PRINTESOI_DOTFILES_DISABLE_NVIM}" ]]; then
+        prerequisites+=nvim
+    fi
+    for cmd in "${prerequisites[@]}"; do
+        if ! hash "$cmd"; then
+            echo "Missing $cmd" >&2
+            missing=1
+        fi
+    done
+    return $missing
+}
+
+check_prerequisites || exit 2
+
+is_git_repo() {
+    local dir="$1"
+    local is_git=1
+
+    pushd -q "$dir"
+    git rev-parse --is-inside-work-tree >/dev/null 2>&1 && is_git=0
+    pushd -q
+
+    return $is_git
+}
+
+clone_repo() {
+    local repo="$1"
+    local dir="$2"
+
+    if [[ -d "$dir" ]]; then
+        if is_git_repo "$dir"; then
+            # TODO: maybe pull?
+            return 0
+        fi
+    fi
+
+    git clone --recursive "$repo" "$dir"
+}
+
+clone_repo https://github.com/sorin-ionescu/prezto.git "${HOME}/.zprezto"
+clone_repo https://github.com/printesoi/dotfiles.git "${PRINTESOI_DOTFILES_DIR}"
+
+for rcfile in "${PRINTESOI_DOTFILES_DIR}/"{zsh,zshrc,zshenv,zpreztorc,gitconfig,lesskey}; do
+    ln -vfs "${rcfile}" "${HOME}/.${rcfile:t}"
 done
 
 lesskey
@@ -13,15 +60,14 @@ lesskey
 if [[ -z "${PRINTESOI_DOTFILES_DISABLE_VIM}" ]]; then
     VIMDIR="${HOME}/.vim"
 
-    ln -s "${HOME}/dotfiles/vimfiles" "${VIMDIR}"
     mkdir -p "${VIMDIR}/tmp"
 
     for rcfile in {,g}vimrc; do
-        ln -s "${HOME}/dotfiles/${rcfile}" "${HOME}/.${rcfile:t}"
+        ln -vfs "${PRINTESOI_DOTFILES_DIR}/${rcfile}" "${HOME}/.${rcfile:t}"
     done
 
-    git clone https://github.com/VundleVim/Vundle.vim.git "${VIMDIR}/bundle/Vundle.vim"
-    git clone https://github.com/printesoi/gruvbox.git "${VIMDIR}/bundle/gruvbox"
+    clone_repo https://github.com/VundleVim/Vundle.vim.git "${VIMDIR}/bundle/Vundle.vim"
+    clone_repo https://github.com/printesoi/gruvbox.git "${VIMDIR}/bundle/gruvbox"
 
     # This is still interactive
     vim +PluginInstall +qall
@@ -37,11 +83,13 @@ if [[ -z "${PRINTESOI_DOTFILES_DISABLE_NVIM}" ]]; then
 
     mkdir -p "${NVIMDIR}/bundle/"
     for rcfile in init.vim ginit.vim; do
-        ln -s "${HOME}/dotfiles/nvim/${rcfile}" "${NVIMDIR}/${rcfile}"
+        ln -vfs "${PRINTESOI_DOTFILES_DIR}/nvim/${rcfile}" "${NVIMDIR}/${rcfile}"
     done
 
-    git clone https://github.com/VundleVim/Vundle.vim.git "${NVIMDIR}/bundle/Vundle.vim"
-    git clone https://github.com/printesoi/gruvbox.git "${NVIMDIR}/bundle/gruvbox"
+    clone_repo https://github.com/VundleVim/Vundle.vim.git "${NVIMDIR}/bundle/Vundle.vim"
+    clone_repo https://github.com/printesoi/gruvbox.git "${NVIMDIR}/bundle/gruvbox"
+
+    mkdir -p "${HOME}/.cache/nvim/yankring"
 
     # This is still interactive
     nvim +PluginInstall +qall
@@ -52,6 +100,9 @@ fi
 
 # Powerline symbols
 mkdir -p ~/.local/share/fonts/ ~/.config/fontconfig/conf.d/
-wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf -O ~/.local/share/fonts/PowerlineSymbols.otf
-wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf -O ~/.config/fontconfig/conf.d/10-powerline-symbols.conf
+curl -sSL \
+    https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf \
+    -o ~/.local/share/fonts/PowerlineSymbols.otf \
+    https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf \
+    -o ~/.config/fontconfig/conf.d/10-powerline-symbols.conf
 fc-cache -vf ~/.local/share/fonts/

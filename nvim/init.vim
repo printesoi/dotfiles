@@ -390,7 +390,7 @@
         " }}}
 
         " Yankring "{{{
-            let g:yankring_history_file = ".vim/tmp/yankring_history"
+            let g:yankring_history_file = ".cache/nvim/yankring/history"
             let g:yankring_enabled = 0
         " }}}
 
