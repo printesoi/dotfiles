@@ -105,4 +105,7 @@ curl -sSL \
     -o ~/.local/share/fonts/PowerlineSymbols.otf \
     https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf \
     -o ~/.config/fontconfig/conf.d/10-powerline-symbols.conf
+
+# Fix Fira Code not being recognised as fixed with
+ln -vfs "{${PRINTESOI_DOTFILES_DIR},$HOME/.config}/fontconfig/conf.d/20-firacode-spacing.conf"
 fc-cache -vf ~/.local/share/fonts/
