@@ -1,9 +1,3 @@
-[url "git://anongit.kde.org/"]
-	insteadof = kde:
-[url "git@git.kde.org:"]
-	pushinsteadof = kde:
-[url "ssh://git@git.kde.org/"]
-	pushinsteadof = kde:
 [alias]
 	up = !gitup
 	a = add
