@@ -1,0 +1,44 @@
+# This file controls options to apply when configuring/building modules, and
+# controls which modules are built in the first place.
+# List of all options: https://go.kde.org/u/ksboptions
+
+global
+    # Paths
+
+    kdedir ~/dev/kde/usr # Where to install KF5-based software
+    qtdir  ~/dev/kde/qt5 # Where to find Qt5
+
+    source-dir ~/dev/kde/src   # Where sources are downloaded
+    build-dir  ~/dev/kde/build # Where the source build is run
+
+    ignore-kde-structure true # Use flat structure
+
+    # Will pull in KDE-based dependencies only, to save you the trouble of
+    # listing them all below
+    include-dependencies true
+
+    cmake-options -DCMAKE_BUILD_TYPE=RelWithDebInfo
+    make-options  -j12
+
+end global
+
+# With base options set, the remainder of the file is used to define modules to build, in the
+# desired order, and set any module-specific options.
+#
+# Modules may be grouped into sets, and this is the normal practice.
+#
+# You can include other files inline using the "include" command. We do this here
+# to include files which are updated with kdesrc-build.
+
+# Qt and some Qt-using middleware libraries
+include ~/dev/kde/src/kdesrc-build/qt5-build-include
+include ~/dev/kde/src/kdesrc-build/custom-qt5-libs-build-include
+
+# KF5 and Plasma :)
+include ~/dev/kde/src/kdesrc-build/kf5-qt5-build-include
+
+# To change options for modules that have already been defined, use an
+# 'options' block
+options kcoreaddons
+    make-options -j4
+end options
