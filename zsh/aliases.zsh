@@ -25,3 +25,7 @@ alias -g ND='*(/om[1])' # newest directory
 
 # System
 alias kernlog='sudo journalctl _TRANSPORT=kernel'
+
+# Terraform
+alias tf='terraform'
+alias tfw='terraform workspace'
