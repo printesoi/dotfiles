@@ -52,3 +52,7 @@
 	insteadOf = https://bitbucket.org/
 [diff "ansible-vault"]
 	textconv = ansible-vault view
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[init]
+	defaultBranch = main
