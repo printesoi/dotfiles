@@ -29,6 +29,9 @@
         " Disable for now Sunset
         let g:loaded_sunset = 1
 
+        " Ensure we are using the lua implementation
+        let g:CommandTPreferredImplementation='lua'
+
         " Setup Vundle
         set rtp+=~/.config/nvim/bundle/Vundle.vim/
         call vundle#begin(expand("~/.config/nvim/bundle/"))
@@ -76,6 +79,7 @@
         Plugin 'neomake/neomake'
         Plugin 'Shougo/deoplete.nvim'
         Plugin 'juliosueiras/vim-terraform-completion'
+        Plugin 'airblade/vim-gitgutter'
 
         call vundle#end()
 
@@ -216,6 +220,9 @@
     " }}}
 
     " Keymappings "{{{
+        " Disable default nvim mapping for Y
+        unmap Y
+
         inoremap jk <ESC>
         inoremap <Esc> <nop>
 
@@ -348,6 +355,7 @@
             autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 shiftround expandtab
             autocmd FileType jst        setlocal shiftwidth=2 tabstop=2 shiftround expandtab
             autocmd FileType yaml       setlocal shiftwidth=2 tabstop=2 shiftround expandtab
+            autocmd FileType vue        setlocal shiftwidth=2 tabstop=2 shiftround expandtab
             autocmd BufNewFile,BufReadPost *.md set filetype=markdown
             autocmd BufRead,BufNewFile *.tex    setlocal ft=tex
             autocmd BufRead,BufNewFile *.bb     setlocal ft=conf

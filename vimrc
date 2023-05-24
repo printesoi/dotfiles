@@ -74,18 +74,6 @@
 
         call vundle#end()
 
-        " Load powerline
-        "if has('python3')
-            "let g:powerline_pycmd='py3'
-            "python3 from powerline.vim import setup as powerline_setup
-            "python3 powerline_setup()
-            "python3 del powerline_setup
-        "else
-            "python from powerline.vim import setup as powerline_setup
-            "python powerline_setup()
-            "python del powerline_setup
-        "endif
-
         " Load the Man function "{{{
             let $PAGER=""
         "}}}
